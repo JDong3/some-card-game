@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/test-card-export.png-1ad42d4380a4f2f6ebfbbaa7a0ce3455.stex"
+path="res://.import/start-menu-button.png-a108e7ed05cdbebb1aebc89c42ce83fc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cards/test-card-export.png"
-dest_files=[ "res://.import/test-card-export.png-1ad42d4380a4f2f6ebfbbaa7a0ce3455.stex" ]
+source_file="res://assets/sprites/start-menu-button.png"
+dest_files=[ "res://.import/start-menu-button.png-a108e7ed05cdbebb1aebc89c42ce83fc.stex" ]
 
 [params]
 

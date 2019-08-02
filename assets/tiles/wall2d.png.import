@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/floor2d.png-331009e6b7cc5a1b67cd62a410b55082.stex"
+path="res://.import/wall2d.png-948a67fdede495edb89ed29c87986675.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/floor2d.png"
-dest_files=[ "res://.import/floor2d.png-331009e6b7cc5a1b67cd62a410b55082.stex" ]
+source_file="res://assets/tiles/wall2d.png"
+dest_files=[ "res://.import/wall2d.png-948a67fdede495edb89ed29c87986675.stex" ]
 
 [params]
 
