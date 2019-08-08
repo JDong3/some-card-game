@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="some-card-game"
 run/main_scene="res://StartMenu/StartMenu.tscn"
 
+[autoload]
+
+State="*res://State.gd"
+
 [display]
 
 window/size/width=480
