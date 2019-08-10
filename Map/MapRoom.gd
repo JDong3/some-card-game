@@ -1,38 +1,14 @@
 extends Node
 
-func _ready():
-	
-	combobulate()
+var defaultPosition = Vector2(0, 0)
 
-func makeArea():
+func config(map):
+	if !map.has('position'):
+		map['position'] = defaultPosition
 	
-	var res = Area2D.new()
+	self.position = map['position']
+
+func _input(event):
 	
-	return res
-	
-func makeSprite():
-	
-	var res = Sprite.new()
-	res.texture = load('res://assets/sprites/map-room.png')
-	
-	return res
-	
-func makeCollision():
-	
-	var res = CollisionShape2D.new()
-	
-	res.shape = RectangleShape2D.new()
-	res.shape.extents = Vector2(25, 25)
-	
-	return res
-	
-func combobulate():
-	
-	var res = makeArea()
-	var sprite = makeSprite()
-	var collision = makeCollision()
-	
-	res.add_child(sprite)
-	res.add_child(collision)
-	
-	self.add_child(res)
+	if event.is_action_pressed("click"):
+		print('clicked')
