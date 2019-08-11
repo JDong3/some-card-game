@@ -1,26 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://assets/sprites/black-bg.png" type="Texture" id=1]
-[ext_resource path="res://StartMenu/StartButton.gd" type="Script" id=2]
-[ext_resource path="res://assets/sprites/start-button.png" type="Texture" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 48, 15 )
 
 [node name="StartMenu" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
-
-[node name="StartButtonArea" type="Area2D" parent="Background"]
-editor/display_folded = true
-script = ExtResource( 2 )
-
-[node name="StartButtonSprite" type="Sprite" parent="Background/StartButtonArea"]
-position = Vector2( 240, 135 )
-texture = ExtResource( 3 )
-
-[node name="StartButtonCollision" type="CollisionShape2D" parent="Background/StartButtonArea"]
-position = Vector2( 240, 135 )
-shape = SubResource( 1 )
