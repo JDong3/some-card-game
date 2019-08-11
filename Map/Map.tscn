@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Map/Map.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/map-bg.png" type="Texture" id=2]
+[ext_resource path="res://Map/MapViewport.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/map-bg.png" type="Texture" id=3]
 
 [node name="Map" type="ViewportContainer"]
 margin_left = 10.0
@@ -14,7 +15,8 @@ script = ExtResource( 1 )
 size = Vector2( 460, 250 )
 handle_input_locally = false
 render_target_update_mode = 3
+script = ExtResource( 2 )
 
 [node name="MapBg" type="Sprite" parent="MapViewport"]
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 centered = false

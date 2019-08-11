@@ -15,7 +15,6 @@ func _init(pathToScene, attachedSceneTree):
 	inst = scene.instance()
 	isAttached = false
 	sceneTree = attachedSceneTree
-	print(attachedSceneTree)
 
 func toggle():
 	

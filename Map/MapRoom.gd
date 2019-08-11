@@ -8,7 +8,7 @@ func config(map):
 	
 	self.position = map['position']
 
-func _input(event):
+func input_event(viewport, event, shape_idx):
 	
 	if event.is_action_pressed("click"):
-		print('clicked')
+		pass
