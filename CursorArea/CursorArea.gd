@@ -2,6 +2,10 @@ extends Node2D
 
 var config
 var cursor_position
+var width
+var height
+var cell_width
+var cell_height
 
 
 func _init(config_map):
@@ -16,23 +20,37 @@ func _init(config_map):
 	"""
 	config = config_map
 	cursor_position = 0
+	width = config.dimensions.x
+	height = config.dimensions.y
+	cell_width = config.cell_size.x
+	cell_height = config.cell_size.y
 	
 	combobulate()
 	
 func combobulate():
-	var width = config.dimensions.x
-	var height = config.dimensions.y
+	"""
+	puts together the stuff
+	"""
 	var curr_position = position
 	var cell
+	var index
 	
-	# fills boxes in left to right, up to down
+	# algorithm to lay out the cells in a grid
 	for i in range(height):
+		
+		curr_position.x = position.x
+		
 		for j in range(width):
-			# load the cells in, and set their position
-			cell = config.cells[i * j]
+			index = (i * j) + i + j
+			
+			cell = config.cells[index]
+			cell.set_centered(false)
+			cell.position = Vector2(curr_position.x, curr_position.y)
 			add_child(cell)
-			print('loading cells in and setting their position', cell)
-			print(curr_position)
+			
+			curr_position.x += cell_width
+			
+		curr_position.y += cell_height
 
 func _input(event):
 	pass
