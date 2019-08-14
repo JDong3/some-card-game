@@ -11,12 +11,12 @@ func obtain_interface(id):
 	:param id: id of the interface you want to obtain, id
 	just used for object matching, please don't duplicate names
 	"""
-	var res = FocusInterface.new(id)
+	var res = FocusInterface.new(self, id)
 	interfaces.append(res)
 	return res
 
-func setFocus(id):
+func set_focus(id):
 	focused_on = id
 
 func has_focus(id):
-	return focused_on == id
+	return focused_on.casecmp_to(id) == 0

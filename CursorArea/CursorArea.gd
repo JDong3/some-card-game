@@ -1,11 +1,17 @@
 extends Node2D
 
 var config
-var cursor_position
+var default_cursor_position = 0
 var width
 var height
 var cell_width
 var cell_height
+var selected_sprite
+
+var cursor_position
+
+# get from the focus manager
+var focus_interface
 
 
 func _init(config_map):
@@ -17,15 +23,26 @@ func _init(config_map):
 		size: Vector2, the pixel w by h of the cursor area
 		default_cursor_position: null
 		cells: list of nodes that are the cells
+		seleted_sprite: sprite, the highlight that shows up when when a cell is 'hovered'
+		focus_interface: a focus interface from the appropriate manager
 	"""
 	config = config_map
-	cursor_position = 0
+	cursor_position = default_cursor_position
 	width = config.dimensions.x
 	height = config.dimensions.y
 	cell_width = config.cell_size.x
 	cell_height = config.cell_size.y
+	selected_sprite = config.selected_sprite
+	focus_interface = config.focus_interface
 	
+	for sprite in config.cells:
+		prep_sprite(sprite)
+	prep_sprite(selected_sprite)
+		
 	combobulate()
+
+func prep_sprite(sprite):
+	sprite.set_centered(false)
 	
 func combobulate():
 	"""
@@ -44,13 +61,36 @@ func combobulate():
 			index = (i * j) + i + j
 			
 			cell = config.cells[index]
-			cell.set_centered(false)
 			cell.position = Vector2(curr_position.x, curr_position.y)
 			add_child(cell)
 			
 			curr_position.x += cell_width
 			
 		curr_position.y += cell_height
+	
+	get_child(cursor_position).add_child(selected_sprite)
+
+func move_cursor_to(index):
+	if index >= config.cells.size() or index < 0:
+		return
+		
+	config.cells[cursor_position].remove_child(selected_sprite)
+	config.cells[index].add_child(selected_sprite)
+	cursor_position = index
 
 func _input(event):
-	pass
+	
+	if !focus_interface.has_focus():
+		return
+
+	if event.is_action_released('cursor_up'):
+		move_cursor_to(cursor_position - width)
+	elif event.is_action_released('cursor_down'):
+		move_cursor_to(cursor_position + width)
+	elif event.is_action_released('cursor_left'):
+		move_cursor_to(cursor_position + 1)
+	elif event.is_action_released('cursor_right'):
+		move_cursor_to(cursor_position - 1)
+	elif event.is_action_released('cursor_select'):
+		print('select')
+	

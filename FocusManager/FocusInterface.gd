@@ -7,8 +7,8 @@ func _init(manager_obj, id_str):
 	manager = manager_obj
 	id = id_str
 
-func obtainFocus():
-	manager.setFocus(id)
+func obtain_focus():
+	manager.set_focus(id)
 	
-func hasFocus():
-	manager.hasFocus(id)
+func has_focus():
+	return manager.has_focus(id)
