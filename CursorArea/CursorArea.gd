@@ -7,16 +7,12 @@ cells are used in cursor areas
 
 var config
 var default_cursor_position = 0
-var width
-var height
-var cell_width
-var cell_height
-var selected_sprite
 
+# state
 var cursor_position
 
 # get from the focus manager
-var focus_interface
+# var focus_interface
 
 
 func _init(config_map):
@@ -33,15 +29,10 @@ func _init(config_map):
 	"""
 	config = config_map
 	cursor_position = default_cursor_position
-	width = config.dimensions.x
-	height = config.dimensions.y
-	cell_width = config.cell_size.x
-	cell_height = config.cell_size.y
-	selected_sprite = config.selected_sprite
-	focus_interface = config.focus_interface
-		
+	config.focus_interface.obtain_focus()
+
 	combobulate()
-	
+
 func combobulate():
 	"""
 	puts together the stuff
@@ -49,46 +40,45 @@ func combobulate():
 	var curr_position = position
 	var cell
 	var index
-	
+
 	# algorithm to lay out the cells in a grid
-	for i in range(height):
-		
+	for i in range(config.dimensions.y):
+
 		curr_position.x = position.x
-		
-		for j in range(width):
+
+		for j in range(config.dimensions.x):
 			index = (i * j) + i + j
-			
+
 			cell = config.cells[index]
 			cell.position = Vector2(curr_position.x, curr_position.y)
 			add_child(cell)
-			
-			curr_position.x += cell_width
-			
-		curr_position.y += cell_height
-	
+
+			curr_position.x += config.cell_size.x
+
+		curr_position.y += config.cell_size.y
+
 	get_child(cursor_position).select()
 
 func move_cursor_to(index):
 	if index >= config.cells.size() or index < 0:
 		return
-		
-	config.cells[cursor_position].remove_child(selected_sprite)
-	config.cells[index].add_child(selected_sprite)
+
+	config.cells[cursor_position].deselect()
+	config.cells[index].select()
 	cursor_position = index
 
 func _input(event):
-	
-	if !focus_interface.has_focus():
+
+	if !config.focus_interface.has_focus():
 		return
 
 	if event.is_action_released('cursor_up'):
-		move_cursor_to(cursor_position - width)
+		move_cursor_to(cursor_position - config.dimensions.x)
 	elif event.is_action_released('cursor_down'):
-		move_cursor_to(cursor_position + width)
+		move_cursor_to(cursor_position + config.dimensions.x)
 	elif event.is_action_released('cursor_left'):
 		move_cursor_to(cursor_position + 1)
 	elif event.is_action_released('cursor_right'):
 		move_cursor_to(cursor_position - 1)
-	elif event.is_action_released('cursor_select'):
-		print('select')
-	
+	else:
+		config.cells[cursor_position].input(event)

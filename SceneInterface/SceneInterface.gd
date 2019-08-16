@@ -17,7 +17,7 @@ func _init(pathToScene, attachedSceneTree):
 	sceneTree = attachedSceneTree
 
 func toggle():
-	
+
 	if !isAttached:
 		sceneTree.root.add_child(inst)
 		isAttached = !isAttached

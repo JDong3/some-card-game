@@ -25,9 +25,24 @@ _global_script_classes=[ {
 "path": "res://CursorArea/CursorArea.gd"
 }, {
 "base": "Node",
+"class": "FocusInterface",
+"language": "GDScript",
+"path": "res://FocusManager/FocusInterface.gd"
+}, {
+"base": "Node",
 "class": "FocusManager",
 "language": "GDScript",
 "path": "res://FocusManager/FocusManager.gd"
+}, {
+"base": "Cell",
+"class": "QuitCell",
+"language": "GDScript",
+"path": "res://StartMenu/QuitCell.gd"
+}, {
+"base": "Cell",
+"class": "SettingsCell",
+"language": "GDScript",
+"path": "res://StartMenu/SettingsCell.gd"
 }, {
 "base": "Cell",
 "class": "StartCell",
@@ -38,7 +53,10 @@ _global_script_class_icons={
 "Cell": "",
 "CellSprite": "",
 "CursorArea": "",
+"FocusInterface": "",
 "FocusManager": "",
+"QuitCell": "",
+"SettingsCell": "",
 "StartCell": ""
 }
 

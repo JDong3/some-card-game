@@ -9,12 +9,10 @@ var is_selected = false
 func _init(props_in):
 	"""
 	props:
-		sprite: the main sprite of the node
+		sprite: the main CellCprite of the node
 		selected_sprite: the sprite overlay to show that the cell is selected
 	"""
 	props = props_in
-	props.sprite.set_centered(false)
-	props.selected_sprite.set_centered(false)
 	add_child(props.sprite)
 
 func select():
