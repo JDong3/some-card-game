@@ -1,4 +1,9 @@
 extends Node2D
+class_name CursorArea
+
+"""
+cells are used in cursor areas
+"""
 
 var config
 var default_cursor_position = 0
@@ -22,7 +27,7 @@ func _init(config_map):
 		cell_size: Vector2, the pixel w by h of each cell
 		size: Vector2, the pixel w by h of the cursor area
 		default_cursor_position: null
-		cells: list of nodes that are the cells
+		cells: list of Cells that are the cells
 		seleted_sprite: sprite, the highlight that shows up when when a cell is 'hovered'
 		focus_interface: a focus interface from the appropriate manager
 	"""
@@ -34,15 +39,8 @@ func _init(config_map):
 	cell_height = config.cell_size.y
 	selected_sprite = config.selected_sprite
 	focus_interface = config.focus_interface
-	
-	for sprite in config.cells:
-		prep_sprite(sprite)
-	prep_sprite(selected_sprite)
 		
 	combobulate()
-
-func prep_sprite(sprite):
-	sprite.set_centered(false)
 	
 func combobulate():
 	"""
@@ -68,7 +66,7 @@ func combobulate():
 			
 		curr_position.y += cell_height
 	
-	get_child(cursor_position).add_child(selected_sprite)
+	get_child(cursor_position).select()
 
 func move_cursor_to(index):
 	if index >= config.cells.size() or index < 0:

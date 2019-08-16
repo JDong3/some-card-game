@@ -1,4 +1,5 @@
 extends Node
+class_name FocusManager
 
 var FocusInterface = load('res://FocusManager/FocusInterface.gd')
 var interfaces = []

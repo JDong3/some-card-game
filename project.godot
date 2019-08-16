@@ -8,9 +8,38 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Cell",
+"language": "GDScript",
+"path": "res://CursorArea/Cell.gd"
+}, {
+"base": "Sprite",
+"class": "CellSprite",
+"language": "GDScript",
+"path": "res://CursorArea/CellSprite.gd"
+}, {
+"base": "Node2D",
+"class": "CursorArea",
+"language": "GDScript",
+"path": "res://CursorArea/CursorArea.gd"
+}, {
+"base": "Node",
+"class": "FocusManager",
+"language": "GDScript",
+"path": "res://FocusManager/FocusManager.gd"
+}, {
+"base": "Cell",
+"class": "StartCell",
+"language": "GDScript",
+"path": "res://StartMenu/StartCell.gd"
+} ]
 _global_script_class_icons={
-
+"Cell": "",
+"CellSprite": "",
+"CursorArea": "",
+"FocusManager": "",
+"StartCell": ""
 }
 
 [application]

@@ -1,6 +1,7 @@
 extends Node2D
 
 var CursorArea = load('res://CursorArea/CursorArea.gd')
+var Cell = load('res://CursorArea/Cell.gd')
 var cursorArea
 
 func make_sprite(texture_path):

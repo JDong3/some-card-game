@@ -1,24 +1,34 @@
 extends Node2D
+class_name Cell
 
 var selected
+var props
 
-func _init(props):
+var is_selected = false
+
+func _init(props_in):
 	"""
 	props:
 		sprite: the main sprite of the node
 		selected_sprite: the sprite overlay to show that the cell is selected
 	"""
-	pass
+	props = props_in
+	props.sprite.set_centered(false)
+	props.selected_sprite.set_centered(false)
+	add_child(props.sprite)
 
 func select():
-	pass
+	if !is_selected:
+		add_child(props.selected_sprite)
+		is_selected = true
 
 func deselect():
-	pass
+	if is_selected:
+		remove_child(props.selected_sprite)
+		is_selected = false
 
 func input(event):
 	"""
 	manually forward input to this node
 	"""
-	if event.is_action_pressed('cursor_select'):
-		print('please implement this function')
+	print('please implement this function', self)
