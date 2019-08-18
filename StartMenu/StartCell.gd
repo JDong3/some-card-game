@@ -14,4 +14,4 @@ func _init().(make_props()):
 
 func input(event):
 	if event.is_action_released('cursor_select'):
-		print('start cell')
+		get_tree().change_scene('res://GameView/GameView.tscn')
