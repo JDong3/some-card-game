@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/sprites/black-bg.png" type="Texture" id=1]
-[ext_resource path="res://CharacterSelect/BardButtonArea.gd" type="Script" id=2]
-[ext_resource path="res://assets/sprites/bard-button.png" type="Texture" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 48, 16 )
+[ext_resource path="res://CharacterSelect/add_cursor_area.gd" type="Script" id=2]
 
 [node name="CharacterSelection" type="Node2D"]
 
@@ -13,13 +9,5 @@ extents = Vector2( 48, 16 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="BardButtonArea" type="Area2D" parent="Background"]
+[node name="Node2D" type="Node2D" parent="Background"]
 script = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Background/BardButtonArea"]
-position = Vector2( 240, 135 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/BardButtonArea"]
-position = Vector2( 240, 135 )
-shape = SubResource( 1 )

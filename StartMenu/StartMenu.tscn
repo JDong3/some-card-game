@@ -10,5 +10,4 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Node2D" type="Node2D" parent="Background"]
-position = Vector2( 184, 68 )
 script = ExtResource( 2 )

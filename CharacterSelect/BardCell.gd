@@ -1,8 +1,8 @@
 extends Cell
-class_name StartCell
+class_name BardCell
 
 func make_props():
-	var sprite = CellSprite.new('res://assets/start/start-button.png')
+	var sprite = CellSprite.new('res://assets/sprites/bard-button.png')
 	var selected_sprite = CellSprite.new('res://assets/start/selected-button.png')
 	return {
 		'sprite': sprite,
@@ -14,4 +14,4 @@ func _init().(make_props()):
 
 func input(event):
 	if event.is_action_released('cursor_select'):
-		get_tree().change_scene('res://CharacterSelect/CharacterSelect.tscn')
+		get_tree().change_scene('res://GameView/GameView.tscn')

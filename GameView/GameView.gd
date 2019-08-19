@@ -14,7 +14,7 @@ func _ready():
 	self.add_child(dude)
 
 func _input(event):
-	
+
 	if event.is_action_released('roam_open_map'):
 		mapInterface.toggle()
 		return

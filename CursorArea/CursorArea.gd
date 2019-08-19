@@ -24,7 +24,6 @@ func _init(config_map):
 		size: Vector2, the pixel w by h of the cursor area
 		default_cursor_position: null
 		cells: list of Cells that are the cells
-		seleted_sprite: sprite, the highlight that shows up when when a cell is 'hovered'
 		focus_interface: a focus interface from the appropriate manager
 	"""
 	config = config_map
