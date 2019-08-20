@@ -16,5 +16,5 @@ render_target_update_mode = 3
 texture = ExtResource( 1 )
 centered = false
 
-[node name="Node2D" type="Node2D" parent="Viewport/Sprite"]
+[node name="Inventory" type="Node2D" parent="Viewport/Sprite"]
 script = ExtResource( 2 )
