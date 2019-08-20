@@ -18,3 +18,6 @@ func _input(event):
 	if event.is_action_released('roam_open_map'):
 		mapInterface.toggle()
 		return
+
+	if event.is_action_released('dev_battle'):
+		get_tree().change_scene('res://Battle/Battle.tscn')
