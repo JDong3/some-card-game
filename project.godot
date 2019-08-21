@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CombatManager/CombatInterface.gd"
 }, {
+"base": "Node",
+"class": "CombatManager",
+"language": "GDScript",
+"path": "res://CombatManager/CombatManager.gd"
+}, {
 "base": "Node2D",
 "class": "CursorArea",
 "language": "GDScript",
@@ -65,9 +70,9 @@ _global_script_classes=[ {
 "path": "res://StartMenu/StartCell.gd"
 }, {
 "base": "Node",
-"class": "Uid",
+"class": "UidGenerator",
 "language": "GDScript",
-"path": "res://Util/Uid.gd"
+"path": "res://Util/UidGenerator.gd"
 } ]
 _global_script_class_icons={
 "BardCell": "",
@@ -75,13 +80,14 @@ _global_script_class_icons={
 "Cell": "",
 "CellSprite": "",
 "CombatInterface": "",
+"CombatManager": "",
 "CursorArea": "",
 "FocusInterface": "",
 "FocusManager": "",
 "QuitCell": "",
 "SettingsCell": "",
 "StartCell": "",
-"Uid": ""
+"UidGenerator": ""
 }
 
 [application]

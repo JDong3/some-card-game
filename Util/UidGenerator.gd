@@ -1,5 +1,5 @@
 extends Node
-class_name Uid
+class_name UidGenerator
 
 """
 class that guarantees generation of uid if generated using the
