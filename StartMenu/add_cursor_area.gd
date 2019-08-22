@@ -1,8 +1,6 @@
 extends Node2D
 
-var CursorArea = load('res://CursorArea/CursorArea.gd')
-var Cell = load('res://CursorArea/Cell.gd')
-var cursorArea
+var cursor_grid
 
 func make_sprite(texture_path):
 	var res = Sprite.new()
@@ -23,5 +21,5 @@ func _ready():
 		'focus_interface': State.StartFocusManager.obtain_interface('start_menu_cluster')
 	}
 
-	cursorArea = CursorArea.new(config)
-	add_child(cursorArea)
+	cursor_grid = CursorGrid.new(config)
+	add_child(cursor_grid)

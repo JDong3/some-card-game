@@ -12,6 +12,6 @@ func _ready():
 		'cells': [BardCell.new()]
 	}
 
-	var cursor_area = CursorArea.new(config)
+	var cursor_grid = CursorGrid.new(config)
 
-	add_child(cursor_area)
+	add_child(cursor_grid)

@@ -1,6 +1,5 @@
 extends Node2D
-class_name CursorArea
-
+class_name CursorGrid
 """
 cells are used in cursor areas
 """
@@ -17,7 +16,7 @@ var cursor_position
 
 func _init(config_map):
 	"""
-	:param config_map: dictionary describing the configuration of the CursorArea object
+	:param config_map: dictionary describing the configuration of the CursorGrid object
 	config_map:
 		dimensions: Vector2, the number of cells per column and row
 		cell_size: Vector2, the pixel w by h of each cell

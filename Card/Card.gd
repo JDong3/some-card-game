@@ -13,10 +13,10 @@ func _init(config_in):
 		sprite: a CardSprite of the card
 		targets: hostile/friendly/board
 	"""
-	var config = config_in
+	config = config_in
 
 func combobulate():
-	pass
+	add_child(config.sprite)
 
 func select():
 	print('implement in parent', self)

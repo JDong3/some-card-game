@@ -1,4 +1,5 @@
 extends Sprite
+class_name CardSprite
 
 func _init(path):
 	texture = load(path)

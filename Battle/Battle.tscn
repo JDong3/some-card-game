@@ -1,9 +1,27 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Battle/load_battle.gd" type="Script" id=2]
+[ext_resource path="res://Battle/dude_anim.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Battle/edud_anim.tres" type="SpriteFrames" id=4]
 
 [node name="Battle" type="TileMap"]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0 )
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 174.218, 119.82 )
+frames = ExtResource( 3 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 304.329, 120.555 )
+frames = ExtResource( 4 )
+animation = "idle"
+frame = 1
+playing = true
