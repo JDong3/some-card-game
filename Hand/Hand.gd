@@ -1,17 +1,27 @@
-extends CursorArea
-class_name HandCurosrArea
+extends CursorGrid # note: change to curtor area later
+class_name Hand
 
-var props
+func make_props():
+	var cells = []
+	for i in range(5):
+		cells.append(TestCard.new())
 
-func _init(props_):
+	var res = {
+		'dimensions': Vector2(5, 1),
+		'cell_size': Vector2(48, 62),
+		'size': 'not used atm', # note: this might crash in the future,
+		'cells': cells,
+		'focus_interface': State.GameFocusManager.obtain_interface('hand')
+
+	}
+	return res
+
+func _init().(make_props()):
 	"""
 	props:
 		cards: list of Card objects
 	"""
-	props = props_
+	return
 
-func combobulate():
-	pass
-
-func _input(event):
+func input(event):
 	pass

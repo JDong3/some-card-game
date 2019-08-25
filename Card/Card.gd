@@ -5,18 +5,20 @@ class_name Card
 two stages of card play, select -> play
 """
 
-var config
+var props
 
-func _init(config_in):
+func _init(props_):
 	"""
 	config:
 		sprite: a CardSprite of the card
 		targets: hostile/friendly/board
 	"""
-	config = config_in
+	props = props_
+	combobulate()
 
 func combobulate():
-	add_child(config.sprite)
+	add_child(props.sprite)
+	return
 
 func select():
 	print('implement in parent', self)
@@ -25,3 +27,6 @@ func select():
 
 func play(target):
 	print('implement this function ', self)
+
+func input(event):
+	print('implement this function', self)

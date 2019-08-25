@@ -9,10 +9,10 @@ var poison
 var bleed
 
 # atk mods (when sending damage)
-var weaken
+var weak
 
 # def mods (when receiving damage)
-var vulnerability
+var vulnerable
 var evasion
 
 # block mods
@@ -24,3 +24,42 @@ func _init(combat_manager_, uid_):
 	"""
 	combat_manager = combat_manager_
 	uid = uid_
+
+func send_transaction(transaction, target):
+	"""
+	sends a transaction to a target CombatInterface
+	:param transaction: Dictionary, a Dictionary describing the transaction
+	transaction:
+		poison?:
+		weaken?:
+		.
+		.
+		.
+	:param target: CombatInterface, the CombatInterface of the target you are sending
+	the transaction to
+	"""
+	target.process_transaction(transaction)
+
+func process_transaction(transaction):
+	"""
+	processes a transaction sent by another CombatInterface
+	processes damage first, then effects
+	:param transaction: Dictionary, a Dictionary describing the transaction
+	transaction:
+		poison?:
+		weaken?:
+		.
+		.
+		.
+	"""
+	if transaction.has('damage'):
+		process_damage(transaction['damage'])
+	if transaction.has('poison'):
+		poison += transaction['poison']
+	pass
+
+func process_damage(damage):
+	pass
+
+func process_dot():
+	pass
