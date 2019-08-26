@@ -1,29 +1,38 @@
 extends Node
-class_name CombatInterface
+class_name CombatEntity
 
-var combat_manager
-var uid
+"""
+parent class for friends and enemies
+"""
+
+# var combat_manager
+# var uid
 
 # dot
-var poison
-var bleed
+# var poison
+# var bleed
 
 # atk mods (when sending damage)
-var weak
+# var weak
 
 # def mods (when receiving damage)
-var vulnerable
-var evasion
+# var vulnerable
+# var evasion
 
 # block mods
-var frail
+# var frail
 
-func _init(combat_manager_, uid_):
+
+var props
+
+func _init(props_):
 	"""
-	constructor for CombatInterface, should only be used by a CombatManager
+	props:
+		hp: int
 	"""
-	combat_manager = combat_manager_
-	uid = uid_
+	# combat_manager = combat_manager_
+	# uid = uid_
+	props = props_
 
 func send_transaction(transaction, target):
 	"""
@@ -54,9 +63,9 @@ func process_transaction(transaction):
 	"""
 	if transaction.has('damage'):
 		process_damage(transaction['damage'])
-	if transaction.has('poison'):
-		poison += transaction['poison']
-	pass
+	#if transaction.has('poison'):
+	#	poison += transaction['poison']
+	#pass
 
 func process_damage(damage):
 	pass

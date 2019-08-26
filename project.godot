@@ -40,9 +40,9 @@ _global_script_classes=[ {
 "path": "res://Character/Character.gd"
 }, {
 "base": "Node",
-"class": "CombatInterface",
+"class": "CombatEntity",
 "language": "GDScript",
-"path": "res://CombatManager/CombatInterface.gd"
+"path": "res://CombatManager/CombatEntity.gd"
 }, {
 "base": "Node",
 "class": "CombatManager",
@@ -106,7 +106,7 @@ _global_script_class_icons={
 "Cell": "",
 "CellSprite": "",
 "Character": "",
-"CombatInterface": "",
+"CombatEntity": "",
 "CombatManager": "",
 "CursorArea": "",
 "CursorGrid": "",
