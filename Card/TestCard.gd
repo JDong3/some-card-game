@@ -1,4 +1,4 @@
-extends Card
+extends CardCell
 class_name TestCard
 
 func make_props():

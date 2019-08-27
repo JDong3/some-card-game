@@ -2,7 +2,7 @@ extends Sprite
 class_name CellSprite
 
 """
-sprite thats centered and with a better constructor
+sprite thats not centered and with a better constructor
 """
 
 func _init(path_in):

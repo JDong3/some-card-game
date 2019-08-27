@@ -1,15 +1,23 @@
 extends Node2D
 class_name Cell
 
-var selected
+"""
+A Cell is an object that lives inside of a CursorGrid or CursorArea, it is seen
+by the player as a Sprite. It must also provide a Sprite that is overlayed on
+the main sprite to show that the Cell is currently selected. The input function
+which determines what happens when the sprite receives a select input must
+be implemented by a child object.
+"""
+
 var props
 
+# state
 var is_selected = false
 
 func _init(props_in):
 	"""
 	props:
-		sprite: the main CellCprite of the node
+		sprite: the main CellSprite of the node
 		selected_sprite: the sprite overlay to show that the cell is selected
 	"""
 	props = props_in
