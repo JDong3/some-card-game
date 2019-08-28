@@ -5,11 +5,14 @@ class_name CardCell
 two stages of card play, select -> play
 """
 
-func make_props():
-	return {}
+func _init(props_).(props_):
+	"""
+	props:
+		..: ..
+		transaction_interface: a
 
-func _init()(make_props()):
-	pass
+	"""
+	props = props_
 
 func input(event):
 	print('implement this function', self)
