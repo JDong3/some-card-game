@@ -18,7 +18,7 @@ func _ready():
 		'dimensions': Vector2(1, 3),
 		'cell_size': Vector2(96, 32),
 		'cells': [StartCell.new(), SettingsCell.new(), QuitCell.new()],
-		'focus_interface': State.StartFocusManager.obtain_interface('start_menu_cluster')
+		'focus_interface': Global.StartFocusManager.obtain_interface('start_menu_cluster')
 	}
 
 	cursor_grid = CursorGrid.new(config)

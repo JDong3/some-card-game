@@ -9,4 +9,4 @@ func _init(config_):
 		sprite: use this one, this will be replaced in actuall version
 		animated_sprite: not implemented yet
 	"""
-	combat_interface = State.GameCombatManager.obtain_interface()
+	combat_interface = Global.GameCombatManager.obtain_interface()

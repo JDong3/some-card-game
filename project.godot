@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Cell",
 "class": "CardCell",
 "language": "GDScript",
-"path": "res://Cell/CellDerivatives/CardCell.gd"
+"path": "res://Cell/CardCellDerivatives/CardCell.gd"
 }, {
 "base": "Sprite",
 "class": "CardSprite",
@@ -90,9 +90,14 @@ _global_script_classes=[ {
 "path": "res://StartMenu/StartCell.gd"
 }, {
 "base": "CardCell",
-"class": "TestCard",
+"class": "TestCardCell",
 "language": "GDScript",
-"path": "res://Card/TestCard.gd"
+"path": "res://Cell/CardCellDerivatives/TestCard.gd"
+}, {
+"base": "Node",
+"class": "TransactionInterface",
+"language": "GDScript",
+"path": "res://Util/TransactionInterface.gd"
 }, {
 "base": "Node",
 "class": "UidGenerator",
@@ -116,7 +121,8 @@ _global_script_class_icons={
 "QuitCell": "",
 "SettingsCell": "",
 "StartCell": "",
-"TestCard": "",
+"TestCardCell": "",
+"TransactionInterface": "",
 "UidGenerator": ""
 }
 
@@ -127,7 +133,7 @@ run/main_scene="res://StartMenu/StartMenu.tscn"
 
 [autoload]
 
-State="*res://State.gd"
+Global="*res://Global.gd"
 
 [display]
 

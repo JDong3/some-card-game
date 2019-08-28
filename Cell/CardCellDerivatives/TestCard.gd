@@ -1,5 +1,5 @@
 extends CardCell
-class_name TestCard
+class_name TestCardCell
 
 func make_props():
 	var res = {
@@ -9,3 +9,4 @@ func make_props():
 
 func _init().(make_props()):
 	return
+
