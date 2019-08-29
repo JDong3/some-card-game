@@ -4,7 +4,7 @@ class_name Hand
 func make_props():
 	var cells = []
 	for i in range(5):
-		cells.append(TestCardCell.new())
+		cells.append(TestCardCell.new({'source': 'a'}))
 
 	var res = {
 		'dimensions': Vector2(5, 1),
@@ -22,6 +22,3 @@ func _init().(make_props()):
 		cards: list of Card objects
 	"""
 	return
-
-func input(event):
-	pass

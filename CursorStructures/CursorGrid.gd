@@ -75,8 +75,8 @@ func _input(event):
 	elif event.is_action_released('cursor_down'):
 		move_cursor_to(cursor_position + props.dimensions.x)
 	elif event.is_action_released('cursor_left'):
-		move_cursor_to(cursor_position + 1)
-	elif event.is_action_released('cursor_right'):
 		move_cursor_to(cursor_position - 1)
+	elif event.is_action_released('cursor_right'):
+		move_cursor_to(cursor_position + 1)
 	else:
 		props.cells[cursor_position].input(event)
