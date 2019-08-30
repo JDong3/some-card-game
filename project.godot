@@ -55,6 +55,11 @@ _global_script_classes=[ {
 "path": "res://CombatManager/CombatManager.gd"
 }, {
 "base": "Node2D",
+"class": "ConnectedCursorArea",
+"language": "GDScript",
+"path": "res://CursorStructures/ConnectedCursorArea.gd"
+}, {
+"base": "Node2D",
 "class": "CursorArea",
 "language": "GDScript",
 "path": "res://Inventory/ItemDropdown.gd"
@@ -77,7 +82,7 @@ _global_script_classes=[ {
 "base": "CursorGrid",
 "class": "Hand",
 "language": "GDScript",
-"path": "res://CursorStructures/CursorAreaDerivatives/Hand.gd"
+"path": "res://CursorStructures/CursorStructureDerivatives/Hand.gd"
 }, {
 "base": "Cell",
 "class": "QuitCell",
@@ -119,6 +124,7 @@ _global_script_class_icons={
 "Character": "",
 "CombatEntity": "",
 "CombatManager": "",
+"ConnectedCursorArea": "",
 "CursorArea": "",
 "CursorGrid": "",
 "FocusInterface": "",
