@@ -54,7 +54,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CombatManager/CombatManager.gd"
 }, {
-"base": "Node2D",
+"base": "CursorArea",
 "class": "ConnectedCursorArea",
 "language": "GDScript",
 "path": "res://CursorStructures/ConnectedCursorArea.gd"
@@ -62,7 +62,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "CursorArea",
 "language": "GDScript",
-"path": "res://Inventory/ItemDropdown.gd"
+"path": "res://CursorStructures/CursorArea.gd"
 }, {
 "base": "Node2D",
 "class": "CursorGrid",
@@ -79,10 +79,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://FocusManager/FocusManager.gd"
 }, {
-"base": "CursorGrid",
+"base": "ConnectedCursorArea",
 "class": "Hand",
 "language": "GDScript",
 "path": "res://CursorStructures/CursorStructureDerivatives/Hand.gd"
+}, {
+"base": "Node2D",
+"class": "ItemDropdown",
+"language": "GDScript",
+"path": "res://Inventory/ItemDropdown.gd"
 }, {
 "base": "Cell",
 "class": "QuitCell",
@@ -130,6 +135,7 @@ _global_script_class_icons={
 "FocusInterface": "",
 "FocusManager": "",
 "Hand": "",
+"ItemDropdown": "",
 "QuitCell": "",
 "SettingsCell": "",
 "StartCell": "",

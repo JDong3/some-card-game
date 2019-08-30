@@ -1,5 +1,5 @@
 extends Node2D
-class_name CursorArea
+class_name ItemDropdown
 
 func _init(config_):
 	"""
