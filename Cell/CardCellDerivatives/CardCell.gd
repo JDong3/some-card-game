@@ -11,10 +11,11 @@ func _init(props_).(props_):
 		..: ..
 		transaction_interface: TransactionInterface
 		transaction: Dictionary
-		source: CombatEntity
+		source..: CombatEntity
 	"""
 	props = props_
 
 func input(event):
-	print('implement this function', self)
+	if !props.has('source'):
+		print('add a source ', self)
 

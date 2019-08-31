@@ -1,6 +1,8 @@
 extends Node
 
 var test_card = {
+	'sprite': 'a',
+	'selected_sprite': 'a',
 	'transaction': {
 		'damage': 4
 	},
