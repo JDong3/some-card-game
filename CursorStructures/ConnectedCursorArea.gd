@@ -1,8 +1,6 @@
 extends CursorArea
 class_name ConnectedCursorArea
 
-var props
-
 func _init(props_).(props_):
 	"""
 	props_:

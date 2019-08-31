@@ -20,4 +20,21 @@ func _init().(make_props()):
 	props:
 		cards: list of Card objects
 	"""
+	combobulate()
+	return
+
+func add_cell(cell, n):
+	"""
+	:param cell: the cell that you want to add to the CursorArea
+	:param n: the position you want to add the cell to
+	"""
+	if n == 0:
+		add_child(cell)
+		cell.set_position()
+		pass
+
+	return
+
+
+func input(event):
 	return
