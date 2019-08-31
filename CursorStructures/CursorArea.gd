@@ -39,5 +39,10 @@ func combobulate():
 	for i in range(props.cells.size()):
 		add_cell(props.cells[i], i)
 
+	props.cells[cursor_position].select()
+
 func input(event):
-	print('implement cursor_next/cursor_previous')
+	if event.is_action_released('cursor_next'):
+		cursor_position += 1
+	elif event.is_action_released('cursor_previous'):
+		pass

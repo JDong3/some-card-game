@@ -1,4 +1,5 @@
 extends Node
+class_name CursorHub
 
 var cursor_areas
 
