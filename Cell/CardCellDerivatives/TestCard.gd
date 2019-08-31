@@ -2,11 +2,12 @@ extends CardCell
 class_name TestCardCell
 
 func make_props():
-	var res = {
-		'sprite': CardSprite.new('res://assets/cards/test-card.png')
-	}
+	var res = CardData.test_card()
 	return res
 
-func _init().(make_props()):
-	return
-
+func _init(props_).(make_props()):
+	"""
+	props_:
+		source: CombatEntity
+	"""
+	props['source'] = props_.source
