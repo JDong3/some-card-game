@@ -25,6 +25,8 @@ func _init(props_):
 	if !props.has('reverse'):
 		props['reverse'] = false
 
+	props.focus_interface.obtain_focus()
+
 func add_cell(cell, n):
 	"""
 	it is standard to put the first cell at 0, 0
@@ -41,8 +43,15 @@ func combobulate():
 
 	props.cells[cursor_position].select()
 
-func input(event):
+func _input(event):
+	if !props.focus_interface.has_focus():
+		return
+
 	if event.is_action_released('cursor_next'):
+		props.cells[cursor_position].deselect()
 		cursor_position += 1
+		props.cells[cursor_position].select()
 	elif event.is_action_released('cursor_previous'):
-		pass
+		props.cells[cursor_position].deselect()
+		cursor_position -= 1
+		props.cells[cursor_position].select()

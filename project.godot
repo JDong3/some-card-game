@@ -87,7 +87,7 @@ _global_script_classes=[ {
 "base": "ConnectedCursorArea",
 "class": "Hand",
 "language": "GDScript",
-"path": "res://CursorStructures/CursorStructureDerivatives/Hand.gd"
+"path": "res://CursorStructures/CursorStructureDerivatives/HandArea.gd"
 }, {
 "base": "Node2D",
 "class": "ItemDropdown",
