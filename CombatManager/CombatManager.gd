@@ -1,7 +1,7 @@
 extends Node
 class_name CombatManager
 
-var uid_generator
+# var uid_generator
 var friendlies
 var enemies
 

@@ -14,4 +14,4 @@ func _init().(make_props()):
 
 func input(event):
 	if event.is_action_released('cursor_select'):
-		get_tree().change_scene('res://CharacterSelect/CharacterSelect.tscn')
+		return get_tree().change_scene('res://CharacterSelect/CharacterSelect.tscn')

@@ -16,12 +16,10 @@ script = ExtResource( 2 )
 position = Vector2( 174.218, 119.82 )
 frames = ExtResource( 3 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 304.329, 120.555 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 1
 playing = true

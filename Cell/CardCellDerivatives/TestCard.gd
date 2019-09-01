@@ -7,7 +7,9 @@ func make_props():
 
 func _init(props_).(make_props()):
 	"""
+	constructor for TestCardCell
 	props_:
+		...
 		source: CombatEntity
 	"""
 	props['source'] = props_.source

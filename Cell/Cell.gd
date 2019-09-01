@@ -3,10 +3,10 @@ class_name Cell
 
 """
 A Cell is an object that lives inside of a CursorGrid or CursorArea, it is seen
-by the player as a Sprite. It must also provide a Sprite that is overlayed on
-the main sprite to show that the Cell is currently selected. The input function
-which determines what happens when the sprite receives a select input must
-be implemented by a child object.
+by the player as a Sprite.
+
+implement:
+	input(event)
 """
 
 var props
@@ -16,25 +16,39 @@ var is_selected = false
 
 func _init(props_in):
 	"""
-	props:
-		sprite: the main CellSprite of the node
-		selected_sprite: the sprite overlay to show that the cell is selected
+	constructor of the Cell object
+	:param props: Dictionary, configuration for the Cell object
+	props_:
+		sprite: Sprite, the Sprite that is seen by the player by default
+		selected_sprite: Sprite, the Sprite that is overlayed on top of the
+			regular sprite
 	"""
 	props = props_in
 	add_child(props.sprite)
 
 func select():
+	"""
+	overlays the selected_sprite onto the regular sprite
+	:return: null
+	"""
 	if !is_selected:
 		add_child(props.selected_sprite)
 		is_selected = true
 
 func deselect():
+	"""
+	removes overlayed selected_sprite
+	:return: null
+	"""
 	if is_selected:
 		remove_child(props.selected_sprite)
 		is_selected = false
 
 func input(event):
 	"""
-	manually forward input to this node
+	handles inputs that are forwarded from parent CursorArea, must be
+	implemented by derivatives
+	:param event: InputEvent
+	:return: null
 	"""
-	print('please implement this function', self)
+	print('please implement this function', self, event)

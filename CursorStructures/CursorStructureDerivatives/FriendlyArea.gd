@@ -1,4 +1,5 @@
 extends CursorArea
+class_name FriendlyArea
 
 func make_props():
 	var res
@@ -10,6 +11,9 @@ func _init().(make_props()):
 func combobulate():
 	pass
 
-func add_cell():
+func add_cell(cell, n):
+	"""
+
+	"""
 	#var current_cells = props.cell
 	pass
