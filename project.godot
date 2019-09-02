@@ -84,7 +84,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://FocusManager/FocusManager.gd"
 }, {
-"base": "CursorArea",
+"base": "ConnectedCursorArea",
 "class": "FriendlyArea",
 "language": "GDScript",
 "path": "res://CursorStructures/CursorStructureDerivatives/FriendlyArea.gd"
@@ -93,6 +93,11 @@ _global_script_classes=[ {
 "class": "Hand",
 "language": "GDScript",
 "path": "res://CursorStructures/CursorStructureDerivatives/HandArea.gd"
+}, {
+"base": "ConnectedCursorArea",
+"class": "HostileArea",
+"language": "GDScript",
+"path": "res://CursorStructures/CursorStructureDerivatives/HostileArea.gd"
 }, {
 "base": "Node2D",
 "class": "ItemDropdown",
@@ -147,6 +152,7 @@ _global_script_class_icons={
 "FocusManager": "",
 "FriendlyArea": "",
 "Hand": "",
+"HostileArea": "",
 "ItemDropdown": "",
 "QuitCell": "",
 "SettingsCell": "",

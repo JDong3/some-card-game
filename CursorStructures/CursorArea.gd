@@ -15,7 +15,7 @@ func _init(props_):
 		focus_interface: FocusInterface obj
 		cells: list of Cells that are contained in the CursorArea,
 		cursor_position?: specify an optional default cursor position
-		reverse=false: cursor_next decrements position and cursor_prev
+		reverse?: cursor_next decrements position and cursor_prev
 			increments position, this is for CursorAreas where the cells are
 			created from right to left
 	"""
@@ -24,8 +24,11 @@ func _init(props_):
 	# if reverse is not specified use default false
 	if !props.has('reverse'):
 		props['reverse'] = false
+	if !props.has('cursor_position'):
+		props['cursor_position'] = 0
 
 	props.focus_interface.obtain_focus()
+	combobulate()
 
 func add_cell(cell, n):
 	"""

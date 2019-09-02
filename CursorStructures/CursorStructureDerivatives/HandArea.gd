@@ -10,17 +10,20 @@ func make_props():
 		'dimensions': Vector2(5, 1),
 		'cells': cells,
 		'focus_interface': Global.GameFocusManager.obtain_interface('hand'),
-		'cursor_hub': CursorHub.new(),
 		'id': 'hand'
 	}
 	return res
 
-func _init().(make_props()):
+func _init(props_).(make_props()):
 	"""
 	props:
-		cards: list of Card objects
+		cards: Array<Card>
+		cursor_hub: CursorHub
 	"""
-	combobulate()
+	props['cards'] = props_['cards']
+	props['cursor_hub'] = props_['cursor_hub']
+
+	props['cursor_hub'].add_cursor_area(self, 'hand')
 
 func add_cell(cell, n):
 	"""
