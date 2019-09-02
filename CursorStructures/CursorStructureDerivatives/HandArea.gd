@@ -1,29 +1,21 @@
 extends ConnectedCursorArea # note: change to curtor area later
 class_name Hand
 
-func make_props():
-	var cells = []
-	for i in range(5):
-		cells.append(TestCardCell.new({'source': 'a'}))
 
-	var res = {
-		'dimensions': Vector2(5, 1),
-		'cells': cells,
-		'focus_interface': Global.GameFocusManager.obtain_interface('hand'),
-		'id': 'hand'
-	}
-	return res
 
-func _init(props_).(make_props()):
+func _init(props_):
 	"""
 	props:
-		cards: Array<Card>
+		cells: Array<Card>
 		cursor_hub: CursorHub
 	"""
-	props['cards'] = props_['cards']
-	props['cursor_hub'] = props_['cursor_hub']
+	for key in props_.keys():
+		props[key] = props_[key]
 
-	props['cursor_hub'].add_cursor_area(self, 'hand')
+	props['focus_interface'] = Global.GAME_FOCUS_MANAGER.obtain_interface()
+	props['id'] = 'hand'
+
+	.init(props)
 
 func add_cell(cell, n):
 	"""

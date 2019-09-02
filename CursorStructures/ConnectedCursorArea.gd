@@ -1,18 +1,19 @@
 extends CursorArea
 class_name ConnectedCursorArea
 
-func make_props():
-	var res = {
-		'focus_interface': Global.GAME_FOCUS_MANAGER.obtain_interface()
-	}
-	return
-
-func _init(props_).(props_):
+func init(props_):
 	"""
+	:param props: Dictionary
 	props_:
-		...
-		cursor_hub+: CursorHub that is shared by the CursorAreas in the group
+		cells: list of Cells that are contained in the CursorArea,
+		focus_interface: FocusInterface obj
+
+		cursor_hub: CursorHub that is shared by the CursorAreas in the group
 		id: String unique id within the cursor group
 	"""
-	for key in props_:
+	for key in props_.keys():
 		props[key] = props_[key]
+
+	props['cursor_hub'].add_cursor_area(self, props['id'])
+
+	.init(props)

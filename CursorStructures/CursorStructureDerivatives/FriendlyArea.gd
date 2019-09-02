@@ -1,19 +1,19 @@
 extends ConnectedCursorArea
 class_name FriendlyArea
 
-func make_props():
-	var res = {
-		'id': 'friendly'
-	}
-	return res
-
-func _init(props_).(make_props()):
+func _init(props_):
 	"""
 	props_:
 		cursor_hub: CursorHub
 	"""
-	props['cursor_hub'] = props_['cursor_hub']
-	props['cursor_hub'].add_cursor_area(self, props['id'])
+	for key in props_.keys():
+		props[key] = props_[key]
+
+	props['id'] = 'friendly'
+	props['cells'] = [TestCardCell.new({'source': 'a'}), TestCardCell.new({'source': 'a'})]
+	props['focus_interface'] = Global.GAME_FOCUS_MANAGER.obtain_interface()
+
+	.init(props)
 
 func add_cell(cell, n):
 	"""

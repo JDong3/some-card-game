@@ -122,7 +122,7 @@ _global_script_classes=[ {
 "base": "CardCell",
 "class": "TestCardCell",
 "language": "GDScript",
-"path": "res://Cell/CardCellDerivatives/TestCard.gd"
+"path": "res://Cell/CardCellDerivatives/TestCardCell.gd"
 }, {
 "base": "Node",
 "class": "TransactionInterface",

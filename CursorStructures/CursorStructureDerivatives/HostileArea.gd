@@ -1,12 +1,19 @@
 extends ConnectedCursorArea
 class_name HostileArea
 
-func make_props():
-	var res = {}
-	return res
+func _init(props_):
+	"""
+	props_:
+		cursor_hub: CursorHub
+	"""
+	for key in props_.keys():
+		props[key] = props_[key]
 
-func _init().(make_props()):
-	pass
+	props['id'] = 'friendly'
+	props['cells'] = [TestCardCell.new({'source': 'a'}), TestCardCell.new({'source': 'a'})]
+	props['focus_interface'] = Global.GAME_FOCUS_MANAGER.obtain_interface()
+
+	.init(props)
 
 func add_cell(cell, n):
 	"""

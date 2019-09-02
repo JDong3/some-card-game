@@ -5,16 +5,15 @@ class_name CursorArea
 same as cursor grid, but you need to provice your own combobulate function,
 """
 
-var props
-
+var props = {}
 var cursor_position = 0
 
-func _init(props_):
+func init(props_):
 	"""
 	props:
-		focus_interface: FocusInterface obj
 		cells: list of Cells that are contained in the CursorArea,
 		cursor_position?: specify an optional default cursor position
+		focus_interface: FocusInterface obj
 		reverse?: cursor_next decrements position and cursor_prev
 			increments position, this is for CursorAreas where the cells are
 			created from right to left
