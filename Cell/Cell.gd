@@ -14,16 +14,15 @@ var props
 # state
 var is_selected = false
 
-func _init(props_in):
+func init(props_):
 	"""
-	constructor of the Cell object
-	:param props: Dictionary, configuration for the Cell object
 	props_:
 		sprite: Sprite, the Sprite that is seen by the player by default
 		selected_sprite: Sprite, the Sprite that is overlayed on top of the
 			regular sprite
 	"""
-	props = props_in
+	for key in props_.keys():
+		props[key] = props_[key]
 	add_child(props.sprite)
 
 func select():

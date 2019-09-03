@@ -1,6 +1,13 @@
 extends Node
 class_name CardData
 
+"""
+CardData:
+	'sprite': Sprite,
+	'selected_sprite': Sprite,
+	'transaction': Dictionary
+"""
+
 static func test_card():
 	return {
 		'sprite': CardSprite.new('res://assets/cards/test-card.png'),

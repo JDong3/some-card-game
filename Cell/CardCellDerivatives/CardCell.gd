@@ -1,21 +1,22 @@
 extends Cell
 class_name CardCell
 
-func _init(props_).(props_):
+func init(props_):
 	"""
 	props:
-		...
+		..CardData..
 		transaction_interface: TransactionInterface
-		transaction: Dictionary
 		source+: CombatEntity
 	"""
-	props = props_
+	for key in props_.keys():
+		props[key] = props_[key]
 
 func input(event):
 	"""
 	add the card transaction and source to the transaction_interface
 	:return: null
 	"""
-	if !props.has('source'):
-		print('add a source ', self)
-
+	if event.is_action_released('cursor_select'):
+		props.transaction_interface.add_transaction(props.transaction)
+		props.transaction_interface.add_source(props.source)
+		deselect()
