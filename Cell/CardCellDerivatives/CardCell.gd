@@ -11,6 +11,8 @@ func init(props_):
 	for key in props_.keys():
 		props[key] = props_[key]
 
+	.init(props)
+
 func input(event):
 	"""
 	add the card transaction and source to the transaction_interface

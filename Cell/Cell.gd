@@ -9,7 +9,7 @@ implement:
 	input(event)
 """
 
-var props
+var props = {}
 
 # state
 var is_selected = false
