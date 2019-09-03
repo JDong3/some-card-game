@@ -51,9 +51,9 @@ func _input(event):
 
 	if event.is_action_released('cursor_next'):
 		props.cells[cursor_position].deselect()
-		cursor_position += 1
+		cursor_position = (cursor_position + 1) % props.cells.size()
 		props.cells[cursor_position].select()
 	elif event.is_action_released('cursor_previous'):
 		props.cells[cursor_position].deselect()
-		cursor_position -= 1
+		cursor_position = (cursor_position - 1) % props.cells.size()
 		props.cells[cursor_position].select()
