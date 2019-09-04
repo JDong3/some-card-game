@@ -2,7 +2,7 @@ extends Node
 class_name FocusManager
 
 var interfaces = []
-var focused_on = ''
+var focused_on = []
 var uid_generator = UidGenerator.new()
 
 func obtain_interface():
@@ -16,8 +16,13 @@ func obtain_interface():
 	interfaces.append(res)
 	return res
 
-func set_focus(id):
-	focused_on = id
+func set_sole_focus(id):
+	focused_on.clear()
+	focused_on.append(id)
+
+func add_to_focus(id):
+	focused_on.append(id)
+
 
 func has_focus(id):
-	return id == 0
+	return focused_on.has(id)

@@ -77,12 +77,12 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "FocusInterface",
 "language": "GDScript",
-"path": "res://FocusManager/FocusInterface.gd"
+"path": "res://Focus/FocusInterface.gd"
 }, {
 "base": "Node",
 "class": "FocusManager",
 "language": "GDScript",
-"path": "res://FocusManager/FocusManager.gd"
+"path": "res://Focus/FocusManager.gd"
 }, {
 "base": "ConnectedCursorArea",
 "class": "FriendlyArea",

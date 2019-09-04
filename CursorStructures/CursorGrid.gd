@@ -27,7 +27,7 @@ func _init(props_):
 	"""
 	props = props_
 	cursor_position = default_cursor_position
-	props.focus_interface.obtain_focus()
+	props.focus_interface.obtain_sole_focus()
 
 	combobulate()
 

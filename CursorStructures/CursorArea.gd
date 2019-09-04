@@ -26,7 +26,7 @@ func init(props_):
 	if !props.has('cursor_position'):
 		props['cursor_position'] = 0
 
-	props.focus_interface.obtain_focus()
+	props.focus_interface.obtain_sole_focus()
 	combobulate()
 
 func add_cell(cell, n):
