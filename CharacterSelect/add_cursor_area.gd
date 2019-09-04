@@ -12,6 +12,7 @@ func _ready():
 		'cells': [BardCell.new()]
 	}
 
-	var cursor_grid = CursorGrid.new(config)
-
+	var cursor_grid = CursorGrid.new()
+	cursor_grid.init(config)
+	cursor_grid.focus()
 	add_child(cursor_grid)

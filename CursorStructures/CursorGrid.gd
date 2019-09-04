@@ -4,32 +4,36 @@ class_name CursorGrid
 cells are used in cursor areas
 """
 
-var props
-var default_cursor_position = 0
+var props = {}
 
 # state
-var cursor_position
+var cursor_position = 0
 
 # get from the focus manager
 # var focus_interface
 
 
-func _init(props_):
+func init(props_):
 	"""
 	:param props_: dictionary describing the configuration of the CursorGrid object
 	props_:
-		dimensions: Vector2, the number of cells per column and row
 		cell_size: Vector2, the pixel w by h of each cell
-		size: Vector2, the pixel w by h of the cursor area
-		default_cursor_position: null
 		cells: list of Cells that are the cells
+		cursor_position?: null
+		dimensions: Vector2, the number of cells per column and row
 		focus_interface: a focus interface from the appropriate manager
+		size: Vector2, the pixel w by h of the cursor area
 	"""
-	props = props_
-	cursor_position = default_cursor_position
-	props.focus_interface.obtain_sole_focus()
-
+	for key in props_.keys():
+		props[key] = props_[key]
 	combobulate()
+
+func focus():
+	"""
+	focuses on the cursor grid selects the correct cell to highlight
+	"""
+	props.focus_interface.obtain_sole_focus()
+	props.cells[cursor_position].select()
 
 func combobulate():
 	"""
@@ -54,8 +58,6 @@ func combobulate():
 			curr_position.x += props.cell_size.x
 
 		curr_position.y += props.cell_size.y
-
-	get_child(cursor_position).select()
 
 func move_cursor_to(index):
 	if index >= props.cells.size() or index < 0:

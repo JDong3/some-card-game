@@ -1,4 +1,4 @@
-extends Node
+extends Cell
 class_name CombatEntity
 
 """
@@ -22,13 +22,12 @@ parent class for friends and enemies
 # block mods
 # var frail
 
-
-var props
-
 func _init(props_):
 	"""
 	props:
-		hp: int
+		hp: int,
+		sprite: Sprite,
+		selected_sprite: Sprite
 	"""
 	# combat_manager = combat_manager_
 	# uid = uid_
@@ -71,4 +70,7 @@ func process_damage(damage):
 	pass
 
 func process_dot():
+	pass
+
+func input(event):
 	pass

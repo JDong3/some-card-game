@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Cell",
 "class": "CardCell",
 "language": "GDScript",
-"path": "res://Cell/CardCellDerivatives/CardCell.gd"
+"path": "res://Cell/CardCell.gd"
 }, {
 "base": "Node",
 "class": "CardData",
@@ -44,7 +44,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Character/Character.gd"
 }, {
-"base": "Node",
+"base": "Cell",
 "class": "CombatEntity",
 "language": "GDScript",
 "path": "res://CombatManager/CombatEntity.gd"
@@ -119,6 +119,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://StartMenu/StartCell.gd"
 }, {
+"base": "CursorGrid",
+"class": "StartMenuCursorGrid",
+"language": "GDScript",
+"path": "res://StartMenu/StartMenuCursorGrid.gd"
+}, {
 "base": "CardCell",
 "class": "TestCardCell",
 "language": "GDScript",
@@ -157,6 +162,7 @@ _global_script_class_icons={
 "QuitCell": "",
 "SettingsCell": "",
 "StartCell": "",
+"StartMenuCursorGrid": "",
 "TestCardCell": "",
 "TransactionInterface": "",
 "UidGenerator": ""
