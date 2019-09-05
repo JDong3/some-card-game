@@ -1,4 +1,4 @@
-extends Node2D
+extends Selectable
 class_name Cell
 
 """
@@ -10,9 +10,6 @@ implement:
 """
 
 var props = {}
-
-# state
-var is_selected = false
 
 func init(props_):
 	"""

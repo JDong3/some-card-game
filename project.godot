@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Cell",
 "class": "CardCell",
 "language": "GDScript",
-"path": "res://Cell/CardCell.gd"
+"path": "res://Selectable/CardCell.gd"
 }, {
 "base": "Node",
 "class": "CardData",
@@ -29,10 +29,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Sprite/CardSprite.gd"
 }, {
-"base": "Node2D",
+"base": "Selectable",
 "class": "Cell",
 "language": "GDScript",
-"path": "res://Cell/Cell.gd"
+"path": "res://Selectable/Cell.gd"
 }, {
 "base": "Sprite",
 "class": "CellSprite",
@@ -109,6 +109,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://StartMenu/QuitCell.gd"
 }, {
+"base": "Node",
+"class": "Selectable",
+"language": "GDScript",
+"path": "res://Selectable/Selectable.gd"
+}, {
 "base": "Cell",
 "class": "SettingsCell",
 "language": "GDScript",
@@ -127,7 +132,7 @@ _global_script_classes=[ {
 "base": "CardCell",
 "class": "TestCardCell",
 "language": "GDScript",
-"path": "res://Cell/CardCellDerivatives/TestCardCell.gd"
+"path": "res://Selectable/CardCellDerivatives/TestCardCell.gd"
 }, {
 "base": "Node",
 "class": "TransactionInterface",
@@ -160,6 +165,7 @@ _global_script_class_icons={
 "HostileArea": "",
 "ItemDropdown": "",
 "QuitCell": "",
+"Selectable": "",
 "SettingsCell": "",
 "StartCell": "",
 "StartMenuCursorGrid": "",
