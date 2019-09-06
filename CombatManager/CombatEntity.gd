@@ -1,4 +1,4 @@
-extends Cell
+extends Selectable
 class_name CombatEntity
 
 """
@@ -21,17 +21,14 @@ parent class for friends and enemies
 
 # block mods
 # var frail
-
-func _init(props_):
+func init(props_):
 	"""
-	props:
-		hp: int,
-		sprite: Sprite,
-		selected_sprite: Sprite
+	props_:
+		name: Str, display name of the CombatEntity
+		hp: int
 	"""
 	# combat_manager = combat_manager_
 	# uid = uid_
-	props = props_
 
 func send_transaction(transaction, target):
 	"""

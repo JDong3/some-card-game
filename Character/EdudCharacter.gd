@@ -1,2 +1,3 @@
-extends Character
+extends CombatEntity
+class_name Edud
 

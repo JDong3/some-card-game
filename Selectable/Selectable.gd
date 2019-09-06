@@ -1,3 +1,6 @@
+extends Node
+class_name Selectable
+
 """
 implement:
 	select
@@ -5,8 +8,6 @@ implement:
 	input
 """
 
-extends Node
-class_name Selectable
 
 var is_selected = false
 

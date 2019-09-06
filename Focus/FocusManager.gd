@@ -23,6 +23,5 @@ func set_sole_focus(id):
 func add_to_focus(id):
 	focused_on.append(id)
 
-
 func has_focus(id):
 	return focused_on.has(id)
