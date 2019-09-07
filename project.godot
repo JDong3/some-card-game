@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Sprite/CellSprite.gd"
 }, {
+"base": "SpriteFrames",
+"class": "CharacterFrames",
+"language": "GDScript",
+"path": "res://Battle/CharacterFrames.gd"
+}, {
 "base": "Selectable",
 "class": "CombatEntity",
 "language": "GDScript",
@@ -114,7 +119,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://StartMenu/QuitCell.gd"
 }, {
-"base": "Node",
+"base": "Node2D",
 "class": "Selectable",
 "language": "GDScript",
 "path": "res://Selectable/Selectable.gd"
@@ -156,6 +161,7 @@ _global_script_class_icons={
 "CardSprite": "",
 "Cell": "",
 "CellSprite": "",
+"CharacterFrames": "",
 "CombatEntity": "",
 "CombatManager": "",
 "ConnectedCursorArea": "",
