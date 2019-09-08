@@ -38,8 +38,30 @@ func combobulate():
 
 func process_animation(dir_name):
 	"""
-	add animation to SpriteFrames
+	add animation to SpriteFrames, assuming the files are named ___1, ___2, etc
 	:param dir_name: String
 	"""
-	pass
+	var new_path = '%s/%s' % [path, dir_name]
+	var dir = Directory.new()
+	var file_path
+	var file_name
+	var n = 1 # file postfix
+
+	add_animation(dir_name)
+
+	dir.open(new_path)
+	dir.list_dir_begin(true, true)
+
+	while true:
+		file_name = dir.get_next()
+		file_path = '%s/%s%s' % [new_path, file_name, n]
+		print(file_path, file_name)
+
+		# if its not an image file skip it
+		if !file_name.ends_with('.png'):
+			continue
+		elif dir.file_exists(file_path):
+			add_frame(dir_name, load(file_path))
+		else:
+			break
 

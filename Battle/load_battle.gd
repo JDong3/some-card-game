@@ -23,4 +23,4 @@ func _ready():
 	add_child(hostile)
 
 	var character_frames = CharacterFrames.new()
-	character_frames.init('res://assets/dude/')
+	character_frames.init('res://assets/dude')
