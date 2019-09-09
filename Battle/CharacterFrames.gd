@@ -43,9 +43,8 @@ func process_animation(dir_name):
 	"""
 	var new_path = '%s/%s' % [path, dir_name]
 	var dir = Directory.new()
-	var file_path
 	var file_name
-	var n = 1 # file postfix
+	var file_path
 
 	add_animation(dir_name)
 
@@ -54,14 +53,16 @@ func process_animation(dir_name):
 
 	while true:
 		file_name = dir.get_next()
-		file_path = '%s/%s%s' % [new_path, file_name, n]
-		print(file_path, file_name)
+		file_path = '%s/%s' % [new_path, file_name]
+
+		# exit on end of dir
+		if file_name.casecmp_to('') == 0:
+			break
 
 		# if its not an image file skip it
 		if !file_name.ends_with('.png'):
 			continue
-		elif dir.file_exists(file_path):
-			add_frame(dir_name, load(file_path))
-		else:
-			break
+
+		print(file_name)
+		add_frame(dir_name, load(file_name))
 
