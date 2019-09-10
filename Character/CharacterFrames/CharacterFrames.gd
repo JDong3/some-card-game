@@ -64,5 +64,5 @@ func process_animation(dir_name):
 			continue
 
 		print(file_name)
-		add_frame(dir_name, load(file_name))
+		add_frame(dir_name, load(file_path))
 

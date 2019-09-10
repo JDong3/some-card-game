@@ -1,10 +1,16 @@
 extends CombatEntity
-class_name Dude
+class_name DudeCharacter
 
 func _init(props_):
 	"""
 		props_:
 			transaction_interface: TransactionInterface, # not yet,
-			character_sprite: AnimatedSprite
 	"""
+	props = props_
+
+	props['character_sprite'] = DudeCharacterSprite.new()
+	props['hp'] = 100
+
+	add_child(props['character_sprite'])
+	props['character_sprite'].play('idle')
 

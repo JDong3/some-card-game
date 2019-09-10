@@ -5,6 +5,8 @@ class_name CombatEntity
 parent class for friends and enemies
 """
 
+var props
+
 # var combat_manager
 # var uid
 
@@ -28,6 +30,7 @@ func init(props_):
 		hp: int
 		animated_sprite
 	"""
+	props = props_
 	# combat_manager = combat_manager_
 	# uid = uid_
 

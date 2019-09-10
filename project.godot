@@ -80,7 +80,7 @@ _global_script_classes=[ {
 "path": "res://CursorStructures/CursorHub.gd"
 }, {
 "base": "CombatEntity",
-"class": "Dude",
+"class": "DudeCharacter",
 "language": "GDScript",
 "path": "res://Character/Character/DudeCharacter.gd"
 }, {
@@ -184,7 +184,7 @@ _global_script_class_icons={
 "CursorArea": "",
 "CursorGrid": "",
 "CursorHub": "",
-"Dude": "",
+"DudeCharacter": "",
 "DudeCharacterFrames": "",
 "DudeCharacterSprite": "",
 "Edud": "",
