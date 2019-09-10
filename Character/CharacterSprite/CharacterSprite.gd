@@ -1,4 +1,5 @@
 extends AnimatedSprite
+class_name CharacterSprite
 
 var props
 

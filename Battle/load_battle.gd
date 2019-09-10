@@ -22,4 +22,4 @@ func _ready():
 	hostile.set_position(Vector2(300, 140))
 	add_child(hostile)
 
-	var character_frames = DudeCharacterFrames.new()
+	var character_frames = DudeCharacterSprite.new()

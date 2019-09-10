@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Character/CharacterFrames/CharacterFrames.gd"
 }, {
+"base": "AnimatedSprite",
+"class": "CharacterSprite",
+"language": "GDScript",
+"path": "res://Character/CharacterSprite/CharacterSprite.gd"
+}, {
 "base": "Selectable",
 "class": "CombatEntity",
 "language": "GDScript",
@@ -83,6 +88,11 @@ _global_script_classes=[ {
 "class": "DudeCharacterFrames",
 "language": "GDScript",
 "path": "res://Character/CharacterFrames/DudeCharacterFrames.gd"
+}, {
+"base": "CharacterSprite",
+"class": "DudeCharacterSprite",
+"language": "GDScript",
+"path": "res://Character/CharacterSprite/DudeCharacterSprite.gd"
 }, {
 "base": "CombatEntity",
 "class": "Edud",
@@ -167,6 +177,7 @@ _global_script_class_icons={
 "Cell": "",
 "CellSprite": "",
 "CharacterFrames": "",
+"CharacterSprite": "",
 "CombatEntity": "",
 "CombatManager": "",
 "ConnectedCursorArea": "",
@@ -175,6 +186,7 @@ _global_script_class_icons={
 "CursorHub": "",
 "Dude": "",
 "DudeCharacterFrames": "",
+"DudeCharacterSprite": "",
 "Edud": "",
 "FocusInterface": "",
 "FocusManager": "",
