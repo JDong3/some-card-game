@@ -22,5 +22,4 @@ func _ready():
 	hostile.set_position(Vector2(300, 140))
 	add_child(hostile)
 
-	var character_frames = CharacterFrames.new()
-	character_frames.init('res://assets/dude')
+	var character_frames = DudeCharacterFrames.new()
