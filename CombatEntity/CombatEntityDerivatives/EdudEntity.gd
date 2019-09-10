@@ -1,3 +1,3 @@
 extends CombatEntity
-class_name Edud
+class_name EdudEntity
 

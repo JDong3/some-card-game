@@ -1,5 +1,5 @@
 extends CombatEntity
-class_name DudeCharacter
+class_name DudeEntity
 
 func _init(props_):
 	"""

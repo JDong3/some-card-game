@@ -22,7 +22,6 @@ func _ready():
 	hostile.set_position(Vector2(300, 140))
 	add_child(hostile)
 
-	var character_frames = DudeCharacterSprite.new()
+	var character_frames = DudeEntity.new({})
 	add_child(character_frames)
 	character_frames.position = Vector2(32, 32)
-	print(character_frames.frames)

@@ -28,7 +28,7 @@ func init(props_):
 	props_:
 		name: Str, display name of the CombatEntity
 		hp: int
-		animated_sprite
+		animated_sprite: AnimatedSprite
 	"""
 	props = props_
 	# combat_manager = combat_manager_
