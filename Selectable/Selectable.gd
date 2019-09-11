@@ -13,6 +13,7 @@ var is_selected = false
 
 func init(props_):
 	pass
+	return self
 
 func select():
 	is_selected = true

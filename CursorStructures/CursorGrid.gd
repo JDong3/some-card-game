@@ -28,6 +28,8 @@ func init(props_):
 		props[key] = props_[key]
 	combobulate()
 
+	return self
+
 func focus():
 	"""
 	focuses on the cursor grid selects the correct cell to highlight

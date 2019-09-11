@@ -13,6 +13,8 @@ func init(props_):
 
 	.init(props)
 
+	return self
+
 func input(event):
 	"""
 	add the card transaction and source to the transaction_interface

@@ -29,6 +29,8 @@ func init(props_):
 	props.focus_interface.obtain_sole_focus()
 	combobulate()
 
+	return self
+
 func add_cell(cell, n):
 	"""
 	it is standard to put the first cell at 0, 0

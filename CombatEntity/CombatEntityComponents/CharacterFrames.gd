@@ -10,6 +10,8 @@ func init(path_):
 	path = path_
 	combobulate()
 
+	return self
+
 func combobulate():
 	# directory controller
 	var dir = Directory.new()

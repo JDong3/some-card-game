@@ -8,9 +8,10 @@ func _init(props_):
 	"""
 	props = props_
 
-	props['character_sprite'] = DudeCharacterSprite.new()
-	props['hp'] = 100
+	props['character_sprite'] = CharacterSprite.new().init('res://assets/character/dude/')
 
 	add_child(props['character_sprite'])
 	props['character_sprite'].play('idle')
 
+	props['hp_bar'] = HpBar.new().init(100)
+	add_child(props['hp_bar'])

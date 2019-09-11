@@ -17,3 +17,5 @@ func init(props_):
 	props['cursor_hub'].add_cursor_area(self, props['id'])
 
 	.init(props)
+
+	return self

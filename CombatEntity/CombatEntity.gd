@@ -27,12 +27,14 @@ func init(props_):
 	"""
 	props_:
 		name: Str, display name of the CombatEntity
-		hp: int
+		hp_bar: int
 		animated_sprite: AnimatedSprite
 	"""
 	props = props_
 	# combat_manager = combat_manager_
 	# uid = uid_
+
+	return self
 
 func send_transaction(transaction, target):
 	"""

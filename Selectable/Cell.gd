@@ -22,6 +22,8 @@ func init(props_):
 		props[key] = props_[key]
 	add_child(props.sprite)
 
+	return self
+
 func select():
 	"""
 	overlays the selected_sprite onto the regular sprite
