@@ -10,7 +10,7 @@ func _init(props_):
 		props[key] = props_[key]
 
 	props['id'] = 'friendly'
-	props['cells'] = [TestCardCell.new({'source': 'a'}), TestCardCell.new({'source': 'a'})]
+	props['cells'] = [DudeEntity.new({}), DudeEntity.new({})]
 	props['focus_interface'] = Global.GAME_FOCUS_MANAGER.obtain_interface()
 
 	.init(props)
