@@ -27,3 +27,11 @@ func add_cell(cell, n):
 	self.add_child(cell)
 	cell.set_position(Vector2(pos_x, pos_y))
 	pass
+
+func input(event):
+	.input(event)
+
+	if event.is_action_pressed('combat_swap'):
+		props['cursor_hub'].send_focus('hostile')
+	if event.is_action_pressed('combat_back'):
+		props['cursor_hub'].send_focus('hand')

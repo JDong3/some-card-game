@@ -21,6 +21,8 @@ func input(event):
 	:return: null
 	"""
 	if event.is_action_released('cursor_select'):
-		props.transaction_interface.add_transaction(props.transaction)
-		props.transaction_interface.add_source(props.source)
-		deselect()
+		#props.transaction_interface.add_transaction(props.transaction)
+		#props.transaction_interface.add_source(props.source)
+		pass
+
+		# transaction interface set transaction

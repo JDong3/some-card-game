@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 class_name FocusManager
 
 var focusables = [] # this might not actualy be needed
@@ -25,3 +25,7 @@ func add_to_focus(focusable):
 
 func has_focus(focusable):
 	return focused_on.has(focusable)
+
+func _input(event):
+	for focusable in focused_on:
+		focusable.input(event)

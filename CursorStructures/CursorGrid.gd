@@ -67,10 +67,7 @@ func move_cursor_to(index):
 	props.cells[index].select()
 	cursor_position = index
 
-func _input(event):
-
-	if !has_focus():
-		return
+func input(event):
 
 	if event.is_action_released('cursor_up'):
 		move_cursor_to(cursor_position - props.dimensions.x)

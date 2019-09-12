@@ -10,3 +10,5 @@ func _ready():
 	var start_menu = StartMenuCursorGrid.new()
 	start_menu.focus()
 	add_child(start_menu)
+
+	add_child(Global.START_FOCUS_MANAGER)

@@ -1,6 +1,8 @@
 extends TileMap
 
 func _ready():
+	add_child(Global.GAME_FOCUS_MANAGER)
+
 	# load hand
 	var c_hub = CursorHub.new()
 	var hand = Hand.new({

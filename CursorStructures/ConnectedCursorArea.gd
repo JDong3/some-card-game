@@ -11,8 +11,7 @@ func init(props_):
 		cursor_hub: CursorHub that is shared by the CursorAreas in the group
 		id: String unique id within the cursor group
 	"""
-	for key in props_.keys():
-		props[key] = props_[key]
+	props = props_
 
 	props['cursor_hub'].add_cursor_area(self, props['id'])
 

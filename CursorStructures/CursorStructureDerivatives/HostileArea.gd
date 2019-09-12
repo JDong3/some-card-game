@@ -9,7 +9,7 @@ func _init(props_):
 	for key in props_.keys():
 		props[key] = props_[key]
 
-	props['id'] = 'friendly'
+	props['id'] = 'hostile'
 	props['cells'] = [EdudEntity.new({}), EdudEntity.new({})]
 	props['focus_manager'] = Global.GAME_FOCUS_MANAGER
 
@@ -25,3 +25,11 @@ func add_cell(cell, n):
 
 	add_child(cell)
 	cell.set_position(Vector2(pos_x, pos_y))
+
+func input(event):
+	.input(event)
+
+	if event.is_action_pressed('combat_swap'):
+		props['cursor_hub'].send_focus('friendly')
+	if event.is_action_pressed('combat_back'):
+		props['cursor_hub'].send_focus('hand')

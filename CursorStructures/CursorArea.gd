@@ -43,10 +43,7 @@ func combobulate():
 	for i in range(props.cells.size()):
 		add_cell(props.cells[i], i)
 
-func _input(event):
-	if !has_focus():
-		return
-
+func input(event):
 	if event.is_action_released('cursor_next'):
 		props.cells[cursor_position].deselect()
 		cursor_position = (cursor_position + 1) % props.cells.size()

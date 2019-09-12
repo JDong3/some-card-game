@@ -14,3 +14,6 @@ func add_cursor_area(cursor_area, id):
 
 func get_cursor_area(id):
 	return cursor_areas[id]
+
+func send_focus(id):
+	cursor_areas[id].obtain_sole_focus()

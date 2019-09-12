@@ -16,3 +16,4 @@ func _ready():
 	cursor_grid.init(config)
 	cursor_grid.focus()
 	add_child(cursor_grid)
+	add_child(Global.CHARACTER_FOCUS_MANAGER)

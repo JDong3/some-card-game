@@ -9,8 +9,7 @@ func _init(props_):
 		cells: Array<Card>
 		cursor_hub: CursorHub
 	"""
-	for key in props_.keys():
-		props[key] = props_[key]
+	props = props_
 
 	props['focus_manager'] = Global.GAME_FOCUS_MANAGER
 	props['id'] = 'hand'
@@ -26,3 +25,11 @@ func add_cell(cell, n):
 	var pos_y = 0
 	add_child(cell)
 	cell.set_position(Vector2(pos_x, pos_y))
+
+func input(event):
+
+	.input(event)
+
+	if event.is_action_released('cursor_select'):
+		props['cells'][cursor_position].input(event)
+		props['cursor_hub'].send_focus('hostile')
