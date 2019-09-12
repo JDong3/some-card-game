@@ -8,6 +8,7 @@ func _ready():
 		'cursor_hub': c_hub
 	})
 	hand.set_position(Vector2(120, 270))
+	hand.obtain_sole_focus()
 	add_child(hand)
 
 	var friendly = FriendlyArea.new({

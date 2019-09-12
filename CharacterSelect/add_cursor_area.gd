@@ -8,7 +8,7 @@ func _ready():
 	var config = {
 		'dimensions': Vector2(1, 1),
 		'cell_size': Vector2(96, 32),
-		'focus_interface': Global.CHARACTER_FOCUS_MANAGER.obtain_interface(),
+		'focus_manager': Global.CHARACTER_FOCUS_MANAGER,
 		'cells': [BardCell.new()]
 	}
 

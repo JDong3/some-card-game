@@ -1,10 +1,8 @@
-extends Node2D
+extends Focusable
 class_name CursorGrid
 """
 cells are used in cursor areas
 """
-
-var props = {}
 
 # state
 var cursor_position = 0
@@ -34,7 +32,7 @@ func focus():
 	"""
 	focuses on the cursor grid selects the correct cell to highlight
 	"""
-	props.focus_interface.obtain_sole_focus()
+	obtain_sole_focus()
 	props.cells[cursor_position].select()
 
 func combobulate():
@@ -71,7 +69,7 @@ func move_cursor_to(index):
 
 func _input(event):
 
-	if !props.focus_interface.has_focus():
+	if !has_focus():
 		return
 
 	if event.is_action_released('cursor_up'):

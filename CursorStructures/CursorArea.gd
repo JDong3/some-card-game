@@ -1,11 +1,10 @@
-extends Node2D
+extends Focusable
 class_name CursorArea
 
 """
 same as cursor grid, but you need to provice your own combobulate function,
 """
 
-var props = {}
 var cursor_position = 0
 
 func init(props_):
@@ -26,7 +25,6 @@ func init(props_):
 	if !props.has('cursor_position'):
 		props['cursor_position'] = 0
 
-	props.focus_interface.obtain_sole_focus()
 	combobulate()
 
 	return self
@@ -45,10 +43,8 @@ func combobulate():
 	for i in range(props.cells.size()):
 		add_cell(props.cells[i], i)
 
-	props.cells[cursor_position].select()
-
 func _input(event):
-	if !props.focus_interface.has_focus():
+	if !has_focus():
 		return
 
 	if event.is_action_released('cursor_next'):
@@ -59,3 +55,9 @@ func _input(event):
 		props.cells[cursor_position].deselect()
 		cursor_position = (cursor_position - 1) % props.cells.size()
 		props.cells[cursor_position].select()
+
+func on_focus():
+	props['cells'][cursor_position].select()
+
+func on_defocus():
+	props['cells'][cursor_position].deselect()

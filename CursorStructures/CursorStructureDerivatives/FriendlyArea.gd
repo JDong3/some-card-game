@@ -11,7 +11,7 @@ func _init(props_):
 
 	props['id'] = 'friendly'
 	props['cells'] = [DudeEntity.new({}), DudeEntity.new({})]
-	props['focus_interface'] = Global.GAME_FOCUS_MANAGER.obtain_interface()
+	props['focus_manager'] = Global.GAME_FOCUS_MANAGER
 
 	.init(props)
 

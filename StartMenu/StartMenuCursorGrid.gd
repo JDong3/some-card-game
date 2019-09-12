@@ -5,6 +5,6 @@ func _init():
 	props['dimensions'] = Vector2(1, 3)
 	props['cell_size'] = Vector2(96, 32)
 	props['cells'] = [StartCell.new(), SettingsCell.new(), QuitCell.new()]
-	props['focus_interface'] = Global.START_FOCUS_MANAGER.obtain_interface()
+	props['focus_manager'] = Global.START_FOCUS_MANAGER
 
 	.init(props)

@@ -12,7 +12,7 @@ func _init(props_):
 	for key in props_.keys():
 		props[key] = props_[key]
 
-	props['focus_interface'] = Global.GAME_FOCUS_MANAGER.obtain_interface()
+	props['focus_manager'] = Global.GAME_FOCUS_MANAGER
 	props['id'] = 'hand'
 
 	.init(props)

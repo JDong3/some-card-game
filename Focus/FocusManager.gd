@@ -1,27 +1,27 @@
 extends Node
 class_name FocusManager
 
-var interfaces = []
+var focusables = [] # this might not actualy be needed
 var focused_on = []
-var uid_generator = UidGenerator.new()
 
-func obtain_interface():
-	"""
-	returns a FocusInterface object and adds it the the tracked
-	interfaces of the current FocusManager
-	:param id: id of the interface you want to obtain, id
-	just used for object matching, please don't duplicate names
-	"""
-	var res = FocusInterface.new(self, uid_generator.obtain_uid())
-	interfaces.append(res)
-	return res
+# this might not actually be needed
+func add_focusable(focusable):
+	focusables.append(focusable)
 
-func set_sole_focus(id):
+func set_sole_focus(focusable):
+	for focusable in focused_on:
+		focusable.on_defocus()
 	focused_on.clear()
-	focused_on.append(id)
 
-func add_to_focus(id):
-	focused_on.append(id)
+	focusable.on_focus()
+	focused_on.append(focusable)
 
-func has_focus(id):
-	return focused_on.has(id)
+func add_to_focus(focusable):
+	for focusable in focused_on:
+		focusable.on_defocus()
+
+	focusable.on_focus()
+	focused_on.append(focusable)
+
+func has_focus(focusable):
+	return focused_on.has(focusable)
