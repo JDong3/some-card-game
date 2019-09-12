@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/edud2.png-4a98c0af876138e72e469d0a0f6f6d69.stex"
+path="res://.import/edud2.png-3d2536c03c3ac6a09fc3e092706f685c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/edud/dude-idle/edud2.png"
-dest_files=[ "res://.import/edud2.png-4a98c0af876138e72e469d0a0f6f6d69.stex" ]
+source_file="res://assets/character/edud/attack/edud2.png"
+dest_files=[ "res://.import/edud2.png-3d2536c03c3ac6a09fc3e092706f685c.stex" ]
 
 [params]
 

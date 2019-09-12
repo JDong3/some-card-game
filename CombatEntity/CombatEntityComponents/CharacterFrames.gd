@@ -3,7 +3,7 @@ class_name CharacterFrames
 
 var path
 
-func init(path_):
+func _init(path_):
 	"""
 	path: path to animation folder
 	"""

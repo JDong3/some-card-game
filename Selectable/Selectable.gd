@@ -10,9 +10,11 @@ implement:
 
 
 var is_selected = false
+var props = {}
+
 
 func init(props_):
-	pass
+	props = props_
 	return self
 
 func select():
@@ -22,4 +24,5 @@ func deselect():
 	is_selected = false
 
 func input(event):
+	print('implement this function', event)
 	pass

@@ -5,8 +5,6 @@ class_name CombatEntity
 parent class for friends and enemies
 """
 
-var props
-
 # var combat_manager
 # var uid
 
@@ -23,16 +21,23 @@ var props
 
 # block mods
 # var frail
+
+var selected_sprite
+
 func init(props_):
 	"""
 	props_:
 		name: Str, display name of the CombatEntity
-		hp_bar: int
-		animated_sprite: AnimatedSprite
+		hp_bar: HpBar
+		character_sprite: CharacterSprite
 	"""
 	props = props_
-	# combat_manager = combat_manager_
-	# uid = uid_
+	add_child(props['hp_bar'])
+	add_child(props['character_sprite'])
+	props['character_sprite'].play('idle')
+
+	selected_sprite = Sprite.new()
+	selected_sprite.texture = load('res://assets/sprites/entity-selected.png')
 
 	return self
 
@@ -77,3 +82,13 @@ func process_dot():
 
 func input(event):
 	pass
+
+func select():
+	if !is_selected:
+		add_child(selected_sprite)
+		is_selected = true
+
+func deselect():
+	if is_selected:
+		remove_child(selected_sprite)
+		is_selected = false

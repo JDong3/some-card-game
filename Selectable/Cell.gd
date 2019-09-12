@@ -9,8 +9,6 @@ implement:
 	input(event)
 """
 
-var props = {}
-
 func init(props_):
 	"""
 	props_:

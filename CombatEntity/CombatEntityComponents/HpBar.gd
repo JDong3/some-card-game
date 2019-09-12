@@ -5,7 +5,7 @@ var max_hp
 var hp # current hp
 var label
 
-func init(max_hp_):
+func _init(max_hp_):
 	max_hp = max_hp_
 
 	label = Label.new()

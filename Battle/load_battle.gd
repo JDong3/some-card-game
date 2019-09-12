@@ -13,6 +13,7 @@ func _ready():
 	var friendly = FriendlyArea.new({
 		'cursor_hub': c_hub
 	})
+
 	friendly.set_position(Vector2(80, 140))
 	add_child(friendly)
 
@@ -21,7 +22,3 @@ func _ready():
 	})
 	hostile.set_position(Vector2(300, 140))
 	add_child(hostile)
-
-	var character_frames = DudeEntity.new({})
-	add_child(character_frames)
-	character_frames.position = Vector2(32, 32)
