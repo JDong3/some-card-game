@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Cell",
 "class": "BardCell",
 "language": "GDScript",
-"path": "res://CharacterSelect/BardCell.gd"
+"path": "res://scenes/CharacterSelect/BardCell.gd"
 }, {
 "base": "Cell",
 "class": "CardCell",
@@ -102,17 +102,17 @@ _global_script_classes=[ {
 "base": "ConnectedCursorArea",
 "class": "FriendlyArea",
 "language": "GDScript",
-"path": "res://CursorStructures/CursorStructureDerivatives/FriendlyArea.gd"
+"path": "res://CursorStructures/CursorAreaDerivatives/FriendlyArea.gd"
 }, {
 "base": "ConnectedCursorArea",
 "class": "Hand",
 "language": "GDScript",
-"path": "res://CursorStructures/CursorStructureDerivatives/HandArea.gd"
+"path": "res://CursorStructures/CursorAreaDerivatives/HandArea.gd"
 }, {
 "base": "ConnectedCursorArea",
 "class": "HostileArea",
 "language": "GDScript",
-"path": "res://CursorStructures/CursorStructureDerivatives/HostileArea.gd"
+"path": "res://CursorStructures/CursorAreaDerivatives/HostileArea.gd"
 }, {
 "base": "Node2D",
 "class": "HpBar",
@@ -127,7 +127,7 @@ _global_script_classes=[ {
 "base": "Cell",
 "class": "QuitCell",
 "language": "GDScript",
-"path": "res://StartMenu/QuitCell.gd"
+"path": "res://scenes/StartMenu/Components/QuitCell.gd"
 }, {
 "base": "Node2D",
 "class": "Selectable",
@@ -137,17 +137,17 @@ _global_script_classes=[ {
 "base": "Cell",
 "class": "SettingsCell",
 "language": "GDScript",
-"path": "res://StartMenu/SettingsCell.gd"
+"path": "res://scenes/StartMenu/Components/SettingsCell.gd"
 }, {
 "base": "Cell",
 "class": "StartCell",
 "language": "GDScript",
-"path": "res://StartMenu/StartCell.gd"
+"path": "res://scenes/StartMenu/Components/StartCell.gd"
 }, {
 "base": "CursorGrid",
 "class": "StartMenuCursorGrid",
 "language": "GDScript",
-"path": "res://StartMenu/StartMenuCursorGrid.gd"
+"path": "res://scenes/StartMenu/Components/StartMenuCursorGrid.gd"
 }, {
 "base": "CardCell",
 "class": "TestCardCell",
@@ -201,7 +201,7 @@ _global_script_class_icons={
 [application]
 
 config/name="some-card-game"
-run/main_scene="res://StartMenu/StartMenu.tscn"
+run/main_scene="res://scenes/StartMenu/StartMenu.tscn"
 
 [autoload]
 
