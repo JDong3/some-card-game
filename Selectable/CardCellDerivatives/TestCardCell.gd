@@ -1,10 +1,6 @@
 extends CardCell
 class_name TestCardCell
 
-func make_props():
-	var res = CardData.test_card()
-	return res
-
 func _init(props_):
 	"""
 	constructor for TestCardCell
@@ -14,11 +10,11 @@ func _init(props_):
 	"""
 	var card_data = CardData.test_card()
 	for key in card_data.keys():
-		props[key] = card_data[key]
+		props_[key] = card_data[key]
 
-	for key in props_.keys():
-		props[key] = props_[key]
+	props = props_
 
 	props['source'] = props_.source
+	props['transaction_interface'] = Global.TRANSACTION_INTERFACE
 
 	.init(props)

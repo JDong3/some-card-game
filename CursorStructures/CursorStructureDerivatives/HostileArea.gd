@@ -29,7 +29,10 @@ func add_cell(cell, n):
 func input(event):
 	.input(event)
 
-	if event.is_action_pressed('combat_swap'):
+	if event.is_action_released('combat_swap'):
 		props['cursor_hub'].send_focus('friendly')
-	if event.is_action_pressed('combat_back'):
+	if event.is_action_released('combat_back'):
+		props['cursor_hub'].send_focus('hand')
+	if event.is_action_released('cursor_select'):
+		props['cells'][cursor_position].input(event)
 		props['cursor_hub'].send_focus('hand')

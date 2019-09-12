@@ -35,3 +35,6 @@ func input(event):
 		props['cursor_hub'].send_focus('hostile')
 	if event.is_action_pressed('combat_back'):
 		props['cursor_hub'].send_focus('hand')
+	if event.is_action_released('cursor_select'):
+		props['cells'][cursor_position].input(event)
+		props['cursor_hub'].send_focus('hand')

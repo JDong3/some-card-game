@@ -7,6 +7,7 @@ var label
 
 func _init(max_hp_):
 	max_hp = max_hp_
+	hp = max_hp
 
 	label = Label.new()
 	label.text = 'hp: %s/%s' % [max_hp, max_hp]
@@ -17,4 +18,4 @@ func _init(max_hp_):
 
 func change_hp(n):
 	hp += n
-	label.taxt = 'hp: %s/%s' % [hp, max_hp]
+	label.text = 'hp: %s/%s' % [hp, max_hp]

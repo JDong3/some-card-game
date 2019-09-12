@@ -2,16 +2,7 @@ extends TileMap
 
 func _ready():
 	add_child(Global.GAME_FOCUS_MANAGER)
-
-	# load hand
 	var c_hub = CursorHub.new()
-	var hand = Hand.new({
-		'cells': [TestCardCell.new({'source': 'a'}), TestCardCell.new({'source': 'a'})],
-		'cursor_hub': c_hub
-	})
-	hand.set_position(Vector2(120, 270))
-	hand.obtain_sole_focus()
-	add_child(hand)
 
 	var friendly = FriendlyArea.new({
 		'cursor_hub': c_hub
@@ -25,3 +16,13 @@ func _ready():
 	})
 	hostile.set_position(Vector2(300, 140))
 	add_child(hostile)
+
+	# load hand
+	var hand = Hand.new({
+		'cells': [TestCardCell.new({'source': friendly['props']['cells'][0]}),
+				  TestCardCell.new({'source': friendly['props']['cells'][0]})],
+		'cursor_hub': c_hub
+	})
+	hand.set_position(Vector2(120, 270))
+	hand.obtain_sole_focus()
+	add_child(hand)

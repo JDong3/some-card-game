@@ -75,7 +75,7 @@ func process_transaction(transaction):
 	#pass
 
 func process_damage(damage):
-	pass
+	props['hp_bar'].change_hp(-damage)
 
 func process_dot():
 	pass

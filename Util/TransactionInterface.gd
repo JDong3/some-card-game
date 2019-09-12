@@ -9,8 +9,10 @@ func _init():
 	return
 
 func try_process():
+	print('trying process')
 	if source != null and transaction != null and target != null:
-		source.send_transaction(target, transaction)
+		source.send_transaction(transaction, target)
+		clear()
 
 func add_source(source_):
 	source = source_
