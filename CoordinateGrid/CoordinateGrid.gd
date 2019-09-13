@@ -1,16 +1,20 @@
 extends Node2D
 class_name CoordinateGrid
 
+var props = {}
+
 func init(props_):
 	"""
 	props_:
 		offset: Vector2
 		space: int, gap between coordinates
 	"""
-	pass
+	props = props_
 
 func position_of(x, y):
-	pass
+	var v = props['space'] * Vector2(x, y)
+	return props['offset'] + v
 
 func draw():
-	pass
+	var sprite
+

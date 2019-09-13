@@ -1,5 +1,8 @@
 extends Node2D
 
+func _init():
+	OS.window_fullscreen = true
+
 func _ready():
 	# set position of the cursor area
 	var pos_x = get_viewport_rect().size.x / 2 - 48
