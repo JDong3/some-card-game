@@ -14,6 +14,3 @@ func _init(props_):
 
 	.init(props)
 
-func input(event):
-	if event.is_action_released('cursor_select'):
-		props['transaction_interface'].add_target(self)

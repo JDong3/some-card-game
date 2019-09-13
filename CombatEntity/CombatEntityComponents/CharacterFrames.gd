@@ -1,18 +1,21 @@
 extends SpriteFrames
 class_name CharacterFrames
 
+"""
+SpriteFrames object which also autoloads animations when given the correct
+path to a folder of animations for a CombatEntity
+"""
+
 var path
 
 func _init(path_):
 	"""
-	path: path to animation folder
+	path_: path to animation folder
 	"""
 	path = path_
-	combobulate()
+	load_animations()
 
-	return self
-
-func combobulate():
+func load_animations():
 	# directory controller
 	var dir = Directory.new()
 	var item_name
@@ -24,7 +27,7 @@ func combobulate():
 	while true:
 		item_name = dir.get_next()
 
-		print(item_name)
+		# print(item_name) # for debugging
 
 		# break when all dir items are listed
 		if item_name.casecmp_to('') == 0:
@@ -43,16 +46,19 @@ func process_animation(dir_name):
 	add animation to SpriteFrames, assuming the files are named ___1, ___2, etc
 	:param dir_name: String
 	"""
+
 	var new_path = '%s/%s' % [path, dir_name]
 	var dir = Directory.new()
 	var file_name
 	var file_path
 
+	# add the animation to SpriteFrames
 	add_animation(dir_name)
 
 	dir.open(new_path)
 	dir.list_dir_begin(true, true)
 
+	# load the images into the animation
 	while true:
 		file_name = dir.get_next()
 		file_path = '%s/%s' % [new_path, file_name]
@@ -65,6 +71,7 @@ func process_animation(dir_name):
 		if !file_name.ends_with('.png'):
 			continue
 
-		print(file_name)
+		# print(file_name) # for debugging
+
 		add_frame(dir_name, load(file_path))
 

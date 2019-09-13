@@ -28,8 +28,9 @@ func init(props_):
 	"""
 	props_:
 		name: Str, display name of the CombatEntity
-		hp_bar: HpBar
-		character_sprite: CharacterSprite
+		hp_bar: HpBar, displays the hp of the CombatEntity
+		character_sprite: CharacterSprite, the AnimatedSprite of the
+			CombatEntity
 	"""
 	props = props_
 	add_child(props['hp_bar'])
@@ -39,8 +40,6 @@ func init(props_):
 	selected_sprite = Sprite.new()
 	selected_sprite.texture = load('res://assets/sprites/entity-selected.png')
 
-	return self
-
 func send_transaction(transaction, target):
 	"""
 	sends a transaction to a target CombatInterface
@@ -48,11 +47,8 @@ func send_transaction(transaction, target):
 	transaction:
 		poison?:
 		weaken?:
-		.
-		.
-		.
-	:param target: CombatInterface, the CombatInterface of the target you are sending
-	the transaction to
+	:param target: CombatInterface, the CombatInterface of the target you are
+		sending the transaction to
 	"""
 	target.process_transaction(transaction)
 
@@ -64,9 +60,6 @@ func process_transaction(transaction):
 	transaction:
 		poison?:
 		weaken?:
-		.
-		.
-		.
 	"""
 	if transaction.has('damage'):
 		process_damage(transaction['damage'])
@@ -75,12 +68,14 @@ func process_transaction(transaction):
 	#pass
 
 func process_damage(damage):
+	"""
+	reponsible for making sure that CombatEntity takes the correct amount of
+	damage
+	:param damage: int, how much damage
+	"""
 	props['hp_bar'].change_hp(-damage)
 
 func process_dot():
-	pass
-
-func input(event):
 	pass
 
 func select():
@@ -92,3 +87,7 @@ func deselect():
 	if is_selected:
 		remove_child(selected_sprite)
 		is_selected = false
+
+func input(event):
+	if event.is_action_released('cursor_select'):
+		props['transaction_interface'].add_target(self)
