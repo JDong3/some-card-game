@@ -54,11 +54,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CombatEntity/CombatEntity.gd"
 }, {
-"base": "Node",
-"class": "CombatManager",
-"language": "GDScript",
-"path": "res://CombatEntity/CombatManager.gd"
-}, {
 "base": "CursorArea",
 "class": "ConnectedCursorArea",
 "language": "GDScript",
@@ -174,7 +169,6 @@ _global_script_class_icons={
 "CharacterFrames": "",
 "CharacterSprite": "",
 "CombatEntity": "",
-"CombatManager": "",
 "ConnectedCursorArea": "",
 "CursorArea": "",
 "CursorGrid": "",
