@@ -92,7 +92,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "FightClub",
 "language": "GDScript",
-"path": "res://FightClub/FightClub.gd"
+"path": "res://Fight/FightClub.gd"
 }, {
 "base": "Node2D",
 "class": "FocusManager",
