@@ -26,3 +26,12 @@ func _ready():
 	hand.set_position(Vector2(120, 270))
 	hand.obtain_sole_focus()
 	add_child(hand)
+
+	var grid = CoordinateGrid.new({
+		'offset': Vector2(132, 100),
+		'space': 32
+	})
+
+	# grid.draw()
+
+	add_child(grid)
