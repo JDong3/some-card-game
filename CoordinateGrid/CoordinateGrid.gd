@@ -1,9 +1,9 @@
 extends Node2D
 class_name CoordinateGrid
 
-var props
+var props = {}
 
-func _init(props_):
+func init(props_):
 	"""
 	props_:
 		offset: Vector2

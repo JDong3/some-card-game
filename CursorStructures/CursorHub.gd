@@ -1,10 +1,10 @@
 extends Node
 class_name CursorHub
 
-var cursor_areas
+var cursor_areas = {}
 
 func _init():
-	cursor_areas = {}
+	pass
 
 func add_cursor_area(cursor_area, id):
 	"""
