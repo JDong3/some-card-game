@@ -5,3 +5,4 @@ var START_FOCUS_MANAGER = FocusManager.new()
 var CHARACTER_FOCUS_MANAGER = FocusManager.new()
 
 var FIGHT_CLUB = FightClub.new()
+var TRANSACTION_INTERFACE = TransactionInterface.new()

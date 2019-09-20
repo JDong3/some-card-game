@@ -1,15 +1,12 @@
 extends Cell
-class_name CardCell
+class_name PlayableCard
 
 func init(props_):
 	"""
 	props:
-		..CardData..
-		transaction_interface: TransactionInterface
 		source+: CombatEntity
 	"""
-	for key in props_.keys():
-		props[key] = props_[key]
+	props = props_
 
 	.init(props)
 
