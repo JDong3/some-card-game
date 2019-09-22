@@ -1,8 +1,5 @@
 extends Node2D
 
-func _init():
-	OS.window_fullscreen = true
-
 func _ready():
 	# set position of the cursor area
 	var pos_x = get_viewport_rect().size.x / 2 - 48
@@ -13,5 +10,5 @@ func _ready():
 	var start_menu = StartMenuCursorGrid.new()
 	start_menu.focus()
 	add_child(start_menu)
-
 	add_child(Global.START_FOCUS_MANAGER)
+

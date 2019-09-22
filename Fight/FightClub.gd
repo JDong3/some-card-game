@@ -6,8 +6,10 @@ every member of the FightClub should have a refernece to every other member of
 the FightClub
 """
 
+var deck
+var draw_pile
 var friendlies
-var hostiles
 var hand
+var hostiles
 var transaction_interface
 

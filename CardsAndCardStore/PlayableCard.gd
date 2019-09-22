@@ -1,12 +1,13 @@
 extends Cell
 class_name PlayableCard
 
-func init(props_):
+func _init(props_):
 	"""
 	props:
-		source+: CombatEntity
+		source: CombatEntity
 	"""
 	props = props_
+	props.transaction_interface = Global.TRANSACTION_INTERFACE
 
 	.init(props)
 

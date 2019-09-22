@@ -1,4 +1,9 @@
 extends Node
+class_name Deck
+
+"""
+A deck is filled with card objects
+"""
 
 var cards
 

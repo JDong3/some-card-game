@@ -1,14 +1,22 @@
 extends Node2D
 
 func _ready():
+	# FightOrchestrator design incubator
+
+	var combat_orchestrator = FightOrchestrator.new({
+		'hostiles': HostileArea.new()
+	})
+	add_child(combat_orchestrator)
+
+	# in fight club
 	var friendlies = FriendlyArea.new()
-	var hostiles = HostileArea.new()
+	friendlies.position = Vector2(150, 150)
+	Global.FIGHT_CLUB.friendlies = friendlies
+
+	# in fight club, need a deck that is filled
 	var deck = Deck.new()
 	for i in range(30):
-		deck.add_card(TestCard.new())
+		deck.add_card(AttackCard.new())
+	Global.FIGHT_CLUB.deck = deck
 
-	friendlies.position = Vector2(150, 150)
-	hostiles.position = Vector2(250, 150)
-
-	add_child(friendlies)
-	add_child(hostiles)
+	combat_orchestrator.start()
