@@ -8,4 +8,4 @@ func _init():
 
 func input(event):
 	if event.is_action_pressed('cursor_select'):
-		print('quit cell')
+		pass

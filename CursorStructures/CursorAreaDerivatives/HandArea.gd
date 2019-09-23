@@ -24,8 +24,10 @@ func draw(n=1):
 	"""
 	draws from fight_club.draw_pile
 	"""
-	for i in n:
+	for i in range(n):
 		var card = fight_club.draw_pile.give()
+		print(card)
+		card = card.playable_card(fight_club.friendlies.props.cells[0])
 		props.cells.push_back(card)
 		add_cell(card, props.cells.size())
 

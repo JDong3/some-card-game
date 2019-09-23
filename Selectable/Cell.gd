@@ -47,4 +47,4 @@ func input(event):
 	:param event: InputEvent
 	:return: null
 	"""
-	print('please implement this function', self, event)
+	pass

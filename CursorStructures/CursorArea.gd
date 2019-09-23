@@ -33,7 +33,7 @@ func add_cell(cell, n):
 	"""
 	it is standard to put the first cell at 0, 0
 	"""
-	print('implement add_cell', self)
+	pass
 
 func combobulate():
 	"""

@@ -1,6 +1,8 @@
 extends Selectable
 class_name CombatEntity
 
+signal end_turn
+
 """
 parent class for friends and enemies
 """
@@ -76,6 +78,12 @@ func process_damage(damage):
 	props['hp_bar'].change_hp(-damage)
 
 func process_dot():
+	pass
+
+func prepare():
+	pass
+
+func act():
 	pass
 
 func select():

@@ -30,22 +30,29 @@ func combobulate():
 	fight_club.draw_pile = DrawPile.new()
 	add_child(fight_club.draw_pile)
 
+func fight_order():
+	return fight_club.friendlies.props.cells + fight_club.hostiles.props.cells
 
+func run_preround():
+	var ents = fight_order()
+
+	for ent in ents:
+		ent.prepare()
+
+func run_round():
+	var ents = fight_order()
+
+	for ent in ents:
+		ent.act()
 
 func start():
 	combobulate()
 
+
 	# first draw pile need to be filled with deck cards and shuffled
 	fight_club.draw_pile.load_from_deck()
 
-	# hand needs to draw from draw_pile
-	for i in range(5):
-		fight_club.hand.draw()
 
 	while true:
-		break
-		# decide which skills the ai will use
-
-		# on player start just give focus and tell the player that his has started
-
-		# on ai start do actions decided on earlier
+		run_preround()
+		run_round()

@@ -30,4 +30,5 @@ func shuffle():
 func give():
 	"""
 	"""
-	return cards.pop_front()
+	var res = cards.pop_front()
+	return res

@@ -24,5 +24,4 @@ func deselect():
 	is_selected = false
 
 func input(event):
-	print('implement this function', event)
 	pass

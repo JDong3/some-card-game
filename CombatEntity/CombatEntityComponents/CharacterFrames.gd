@@ -27,8 +27,6 @@ func load_animations():
 	while true:
 		item_name = dir.get_next()
 
-		# print(item_name) # for debugging
-
 		# break when all dir items are listed
 		if item_name.casecmp_to('') == 0:
 			break
@@ -70,8 +68,6 @@ func process_animation(dir_name):
 		# if its not an image file skip it
 		if !file_name.ends_with('.png'):
 			continue
-
-		# print(file_name) # for debugging
 
 		add_frame(dir_name, load(file_path))
 
