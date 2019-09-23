@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	# FightOrchestrator design incubator
+	add_child(Global.GAME_FOCUS_MANAGER)
 
 	var combat_orchestrator = FightOrchestrator.new({
 		'hostiles': HostileArea.new()

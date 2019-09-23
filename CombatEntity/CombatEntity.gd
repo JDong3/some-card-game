@@ -1,8 +1,6 @@
 extends Selectable
 class_name CombatEntity
 
-signal end_turn
-
 """
 parent class for friends and enemies
 """

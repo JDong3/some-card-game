@@ -8,6 +8,7 @@ the FightClub
 
 var deck
 var draw_pile
+var fight_orchestrator
 var friendlies
 var hand
 var hostiles

@@ -26,7 +26,6 @@ func draw(n=1):
 	"""
 	for i in range(n):
 		var card = fight_club.draw_pile.give()
-		print(card)
 		card = card.playable_card(fight_club.friendlies.props.cells[0])
 		props.cells.push_back(card)
 		add_cell(card, props.cells.size())
@@ -38,4 +37,6 @@ func input(event):
 
 	if event.is_action_released('cursor_select'):
 		props.cells[cursor_position].input(event)
-		props.fight_clubs.hostiles.obtain_sole_focus()
+		fight_club.hostiles.obtain_sole_focus()
+	if event.is_action_released('combat_end_turn'):
+		fight_club.fight_orchestrator.cont()

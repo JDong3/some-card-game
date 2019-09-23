@@ -19,9 +19,11 @@ func _init(props_):
 	.init(props)
 
 func prepare():
+	pass
+
+func act():
 	# hand needs to draw from draw_pile
 	for i in range(5):
 		fight_club.hand.draw()
 
-func act():
-	pass
+	fight_club.hand.obtain_sole_focus()

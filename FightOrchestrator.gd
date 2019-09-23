@@ -4,6 +4,7 @@ class_name FightOrchestrator
 var props = {}
 
 var fight_club
+var ent_index = 0
 
 func _init(props_):
 	"""
@@ -14,6 +15,7 @@ func _init(props_):
 	fight_club = Global.FIGHT_CLUB
 
 func combobulate():
+	fight_club.fight_orchestrator = self
 
 	# add friendlies to self
 	fight_club.friendlies.position = Vector2(150, 150)
@@ -26,6 +28,7 @@ func combobulate():
 
 	fight_club.hand = Hand.new()
 	add_child(fight_club.hand)
+	fight_club.hand.position = Vector2(75, 270)
 
 	fight_club.draw_pile = DrawPile.new()
 	add_child(fight_club.draw_pile)
@@ -45,14 +48,14 @@ func run_round():
 	for ent in ents:
 		ent.act()
 
+func cont():
+	"""
+	passes turn to the next entity
+	"""
+	fight_order()[ent_index].act()
+	ent_index = ent_index + 1
+
 func start():
 	combobulate()
-
-
-	# first draw pile need to be filled with deck cards and shuffled
 	fight_club.draw_pile.load_from_deck()
-
-
-	while true:
-		run_preround()
-		run_round()
+	cont()
