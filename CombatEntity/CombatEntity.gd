@@ -5,6 +5,8 @@ class_name CombatEntity
 parent class for friends and enemies
 """
 
+var fight_club = Global.FIGHT_CLUB
+
 # var combat_manager
 # var uid
 
@@ -96,4 +98,4 @@ func deselect():
 
 func input(event):
 	if event.is_action_released('cursor_select'):
-		props['transaction_interface'].add_target(self)
+		fight_club.transaction_interface.add_target(self)

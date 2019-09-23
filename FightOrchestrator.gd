@@ -33,6 +33,8 @@ func combobulate():
 	fight_club.draw_pile = DrawPile.new()
 	add_child(fight_club.draw_pile)
 
+	fight_club.transaction_interface = TransactionInterface.new()
+
 func fight_order():
 	return fight_club.friendlies.props.cells + fight_club.hostiles.props.cells
 

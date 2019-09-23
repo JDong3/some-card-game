@@ -1,13 +1,15 @@
 extends Cell
 class_name PlayableCard
 
+var fight_club
+
 func _init(props_):
 	"""
 	props:
 		source: CombatEntity
 	"""
 	props = props_
-	props.transaction_interface = Global.TRANSACTION_INTERFACE
+	fight_club = Global.FIGHT_CLUB
 
 	.init(props)
 
@@ -19,5 +21,5 @@ func input(event):
 	:return: null
 	"""
 	if event.is_action_released('cursor_select'):
-		props.transaction_interface.add_transaction(props.transaction)
-		props.transaction_interface.add_source(props.source)
+		fight_club.transaction_interface.add_transaction(props.transaction)
+		fight_club.transaction_interface.add_source(props.source)

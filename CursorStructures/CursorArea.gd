@@ -5,7 +5,9 @@ class_name CursorArea
 same as cursor grid, but you need to provice your own combobulate function,
 """
 
-var cursor_position = 0
+var cursor_position
+var cells
+
 
 func init(props_):
 	"""
@@ -19,11 +21,16 @@ func init(props_):
 	"""
 	props = props_
 
+	if props.has('cells'):
+		cells = props.cells
 	# if reverse is not specified use default false
 	if !props.has('reverse'):
-		props['reverse'] = false
+		props.reverse = false
 	if !props.has('cursor_position'):
-		props['cursor_position'] = 0
+		props.cursor_position = 0
+
+	cursor_position = props.cursor_position
+	cells = props.cells
 
 	combobulate()
 
@@ -41,17 +48,17 @@ func combobulate():
 	:return: null
 	"""
 	for i in range(props.cells.size()):
-		add_cell(props.cells[i], i)
+		add_cell(cells[i], i)
 
 func input(event):
 	if event.is_action_released('cursor_next'):
-		props.cells[cursor_position].deselect()
-		cursor_position = (cursor_position + 1) % props.cells.size()
-		props.cells[cursor_position].select()
+		cells[cursor_position].deselect()
+		cursor_position = (cursor_position + 1) % cells.size()
+		cells[cursor_position].select()
 	elif event.is_action_released('cursor_previous'):
-		props.cells[cursor_position].deselect()
-		cursor_position = (cursor_position - 1) % props.cells.size()
-		props.cells[cursor_position].select()
+		cells[cursor_position].deselect()
+		cursor_position = (cursor_position - 1) % cells.size()
+		cells[cursor_position].select()
 
 func on_focus():
 	props['cells'][cursor_position].select()

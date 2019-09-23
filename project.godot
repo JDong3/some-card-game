@@ -74,6 +74,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CardsAndCardStore/Deck.gd"
 }, {
+"base": "Card",
+"class": "DogeCard",
+"language": "GDScript",
+"path": "res://CardsAndCardStore/Cards/DogeCard.gd"
+}, {
+"base": "CombatEntity",
+"class": "DogeEntity",
+"language": "GDScript",
+"path": "res://CombatEntity/CombatEntityDerivatives/DogeEntity.gd"
+}, {
 "base": "Node",
 "class": "DrawPile",
 "language": "GDScript",
@@ -193,6 +203,8 @@ _global_script_class_icons={
 "CursorArea": "",
 "CursorGrid": "",
 "Deck": "",
+"DogeCard": "",
+"DogeEntity": "",
 "DrawPile": "",
 "DudeEntity": "",
 "EdudEntity": "",
@@ -219,7 +231,7 @@ _global_script_class_icons={
 [application]
 
 config/name="some-card-game"
-run/main_scene="res://scenes/StartMenu/StartMenu.tscn"
+run/main_scene="res://Rooms/TestRoom.tscn"
 
 [autoload]
 

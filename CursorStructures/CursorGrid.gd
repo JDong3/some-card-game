@@ -6,6 +6,7 @@ cells are used in cursor areas
 
 # state
 var cursor_position = 0
+var cells = []
 
 # get from the focus manager
 # var focus_interface
@@ -22,8 +23,9 @@ func init(props_):
 		focus_interface: a focus interface from the appropriate manager
 		size: Vector2, the pixel w by h of the cursor area
 	"""
-	for key in props_.keys():
-		props[key] = props_[key]
+	props = props_
+
+	cells = props.cells
 	combobulate()
 
 	return self
@@ -63,8 +65,8 @@ func move_cursor_to(index):
 	if index >= props.cells.size() or index < 0:
 		return
 
-	props.cells[cursor_position].deselect()
-	props.cells[index].select()
+	cells[cursor_position].deselect()
+	cells[index].select()
 	cursor_position = index
 
 func input(event):
@@ -78,4 +80,4 @@ func input(event):
 	elif event.is_action_released('cursor_right'):
 		move_cursor_to(cursor_position + 1)
 	else:
-		props.cells[cursor_position].input(event)
+		cells[cursor_position].input(event)

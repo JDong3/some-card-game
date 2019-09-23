@@ -1,10 +1,12 @@
 extends CursorArea
 class_name FriendlyArea
 
+var fight_club
+
 func _init():
-	props.cells = [DudeEntity.new({})]
+	props.cells = [DudeEntity.new(), DogeEntity.new()]
 	props.focus_manager = Global.GAME_FOCUS_MANAGER
-	props.fight_club = Global.FIGHT_CLUB
+	fight_club = Global.FIGHT_CLUB
 	.init(props)
 
 func add_cell(cell, n):
@@ -24,9 +26,9 @@ func input(event):
 	.input(event)
 
 	if event.is_action_released('combat_swap'):
-		props.fight_club.hostiles.obtain_sole_focus()
+		fight_club.hostiles.obtain_sole_focus()
 	if event.is_action_released('combat_back'):
-		props.fight_club.hand.obtain_sole_focus()
+		fight_club.hand.obtain_sole_focus()
 	if event.is_action_released('cursor_select'):
-		props.cells[cursor_position].input(event)
-		props.fight_club.hand.obtain_sole_focus()
+		cells[cursor_position].input(event)
+		fight_club.hand.obtain_sole_focus()
