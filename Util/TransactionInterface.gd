@@ -4,13 +4,15 @@ class_name TransactionInterface
 var source # combat entity
 var transaction # transaction dictionary
 var target # combat entity
+var fight_club = Global.FIGHT_CLUB
 
 func _init():
 	return
 
 func try_process():
 	if source != null and transaction != null and target != null:
-		source.send_transaction(transaction, target)
+		source.send_transaction(transaction.props.transaction, target)
+		fight_club.hand.remove_card(transaction)
 		clear()
 
 func add_source(source_):
@@ -18,6 +20,7 @@ func add_source(source_):
 	try_process()
 
 func add_transaction(transaction_):
+	# actually adds the card
 	transaction = transaction_
 	try_process()
 

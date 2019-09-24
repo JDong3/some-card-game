@@ -24,6 +24,13 @@ func add_card(card):
 	cells.push_back(card)
 	add_cell(card, cells.size())
 
+func remove_card(card):
+	for cell in cells:
+		remove_child(cell)
+
+	cells.erase(card)
+	combobulate()
+
 func draw(n=1):
 	"""
 	draws from fight_club.draw_pile
@@ -32,7 +39,7 @@ func draw(n=1):
 		var card = fight_club.draw_pile.give()
 		card = card.playable_card(fight_club.friendlies.cells[0])
 		cells.push_back(card)
-		add_cell(card, cells.size())
+		add_cell(card, cells.size() - 1)
 
 
 func input(event):

@@ -28,7 +28,7 @@ func combobulate():
 
 	fight_club.hand = Hand.new()
 	add_child(fight_club.hand)
-	fight_club.hand.position = Vector2(75, 270)
+	fight_club.hand.position = Vector2(123, 270)
 
 	fight_club.draw_pile = DrawPile.new()
 	add_child(fight_club.draw_pile)
@@ -55,7 +55,7 @@ func cont():
 	passes turn to the next entity
 	"""
 	fight_order()[ent_index].act()
-	ent_index = ent_index + 1
+	ent_index = (ent_index + 1) % fight_order().size()
 
 func start():
 	combobulate()

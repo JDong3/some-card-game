@@ -61,7 +61,8 @@ func input(event):
 		cells[cursor_position].select()
 
 func on_focus():
-	props['cells'][cursor_position].select()
+	if cells.size() > 0:
+		props.cells[cursor_position].select()
 
 func on_defocus():
-	props['cells'][cursor_position].deselect()
+	props.cells[cursor_position].deselect()
