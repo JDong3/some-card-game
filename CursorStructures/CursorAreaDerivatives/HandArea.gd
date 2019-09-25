@@ -1,10 +1,11 @@
-extends CursorArea # note: change to curtor area later
+extends CursorArea
 class_name Hand
 
 var fight_club
 
 func _init():
 	fight_club = Global.FIGHT_CLUB
+
 	props.cells = []
 	props.focus_manager = Global.GAME_FOCUS_MANAGER
 
@@ -37,17 +38,19 @@ func draw(n=1):
 	"""
 	for i in range(n):
 		var card = fight_club.draw_pile.give()
-		card = card.playable_card(fight_club.friendlies.cells[0])
+
+		if card is Card:
+			card = card.playable_card(fight_club.friendlies.cells[0])
 		cells.push_back(card)
 		add_cell(card, cells.size() - 1)
 
 
 func input(event):
-
-	.input(event)
-
-	if event.is_action_released('cursor_select'):
+	# if hand is empty don't bother with handling card input
+	if event.is_action_released('cursor_select') and cells.size() > 0:
 		cells[cursor_position].input(event)
 		fight_club.hostiles.obtain_sole_focus()
 	if event.is_action_released('combat_end_turn'):
 		fight_club.fight_orchestrator.cont()
+
+	.input(event)

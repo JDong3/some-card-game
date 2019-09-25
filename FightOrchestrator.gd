@@ -34,6 +34,9 @@ func combobulate():
 	fight_club.draw_pile = DrawPile.new()
 	add_child(fight_club.draw_pile)
 
+	fight_club.discard_pile = DiscardPile.new()
+	add_child(fight_club.discard_pile)
+
 	fight_club.transaction_interface = TransactionInterface.new()
 
 func fight_order():

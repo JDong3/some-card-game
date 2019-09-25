@@ -7,6 +7,7 @@ the FightClub
 """
 
 var deck
+var discard_pile
 var draw_pile
 var fight_orchestrator
 var friendlies

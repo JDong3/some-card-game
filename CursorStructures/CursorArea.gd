@@ -51,6 +51,15 @@ func combobulate():
 		add_cell(cells[i], i)
 
 func input(event):
+	"""
+	handles cursor_next and cursor_previous inputs
+	:param event: InputEvent
+	:return: null
+	"""
+	# if there are no cells in the area ignore cursor_next and prev inputs
+	if cells.size() == 0:
+		return
+
 	if event.is_action_released('cursor_next'):
 		cells[cursor_position].deselect()
 		cursor_position = (cursor_position + 1) % cells.size()

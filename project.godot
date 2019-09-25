@@ -74,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CardsAndCardStore/Deck.gd"
 }, {
+"base": "Node2D",
+"class": "DiscardPile",
+"language": "GDScript",
+"path": "res://CardsAndCardStore/DiscardPile.gd"
+}, {
 "base": "Card",
 "class": "DogeCard",
 "language": "GDScript",
@@ -84,7 +89,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CombatEntity/CombatEntityDerivatives/DogeEntity.gd"
 }, {
-"base": "Node",
+"base": "Node2D",
 "class": "DrawPile",
 "language": "GDScript",
 "path": "res://CardsAndCardStore/DrawPile.gd"
@@ -213,6 +218,7 @@ _global_script_class_icons={
 "CursorArea": "",
 "CursorGrid": "",
 "Deck": "",
+"DiscardPile": "",
 "DogeCard": "",
 "DogeEntity": "",
 "DrawPile": "",
