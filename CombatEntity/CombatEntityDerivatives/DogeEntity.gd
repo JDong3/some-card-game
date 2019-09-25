@@ -9,3 +9,4 @@ func _init():
 
 func act():
 	fight_club.hand.add_card(DogeCard.new().playable_card(self))
+	fight_club.fight_orchestrator.cont()

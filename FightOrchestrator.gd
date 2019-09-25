@@ -4,7 +4,7 @@ class_name FightOrchestrator
 var props = {}
 
 var fight_club
-var ent_index = 0
+var ent_index
 
 func _init(props_):
 	"""
@@ -13,6 +13,7 @@ func _init(props_):
 	"""
 	props = props_
 	fight_club = Global.FIGHT_CLUB
+	ent_index = -1
 
 func combobulate():
 	fight_club.fight_orchestrator = self
@@ -36,7 +37,7 @@ func combobulate():
 	fight_club.transaction_interface = TransactionInterface.new()
 
 func fight_order():
-	return fight_club.friendlies.props.cells + fight_club.hostiles.props.cells
+	return fight_club.friendlies.cells + fight_club.hostiles.cells
 
 func run_preround():
 	var ents = fight_order()
@@ -54,8 +55,11 @@ func cont():
 	"""
 	passes turn to the next entity
 	"""
-	fight_order()[ent_index].act()
+	var ents = fight_order()
 	ent_index = (ent_index + 1) % fight_order().size()
+	ents[ent_index].act()
+
+
 
 func start():
 	combobulate()

@@ -22,7 +22,7 @@ func add_cell(cell, n):
 
 func add_card(card):
 	cells.push_back(card)
-	add_cell(card, cells.size())
+	add_cell(card, cells.size() - 1)
 
 func remove_card(card):
 	for cell in cells:
