@@ -17,7 +17,14 @@ func add_card(card):
 	cards.push_back(card)
 	label.text = "discard pile: %s" % cards.size()
 
+func is_empty():
+	"""
+	tells you whether the discard pile is empty
+	:return: bool
+	"""
+	return cards.size() == 0
 
 func give():
-	cards.pop_front()
+	var res = cards.pop_front()
 	label.text = "discard pile: %s" % cards.size()
+	return res

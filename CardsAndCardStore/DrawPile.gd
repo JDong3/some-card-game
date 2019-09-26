@@ -23,17 +23,26 @@ func load_from_deck():
 	used at start of fight to load all cards from the deck into the DrawPile
 	"""
 	cards = fight_club.deck.cards
-	text.text = 'draw pile: %s' % cards.size()
+	update()
 	shuffle()
 
 func load_from_discard():
-	for i in range(fight_club.discard_pile.cards.size()):
+	"""
+	used at start of battle, copies the cards from deck into DrawPile and
+	shuffles the DrawPile
+	"""
+	var pile_size = fight_club.discard_pile.cards.size()
+	for i in range(pile_size):
 		var card = fight_club.discard_pile.give()
-	text.text = 'draw pile: %s' % cards.size()
+		add_card(card)
+	update()
 
 func add_card(card):
+	"""
+	adds a card to the hand
+	"""
 	cards.push_back(card)
-	text.text = 'draw pile: %s' % cards.size()
+	update()
 
 func shuffle():
 	"""
@@ -41,12 +50,33 @@ func shuffle():
 	"""
 	cards.shuffle()
 
+func is_empty():
+	"""
+	tells you whether the DrawPile is empty
+	:return: bool
+	"""
+	return cards.size() == 0
+
 func give():
 	"""
+	removes a card from the draw pile and sends it in as the return value
+	:return: Card or null, null if DrawPile and DiscardPile are both empty
 	"""
-	if cards.size() == 0:
+	# if there are no cards to give, load more cards from the draw pile
+	if is_empty():
 		load_from_discard()
 
+	# if there are no cards to give, and the discard pile is empty just return
+	if is_empty() and fight_club.discard_pile.is_empty():
+		return
+
+	# return the top card of the pile
 	var res = cards.pop_front()
-	text.text = 'draw pile: %s' % cards.size()
+	update()
 	return res
+
+func update():
+	"""
+	updates the text, should be called when cards is changed
+	"""
+	text.text = 'draw pile: %s' % cards.size()

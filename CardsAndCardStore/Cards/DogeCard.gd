@@ -7,3 +7,4 @@ func _init():
 	props.transaction = {
 		'damage': 12
 	}
+	.init(props)

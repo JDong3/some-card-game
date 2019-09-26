@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/CharacterSelect/BardCell.gd"
 }, {
-"base": "Node2D",
+"base": "Cell",
 "class": "Card",
 "language": "GDScript",
 "path": "res://CardsAndCardStore/Card.gd"
@@ -160,11 +160,6 @@ _global_script_classes=[ {
 "path": "res://Sprite/PathSprite.gd"
 }, {
 "base": "Cell",
-"class": "PlayableCard",
-"language": "GDScript",
-"path": "res://CardsAndCardStore/PlayableCard.gd"
-}, {
-"base": "Cell",
 "class": "QuitCell",
 "language": "GDScript",
 "path": "res://scenes/StartMenu/Components/QuitCell.gd"
@@ -235,7 +230,6 @@ _global_script_class_icons={
 "HpBar": "",
 "ItemDropdown": "",
 "PathSprite": "",
-"PlayableCard": "",
 "QuitCell": "",
 "Selectable": "",
 "SettingsCell": "",

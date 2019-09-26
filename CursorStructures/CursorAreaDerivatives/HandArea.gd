@@ -26,24 +26,38 @@ func add_card(card):
 	add_cell(card, cells.size() - 1)
 
 func remove_card(card):
-	for cell in cells:
-		remove_child(cell)
-
 	cells.erase(card)
+	for child in get_children():
+		remove_child(child)
 	combobulate()
 
 func draw(n=1):
 	"""
-	draws from fight_club.draw_pile
+	draws from the DrawPile in the fight_club
 	"""
 	for i in range(n):
 		var card = fight_club.draw_pile.give()
 
-		if card is Card:
-			card = card.playable_card(fight_club.friendlies.cells[0])
-		cells.push_back(card)
-		add_cell(card, cells.size() - 1)
+		if card == null:
+			break
 
+		card.props.source = fight_club.friendlies.cells[0]
+		add_card(card)
+
+func on_focus():
+	"""
+	if you use the last card in your hand, the Hand will cause a crash when
+	it is refocused, since the card is removed but the cursor_position is still
+	on the end of the Hand
+	"""
+	# if cursor goes out of bounds on the top end bring it back in
+	if cursor_position > cells.size() - 1:
+		cursor_position = cells.size() - 1
+
+		if cursor_position == -1:
+			cursor_position = 0
+		print(cursor_position)
+	.on_focus()
 
 func input(event):
 	# if hand is empty don't bother with handling card input

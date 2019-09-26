@@ -8,5 +8,8 @@ func _init():
 	.init(props)
 
 func act():
-	fight_club.hand.add_card(DogeCard.new().playable_card(self))
+	var card = DogeCard.new()
+	card.props.source = self
+
+	fight_club.hand.add_card(card)
 	fight_club.fight_orchestrator.cont()
