@@ -26,7 +26,7 @@ func init(props_):
 	props = props_
 
 	cells = props.cells
-	combobulate()
+	render()
 
 	return self
 
@@ -37,7 +37,7 @@ func focus():
 	obtain_sole_focus()
 	props.cells[cursor_position].select()
 
-func combobulate():
+func render():
 	"""
 	puts together the stuff
 	"""

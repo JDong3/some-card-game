@@ -9,13 +9,15 @@ func _init():
 	fight_club = Global.FIGHT_CLUB
 	.init(props)
 
-func add_cell(cell, n):
+func attach_cell(cell):
 	"""
 	adds a cell at position n in the CursorArea
 	:param cell: Cell
 	:param n: int
 	:return: null
 	"""
+	var n = cells.find(cell)
+
 	var pos_x = 0 - (50 * n)
 	var pos_y = 0
 	self.add_child(cell)

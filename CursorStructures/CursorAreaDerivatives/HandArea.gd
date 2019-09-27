@@ -2,6 +2,7 @@ extends CursorArea
 class_name Hand
 
 var fight_club
+var hand_size = 8
 
 func _init():
 	fight_club = Global.FIGHT_CLUB
@@ -11,25 +12,27 @@ func _init():
 
 	.init(props)
 
-func add_cell(cell, n):
+func attach_cell(cell):
 	"""
+	attaches a cell that is found in state.cells
 	:param cell: the cell that you want to add to the CursorArea
-	:param n: the position you want to add the cell to
 	"""
+	var n = cells.find(cell)
+
 	var pos_x = 0 + (48 * n)
 	var pos_y = 0
 	add_child(cell)
 	cell.set_position(Vector2(pos_x, pos_y))
 
-func add_card(card):
+func add_card(card, render=true):
 	cells.push_back(card)
-	add_cell(card, cells.size() - 1)
+
+	if render:
+		render()
 
 func remove_card(card):
 	cells.erase(card)
-	for child in get_children():
-		remove_child(child)
-	combobulate()
+	render()
 
 func draw(n=1):
 	"""
@@ -38,11 +41,17 @@ func draw(n=1):
 	for i in range(n):
 		var card = fight_club.draw_pile.give()
 
+		# if the draw pile starts to give you nothing stop drawing
 		if card == null:
 			break
 
 		card.props.source = fight_club.friendlies.cells[0]
-		add_card(card)
+
+		# if the hand is full discard the card
+		if cells.size() >= hand_size:
+			fight_club.discard_pile.add_card(card)
+		else:
+			add_card(card)
 
 func on_focus():
 	"""

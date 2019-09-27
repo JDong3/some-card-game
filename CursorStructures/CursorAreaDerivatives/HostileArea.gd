@@ -11,16 +11,23 @@ func _init():
 
 	.init(props)
 
-func add_cell(cell, n):
+func attach_cell(cell):
 	"""
 	:param cell: Cell
 	:param n: int
 	"""
+	var n = cells.find(cell)
+
 	var pos_x = 0 + (50 * n)
 	var pos_y = 0
-
 	add_child(cell)
 	cell.set_position(Vector2(pos_x, pos_y))
+
+func add_card(card):
+	"""
+	adds a card to cells
+	"""
+	cells.push_back(card)
 
 func input(event):
 	.input(event)

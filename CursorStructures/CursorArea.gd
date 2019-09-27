@@ -2,7 +2,7 @@ extends Focusable
 class_name CursorArea
 
 """
-same as cursor grid, but you need to provice your own combobulate function,
+same as cursor grid, but you need to provice your own render function,
 """
 
 var cursor_position
@@ -32,23 +32,28 @@ func init(props_):
 	cursor_position = props.cursor_position
 	cells = props.cells
 
-	combobulate()
+	render()
 
 	return self
 
-func add_cell(cell, n):
+func attach_cell(cell):
 	"""
-	it is standard to put the first cell at 0, 0
+	it is standard to put the first cell at 0, 0 as child
 	"""
 	pass
 
-func combobulate():
+func render():
 	"""
 	takes all cells in props.cells and combobulates them onto the object
 	:return: null
 	"""
-	for i in range(props.cells.size()):
-		add_cell(cells[i], i)
+	for child in get_children():
+		remove_child(child)
+
+	var i = 0
+	for cell in cells:
+		attach_cell(cell)
+		i += 1
 
 func input(event):
 	"""
@@ -69,9 +74,9 @@ func input(event):
 		cursor_position = (cursor_position - 1) % cells.size()
 		cells[cursor_position].select()
 
+func on_defocus():
+	props.cells[cursor_position].deselect()
+
 func on_focus():
 	if cells.size() > 0:
 		props.cells[cursor_position].select()
-
-func on_defocus():
-	props.cells[cursor_position].deselect()

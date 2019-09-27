@@ -15,7 +15,7 @@ func _init(props_):
 	fight_club = Global.FIGHT_CLUB
 	ent_index = -1
 
-func combobulate():
+func render():
 	fight_club.fight_orchestrator = self
 
 	# add friendlies to self
@@ -29,7 +29,7 @@ func combobulate():
 
 	fight_club.hand = Hand.new()
 	add_child(fight_club.hand)
-	fight_club.hand.position = Vector2(123, 270)
+	fight_club.hand.position = Vector2(70, 270)
 
 	fight_club.draw_pile = DrawPile.new()
 	add_child(fight_club.draw_pile)
@@ -65,6 +65,6 @@ func cont():
 
 
 func start():
-	combobulate()
+	render()
 	fight_club.draw_pile.load_from_deck()
 	cont()
