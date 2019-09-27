@@ -59,25 +59,34 @@ func process_transaction(transaction):
 	processes a transaction sent by another CombatInterface
 	processes damage first, then effects
 	:param transaction: Dictionary, a Dictionary describing the transaction
-	transaction:
-		poison?:
-		weaken?:
+	transaction: see card defn
 	"""
+	# process primary effects, taking into account the modifiers
 	if transaction.has('damage'):
-		process_damage(transaction['damage'])
+		process_damage(transaction.damage)
+	if transaction.has('heal'):
+		process_heal(transaction.heal)
+	if transaction.has('block'):
+		process_block(transaction.block)
+
 	#if transaction.has('poison'):
 	#	poison += transaction['poison']
 	#pass
 
-func process_damage(damage):
+func process_damage(amount):
 	"""
 	reponsible for making sure that CombatEntity takes the correct amount of
 	damage
 	:param damage: int, how much damage
 	"""
-	props['hp_bar'].change_hp(-damage)
+	props['hp_bar'].change_hp(-amount)
 
-func process_dot():
+func process_heal(amount):
+	"""
+	"""
+	pass
+
+func process_block(amount):
 	pass
 
 func prepare():

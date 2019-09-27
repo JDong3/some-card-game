@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Card",
 "class": "AttackCard",
 "language": "GDScript",
-"path": "res://CardsAndCardStore/Cards/AttackCard.gd"
+"path": "res://Card/Cards/AttackCard.gd"
 }, {
 "base": "Cell",
 "class": "BardCell",
@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Cell",
 "class": "Card",
 "language": "GDScript",
-"path": "res://CardsAndCardStore/Card.gd"
+"path": "res://Card/Card.gd"
 }, {
 "base": "Sprite",
 "class": "CardSprite",
@@ -72,17 +72,17 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Deck",
 "language": "GDScript",
-"path": "res://CardsAndCardStore/Deck.gd"
+"path": "res://Card/Deck.gd"
 }, {
 "base": "Node2D",
 "class": "DiscardPile",
 "language": "GDScript",
-"path": "res://CardsAndCardStore/DiscardPile.gd"
+"path": "res://Card/DiscardPile.gd"
 }, {
 "base": "Card",
 "class": "DogeCard",
 "language": "GDScript",
-"path": "res://CardsAndCardStore/Cards/DogeCard.gd"
+"path": "res://Card/Cards/DogeCard.gd"
 }, {
 "base": "CombatEntity",
 "class": "DogeEntity",
@@ -92,7 +92,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "DrawPile",
 "language": "GDScript",
-"path": "res://CardsAndCardStore/DrawPile.gd"
+"path": "res://Card/DrawPile.gd"
 }, {
 "base": "CombatEntity",
 "class": "DudeEntity",

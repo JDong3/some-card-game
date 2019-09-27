@@ -25,7 +25,10 @@ func attach_cell(cell):
 	cell.set_position(Vector2(pos_x, pos_y))
 
 func add_card(card, render=true):
-	cells.push_back(card)
+	if cells.size() < hand_size:
+		cells.push_back(card)
+	else:
+		fight_club.discard_pile.add_card(card)
 
 	if render:
 		render()
@@ -46,12 +49,7 @@ func draw(n=1):
 			break
 
 		card.props.source = fight_club.friendlies.cells[0]
-
-		# if the hand is full discard the card
-		if cells.size() >= hand_size:
-			fight_club.discard_pile.add_card(card)
-		else:
-			add_card(card)
+		add_card(card)
 
 func on_focus():
 	"""
