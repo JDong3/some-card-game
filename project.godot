@@ -174,11 +174,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/StartMenu/Components/SettingsCell.gd"
 }, {
-"base": "Node",
-"class": "Sig",
-"language": "GDScript",
-"path": "res://Util/Sig.gd"
-}, {
 "base": "Cell",
 "class": "StartCell",
 "language": "GDScript",
@@ -192,7 +187,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "TransactionInterface",
 "language": "GDScript",
-"path": "res://Util/TransactionInterface.gd"
+"path": "res://CombatEntity/TransactionInterface.gd"
 }, {
 "base": "Node",
 "class": "UidGenerator",
@@ -233,7 +228,6 @@ _global_script_class_icons={
 "QuitCell": "",
 "Selectable": "",
 "SettingsCell": "",
-"Sig": "",
 "StartCell": "",
 "StartMenuCursorGrid": "",
 "TransactionInterface": "",

@@ -9,5 +9,5 @@ func _init():
 	.init(props)
 
 func act():
-	send_transaction({'damage': 4}, fight_club.friendlies.cells[0])
+	fight_club.friendlies.cells[0].process_transaction({'damage': 4}, self)
 	fight_club.fight_orchestrator.cont()

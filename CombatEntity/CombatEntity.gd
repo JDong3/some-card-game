@@ -42,19 +42,17 @@ func init(props_):
 	selected_sprite = Sprite.new()
 	selected_sprite.texture = load('res://assets/sprites/entity-selected.png')
 
-func send_transaction(transaction, target):
-	"""
-	sends a transaction to a target CombatInterface
-	:param transaction: Dictionary, a Dictionary describing the transaction
-	transaction:
-		poison?:
-		weaken?:
-	:param target: CombatInterface, the CombatInterface of the target you are
-		sending the transaction to
-	"""
-	target.process_transaction(transaction)
+func send_transaction(transaction, target=null):
+	# handle case for targeted card
+	if target != null:
+		target.process_transaction(transaction, self)
+	else:
+		pass
 
-func process_transaction(transaction):
+	# handle case for non targeted card
+	pass
+
+func process_transaction(transaction, source):
 	"""
 	processes a transaction sent by another CombatInterface
 	processes damage first, then effects
@@ -77,8 +75,9 @@ func process_damage(amount):
 	"""
 	reponsible for making sure that CombatEntity takes the correct amount of
 	damage
-	:param damage: int, how much damage
+	:param amount: int, how much damage
 	"""
+	# looks at self vulnerable, adversary weakness
 	props['hp_bar'].change_hp(-amount)
 
 func process_heal(amount):

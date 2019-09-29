@@ -11,7 +11,7 @@ func _init():
 
 func try_process():
 	if source != null and card != null and target != null:
-		source.send_transaction(card.props.transaction, target)
+		target.process_transaction(card.props.transaction, source)
 		fight_club.hand.remove_card(card)
 		fight_club.discard_pile.add_card(card)
 		clear()
