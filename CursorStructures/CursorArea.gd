@@ -8,6 +8,11 @@ same as cursor grid, but you need to provice your own render function,
 var cursor_position
 var cells
 
+# targeting modes
+var single_target = true # default mode
+var multi_target = false
+var group_target = false
+
 
 func init(props_):
 	"""
@@ -80,3 +85,22 @@ func on_defocus():
 func on_focus():
 	if cells.size() > 0:
 		props.cells[cursor_position].select()
+
+
+# targeting module
+func clear_targeting_mode():
+	single_target = false
+	multi_target = false
+	group_target = false
+
+func set_single_target_mode():
+	clear_targeting_mode()
+	single_target = true
+
+func set_multi_target_mode():
+	clear_targeting_mode()
+	multi_target = true
+
+func set_group_target_mode():
+	clear_targeting_mode()
+	group_target = true
