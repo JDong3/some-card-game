@@ -12,6 +12,11 @@ func init(props_):
 		text: String
 		source+: CombatEntity
 
+		metadata: Dict
+			single_target: bool
+			multi_target: int=0, if greater then 0 this is treated as true
+			group_target: bool
+
 		transaction:
 			# primary effects
 			damage: int, how much damage the card does
@@ -24,10 +29,8 @@ func init(props_):
 			vulnerability: int, halved then floored
 
 			# modifiers
-			target_random: bool, chooses from all targets randomly
-			target_random_hostile: bool, chooses from all hostiles randomly
-			target_random_friendly: bool, chooses from all friendlies randomly
-			times: int=0, how many times to do the attack
+			times: int=1, how many times to do the attack
+			aoe: bool=false
 	"""
 	props = props_
 	transaction = props.transaction

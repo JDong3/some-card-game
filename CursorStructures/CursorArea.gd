@@ -69,15 +69,27 @@ func input(event):
 	# if there are no cells in the area ignore cursor_next and prev inputs
 	if cells.size() == 0:
 		return
+	if single_target:
+		single_target_input(event)
 
+	if multi_target:
+		multi_target_input(event)
+
+func single_target_input(event):
 	if event.is_action_released('cursor_next'):
-		cells[cursor_position].deselect()
-		cursor_position = (cursor_position + 1) % cells.size()
-		cells[cursor_position].select()
+			cells[cursor_position].deselect()
+			cursor_position = (cursor_position + 1) % cells.size()
+			cells[cursor_position].select()
 	elif event.is_action_released('cursor_previous'):
-		cells[cursor_position].deselect()
-		cursor_position = (cursor_position - 1) % cells.size()
-		cells[cursor_position].select()
+			cells[cursor_position].deselect()
+			cursor_position = (cursor_position - 1) % cells.size()
+			cells[cursor_position].select()
+
+func multi_target_input(event):
+	pass
+
+func group_target_input(event):
+	pass
 
 func on_defocus():
 	props.cells[cursor_position].deselect()
@@ -88,6 +100,7 @@ func on_focus():
 
 
 # targeting module
+
 func clear_targeting_mode():
 	single_target = false
 	multi_target = false

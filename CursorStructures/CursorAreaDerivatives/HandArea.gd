@@ -66,10 +66,22 @@ func on_focus():
 		print(cursor_position)
 	.on_focus()
 
+func handle_cursor_select(event):
+	"""
+	handles cursor select event
+	"""
+	# if the card cannot be played, send error
+
+	# send the focus to the correct area (see transaction)
+
 func input(event):
-	# if hand is empty don't bother with handling card input
-	if event.is_action_released('cursor_select') and cells.size() > 0:
+	# if hand is empty don't bother handling input
+	if cells.size() == 0:
+		return
+
+	if event.is_action_released('cursor_select'):
 		cells[cursor_position].input(event)
+
 		fight_club.hostiles.obtain_sole_focus()
 	if event.is_action_released('combat_end_turn'):
 		fight_club.fight_orchestrator.cont()

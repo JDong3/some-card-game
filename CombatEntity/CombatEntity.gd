@@ -42,15 +42,9 @@ func init(props_):
 	selected_sprite = Sprite.new()
 	selected_sprite.texture = load('res://assets/sprites/entity-selected.png')
 
-func send_transaction(transaction, target=null):
+func send_transaction(transaction, target):
 	# handle case for targeted card
-	if target != null:
 		target.process_transaction(transaction, self)
-	else:
-		pass
-
-	# handle case for non targeted card
-	pass
 
 func process_transaction(transaction, source):
 	"""
