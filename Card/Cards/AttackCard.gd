@@ -7,5 +7,8 @@ func _init():
 	props.transaction = {
 		'damage': 4
 	}
+	props.metadata = {
+		'single_target': true
+	}
 
 	.init(props)
