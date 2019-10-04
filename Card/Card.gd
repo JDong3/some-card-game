@@ -17,6 +17,8 @@ func init(props_):
 			multi_target: int=0, if greater then 0 this is treated as true
 			group_target: bool
 
+			target_hostile: bool=True
+
 		transaction:
 			# primary effects
 			damage: int, how much damage the card does

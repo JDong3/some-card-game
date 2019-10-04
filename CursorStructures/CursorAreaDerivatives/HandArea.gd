@@ -74,15 +74,33 @@ func handle_cursor_select(event):
 
 	# send the focus to the correct area (see transaction)
 
+func group_target_event_input():
+	pass
+
 func input(event):
+	var card = cells[cursor_position]
+
+	var ent_area
+
+	if card.metadata.target_hostile:
+		ent_area = fight_club.hostiles
+	else:
+		ent_area = fight_club.friendlies
+
 	# if hand is empty don't bother handling input
 	if cells.size() == 0:
 		return
 
 	if event.is_action_released('cursor_select'):
+		if card.metadata.target_hostile:
+			fight_club.hostiles.obtain_sole_focus()
+
+			if card.metadata.single_target:
+				fight_club.a
+		else:
+			fight_club.friendlies.obtain_sole_focus()
 		cells[cursor_position].input(event)
 
-		fight_club.hostiles.obtain_sole_focus()
 	if event.is_action_released('combat_end_turn'):
 		fight_club.fight_orchestrator.cont()
 
