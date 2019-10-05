@@ -1,13 +1,10 @@
-extends CursorArea
+extends EntArea
 class_name HostileArea
-
-var fight_club
 
 func _init():
 	props['id'] = 'hostile'
 	props['cells'] = [EdudEntity.new(), EdudEntity.new()]
 	props['focus_manager'] = Global.GAME_FOCUS_MANAGER
-	fight_club = Global.FIGHT_CLUB
 
 	.init(props)
 
@@ -34,9 +31,3 @@ func input(event):
 
 	if event.is_action_released('combat_swap'):
 		fight_club.friendlies.obtain_sole_focus()
-	if event.is_action_released('combat_back'):
-		fight_club.hand.obtain_sole_focus()
-	if event.is_action_released('cursor_select'):
-		cells[cursor_position].input(event)
-		fight_club.transaction_interface.try_process()
-		fight_club.hand.obtain_sole_focus()

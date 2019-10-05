@@ -78,30 +78,31 @@ func group_target_event_input():
 	pass
 
 func input(event):
-	var card = cells[cursor_position]
-
-	var ent_area
-
-	if card.metadata.target_hostile:
-		ent_area = fight_club.hostiles
-	else:
-		ent_area = fight_club.friendlies
+	if event.is_action_released('combat_end_turn'):
+		fight_club.fight_orchestrator.cont()
 
 	# if hand is empty don't bother handling input
 	if cells.size() == 0:
 		return
 
+	var card = cells[cursor_position]
+	var ent_area
+
+	# choose EntArea depending on whether the card prefers to target hostile
+	# or friendly
+	if card.props.metadata.target_hostile:
+		ent_area = fight_club.hostiles
+	else:
+		ent_area = fight_club.friendlies
+
+	# handle cursor select
 	if event.is_action_released('cursor_select'):
-		if card.metadata.target_hostile:
-			fight_club.hostiles.obtain_sole_focus()
-
-			if card.metadata.single_target:
-				fight_club.a
-		else:
-			fight_club.friendlies.obtain_sole_focus()
+		ent_area.obtain_sole_focus()
+		if card.props.metadata.single_target:
+			ent_area.set_single_target_mode()
+		if card.props.metadata.group_target:
+			ent_area.set_group_target_mode()
+		# pass input to cell to add itself to the transaction interface
 		cells[cursor_position].input(event)
-
-	if event.is_action_released('combat_end_turn'):
-		fight_club.fight_orchestrator.cont()
 
 	.input(event)

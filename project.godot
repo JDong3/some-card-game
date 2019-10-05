@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Card",
+"class": "AoeAttackCard",
+"language": "GDScript",
+"path": "res://Card/Cards/AttackAoeCard.gd"
+}, {
+"base": "Card",
 "class": "AttackCard",
 "language": "GDScript",
 "path": "res://Card/Cards/AttackCard.gd"
@@ -104,6 +109,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CombatEntity/CombatEntityDerivatives/EdudEntity.gd"
 }, {
+"base": "CursorArea",
+"class": "EntArea",
+"language": "GDScript",
+"path": "res://CursorStructures/CursorAreaDerivatives/EntArea.gd"
+}, {
 "base": "Node",
 "class": "FightClub",
 "language": "GDScript",
@@ -129,7 +139,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Focus/Focusable.gd"
 }, {
-"base": "CursorArea",
+"base": "EntArea",
 "class": "FriendlyArea",
 "language": "GDScript",
 "path": "res://CursorStructures/CursorAreaDerivatives/FriendlyArea.gd"
@@ -139,7 +149,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CursorStructures/CursorAreaDerivatives/HandArea.gd"
 }, {
-"base": "CursorArea",
+"base": "EntArea",
 "class": "HostileArea",
 "language": "GDScript",
 "path": "res://CursorStructures/CursorAreaDerivatives/HostileArea.gd"
@@ -195,6 +205,7 @@ _global_script_classes=[ {
 "path": "res://Util/UidGenerator.gd"
 } ]
 _global_script_class_icons={
+"AoeAttackCard": "",
 "AttackCard": "",
 "BardCell": "",
 "Card": "",
@@ -214,6 +225,7 @@ _global_script_class_icons={
 "DrawPile": "",
 "DudeEntity": "",
 "EdudEntity": "",
+"EntArea": "",
 "FightClub": "",
 "FightOrchestrator": "",
 "FightPublisher": "",

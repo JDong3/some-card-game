@@ -16,8 +16,8 @@ func _ready():
 
 	# in fight club, need a deck that is filled
 	var deck = Deck.new()
-	for i in range(10):
-		deck.add_card(AttackCard.new())
+	deck.add_card(AttackCard.new())
+	deck.add_card(AoeAttackCard.new())
 	Global.FIGHT_CLUB.deck = deck
 
 	combat_orchestrator.start()

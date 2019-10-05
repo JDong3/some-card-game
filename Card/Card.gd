@@ -13,9 +13,9 @@ func init(props_):
 		source+: CombatEntity
 
 		metadata: Dict
-			single_target: bool
+			single_target: bool=false
 			multi_target: int=0, if greater then 0 this is treated as true
-			group_target: bool
+			group_target: bool=false
 
 			target_hostile: bool=True
 
@@ -37,6 +37,20 @@ func init(props_):
 	props = props_
 	transaction = props.transaction
 	fight_club = Global.FIGHT_CLUB
+
+
+	# defaults for metadata
+	if !props.metadata.has('single_target'):
+		props.metadata.single_target = false
+	if !props.metadata.has('multi_target'):
+		props.metadata.multi_target = false
+	if !props.metadata.has('group_target'):
+		props.metadata.group_target = false
+	if !props.metadata.has('target_hostile'):
+		props.metadata.target_hostile = true
+
+	# defaults for transaction
+
 
 	.init(props)
 
