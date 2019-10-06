@@ -13,6 +13,8 @@ var single_target = true # default mode
 var multi_target = false
 var group_target = false
 
+var focused = false
+
 
 func init(props_):
 	"""
@@ -52,13 +54,20 @@ func render():
 	takes all cells in props.cells and combobulates them onto the object
 	:return: null
 	"""
+	# render cells
 	for child in get_children():
 		remove_child(child)
 
-	var i = 0
 	for cell in cells:
 		attach_cell(cell)
-		i += 1
+
+	# cursor selection
+	for cell in cells:
+		cell.deselect()
+
+	if cells.size() > 0 and focused:
+		cells[cursor_position].select()
+
 
 func input(event):
 	"""
@@ -77,13 +86,10 @@ func input(event):
 
 func single_target_input(event):
 	if event.is_action_released('cursor_next'):
-			cells[cursor_position].deselect()
 			cursor_position = (cursor_position + 1) % cells.size()
-			cells[cursor_position].select()
 	elif event.is_action_released('cursor_previous'):
-			cells[cursor_position].deselect()
 			cursor_position = (cursor_position - 1) % cells.size()
-			cells[cursor_position].select()
+	render()
 
 func multi_target_input(event):
 	pass
@@ -92,11 +98,12 @@ func group_target_input(event):
 	pass
 
 func on_defocus():
-	props.cells[cursor_position].deselect()
+	focused = false
+	render()
 
 func on_focus():
-	if cells.size() > 0:
-		props.cells[cursor_position].select()
+	focused = true
+	render()
 
 
 # targeting module
