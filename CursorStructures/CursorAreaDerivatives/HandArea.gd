@@ -66,12 +66,43 @@ func on_focus():
 		print(cursor_position)
 	.on_focus()
 
+func handle_cursor_select(event):
+	"""
+	handles cursor select event
+	"""
+	# if the card cannot be played, send error
+
+	# send the focus to the correct area (see transaction)
+
+func group_target_event_input():
+	pass
+
 func input(event):
-	# if hand is empty don't bother with handling card input
-	if event.is_action_released('cursor_select') and cells.size() > 0:
-		cells[cursor_position].input(event)
-		fight_club.hostiles.obtain_sole_focus()
 	if event.is_action_released('combat_end_turn'):
 		fight_club.fight_orchestrator.cont()
+
+	# if hand is empty don't bother handling input
+	if cells.size() == 0:
+		return
+
+	var card = cells[cursor_position]
+	var ent_area
+
+	# choose EntArea depending on whether the card prefers to target hostile
+	# or friendly
+	if card.props.metadata.target_hostile:
+		ent_area = fight_club.hostiles
+	else:
+		ent_area = fight_club.friendlies
+
+	# handle cursor select
+	if event.is_action_released('cursor_select'):
+		ent_area.obtain_sole_focus()
+		if card.props.metadata.single_target:
+			ent_area.set_single_target_mode()
+		if card.props.metadata.group_target:
+			ent_area.set_group_target_mode()
+		# pass input to cell to add itself to the transaction interface
+		cells[cursor_position].input(event)
 
 	.input(event)
