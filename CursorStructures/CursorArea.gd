@@ -39,8 +39,6 @@ func init(props_):
 
 	render()
 
-	return self
-
 func attach_cell(cell):
 	"""
 	it is standard to put the first cell at 0, 0 as child

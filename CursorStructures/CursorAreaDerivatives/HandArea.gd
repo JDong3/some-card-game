@@ -14,9 +14,10 @@ func _init():
 
 	.init(props)
 
+# alias to render_cells and chage functionality in the future
 func attach_cell(cell):
 	"""
-	attaches a cell that is found in state.cells
+	attaches a cell that is found in state.cells, used by render
 	:param cell: the cell that you want to add to the CursorArea
 	"""
 	var n = cells.find(cell)
@@ -65,7 +66,6 @@ func on_focus():
 
 		if cursor_position == -1:
 			cursor_position = 0
-		print(cursor_position)
 	.on_focus()
 
 func handle_cursor_select(event):
@@ -113,6 +113,7 @@ func input_swap():
 		alt.set_single_target_mode()
 	if card.props.metadata.group_target:
 		alt.set_group_target_mode()
+	swapped = !swapped
 
 func input_cursor_select(event):
 	# if hand is empty don't bother handling input

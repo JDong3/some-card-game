@@ -28,9 +28,9 @@ func has_focus(focusable):
 
 func remove_focus(focusable):
 	focused_on.erase(focusable)
+	focusable.on_defocus()
 
 func _input(event):
 	var copy = focused_on.duplicate()
 	for focusable in copy:
-		print(focused_on.size())
 		focusable.input(event)
