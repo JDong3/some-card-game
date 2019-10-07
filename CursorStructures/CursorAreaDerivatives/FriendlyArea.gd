@@ -19,10 +19,7 @@ func attach_cell(cell):
 	var pos_y = 0
 	self.add_child(cell)
 	cell.set_position(Vector2(pos_x, pos_y))
-	pass
 
 func input(event):
 	.input(event)
-	if event.is_action_released('combat_swap'):
-		fight_club.hostiles.obtain_sole_focus()
 

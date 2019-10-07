@@ -13,8 +13,6 @@ var single_target = true # default mode
 var multi_target = false
 var group_target = false
 
-var focused = false
-
 
 func init(props_):
 	"""
@@ -61,12 +59,17 @@ func render():
 	for cell in cells:
 		attach_cell(cell)
 
-	# cursor selection
+	# render cursor
 	for cell in cells:
 		cell.deselect()
 
-	if cells.size() > 0 and focused:
-		cells[cursor_position].select()
+	if single_target:
+		if cells.size() > 0 and focused:
+			cells[cursor_position].select()
+
+	if group_target and focused:
+		for cell in cells:
+			cell.select()
 
 
 func input(event):
@@ -116,6 +119,7 @@ func clear_targeting_mode():
 func set_single_target_mode():
 	clear_targeting_mode()
 	single_target = true
+	render()
 
 func set_multi_target_mode():
 	clear_targeting_mode()
@@ -124,3 +128,4 @@ func set_multi_target_mode():
 func set_group_target_mode():
 	clear_targeting_mode()
 	group_target = true
+	render()

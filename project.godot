@@ -122,7 +122,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "FightOrchestrator",
 "language": "GDScript",
-"path": "res://FightOrchestrator.gd"
+"path": "res://Fight/FightOrchestrator.gd"
 }, {
 "base": "Node",
 "class": "FightPublisher",

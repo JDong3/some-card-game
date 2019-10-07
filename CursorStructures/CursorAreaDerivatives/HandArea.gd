@@ -3,6 +3,8 @@ class_name Hand
 
 var fight_club
 var hand_size = 8
+var target_default = true
+var swapped = false
 
 func _init():
 	fight_club = Global.FIGHT_CLUB
@@ -79,8 +81,40 @@ func group_target_event_input():
 
 func input(event):
 	if event.is_action_released('combat_end_turn'):
-		fight_club.fight_orchestrator.cont()
+		input_end_turn()
+	if event.is_action_released('cursor_select'):
+		input_cursor_select(event)
+	if event.is_action_released('combat_swap'):
+		input_swap()
+	.input(event)
 
+func input_swap():
+	var current
+	var alt
+
+	var card = cells[cursor_position]
+
+	var card_default_attack = card.props.metadata.target_hostile
+	var is_hostile = card_default_attack and (target_default != swapped)
+
+	print('hostile: ', is_hostile)
+
+	if is_hostile:
+		current = fight_club.hostiles
+		alt = fight_club.friendlies
+	else:
+		current = fight_club.friendlies
+		alt = fight_club.hostiles
+
+	current.defocus()
+	alt.obtain_shared_focus()
+
+	if card.props.metadata.single_target:
+		alt.set_single_target_mode()
+	if card.props.metadata.group_target:
+		alt.set_group_target_mode()
+
+func input_cursor_select(event):
 	# if hand is empty don't bother handling input
 	if cells.size() == 0:
 		return
@@ -90,19 +124,19 @@ func input(event):
 
 	# choose EntArea depending on whether the card prefers to target hostile
 	# or friendly
-	if card.props.metadata.target_hostile:
+	if card.props.metadata.target_hostile and target_default:
 		ent_area = fight_club.hostiles
 	else:
 		ent_area = fight_club.friendlies
 
 	# handle cursor select
-	if event.is_action_released('cursor_select'):
-		ent_area.obtain_sole_focus()
-		if card.props.metadata.single_target:
-			ent_area.set_single_target_mode()
-		if card.props.metadata.group_target:
-			ent_area.set_group_target_mode()
-		# pass input to cell to add itself to the transaction interface
-		cells[cursor_position].input(event)
+	if card.props.metadata.single_target:
+		ent_area.set_single_target_mode()
+	elif card.props.metadata.group_target:
+		ent_area.set_group_target_mode()
+	# pass input to cell to add itself to the transaction interface
+	cells[cursor_position].input(event)
+	ent_area.obtain_shared_focus()
 
-	.input(event)
+func input_end_turn():
+	fight_club.fight_orchestrator.cont()

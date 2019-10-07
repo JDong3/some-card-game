@@ -6,6 +6,7 @@ Class that is appropriate for connecting to focus interface
 """
 
 var props = {}
+var focused = false
 
 func init(props_):
 	"""
@@ -45,6 +46,9 @@ func obtain_sole_focus():
 	:return: null
 	"""
 	props['focus_manager'].set_sole_focus(self)
+
+func defocus():
+	props.focus_manager.remove_focus(self)
 
 func has_focus():
 	"""

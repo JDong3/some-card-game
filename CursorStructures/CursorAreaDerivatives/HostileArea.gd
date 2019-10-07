@@ -20,14 +20,5 @@ func attach_cell(cell):
 	add_child(cell)
 	cell.set_position(Vector2(pos_x, pos_y))
 
-func add_card(card):
-	"""
-	adds a card to cells
-	"""
-	cells.push_back(card)
-
 func input(event):
 	.input(event)
-
-	if event.is_action_released('combat_swap'):
-		fight_club.friendlies.obtain_sole_focus()
