@@ -44,7 +44,7 @@ func init(props_):
 
 func send_transaction(transaction, target):
 	# handle case for targeted card
-		target.process_transaction(transaction, self)
+	target.process_transaction(transaction, self)
 
 func process_transaction(transaction, source):
 	"""
@@ -77,7 +77,7 @@ func process_damage(amount):
 func process_heal(amount):
 	"""
 	"""
-	pass
+	props.hp_bar.change_hp(amount)
 
 func process_block(amount):
 	pass

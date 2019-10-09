@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Card/Cards/AttackAoeCard.gd"
 }, {
 "base": "Card",
+"class": "AoeHealCard",
+"language": "GDScript",
+"path": "res://Card/Cards/AoeHealCard.gd"
+}, {
+"base": "Card",
 "class": "AttackCard",
 "language": "GDScript",
 "path": "res://Card/Cards/AttackCard.gd"
@@ -149,6 +154,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CursorStructures/CursorAreaDerivatives/HandArea.gd"
 }, {
+"base": "Card",
+"class": "HealCard",
+"language": "GDScript",
+"path": "res://Card/Cards/HealCard.gd"
+}, {
 "base": "EntArea",
 "class": "HostileArea",
 "language": "GDScript",
@@ -206,6 +216,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AoeAttackCard": "",
+"AoeHealCard": "",
 "AttackCard": "",
 "BardCell": "",
 "Card": "",
@@ -233,6 +244,7 @@ _global_script_class_icons={
 "Focusable": "",
 "FriendlyArea": "",
 "Hand": "",
+"HealCard": "",
 "HostileArea": "",
 "HpBar": "",
 "ItemDropdown": "",

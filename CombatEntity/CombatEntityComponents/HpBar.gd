@@ -19,15 +19,16 @@ func _init(max_hp_):
 	hp = max_hp
 
 	label = Label.new()
-	label.text = 'hp: %s/%s' % [max_hp, max_hp]
 	position = Vector2(-20, -25) # note: hard code?
 	add_child(label)
-
-	return self
+	render()
 
 func change_hp(n):
 	"""
 	:param n: int, changes the HP by n
 	"""
 	hp += n
+	render()
+
+func render():
 	label.text = 'hp: %s/%s' % [hp, max_hp]

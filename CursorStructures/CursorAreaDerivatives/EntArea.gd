@@ -28,4 +28,5 @@ func input(event):
 	if event.is_action_released('combat_back'):
 		fight_club.hand.obtain_sole_focus()
 
+
 	.input(event)

@@ -18,6 +18,9 @@ func _ready():
 	var deck = Deck.new()
 	deck.add_card(AttackCard.new())
 	deck.add_card(AoeAttackCard.new())
+	deck.add_card(HealCard.new())
+	deck.add_card(AoeHealCard.new())
+	deck.add_card(AttackCard.new())
 	Global.FIGHT_CLUB.deck = deck
 
 	combat_orchestrator.start()

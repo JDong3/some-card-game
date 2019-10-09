@@ -86,7 +86,8 @@ func input(event):
 		input_cursor_select(event)
 	if event.is_action_released('combat_swap'):
 		input_swap()
-	.input(event)
+	if !fight_club.hostiles.has_focus() and !fight_club.friendlies.has_focus():
+		.input(event)
 
 func input_swap():
 	var current
