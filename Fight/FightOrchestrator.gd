@@ -66,13 +66,15 @@ func cont():
 			all_fainted = false
 
 	if all_fainted:
-		return
+		cleanup()
 
 	var ents = fight_order()
 	ent_index = (ent_index + 1) % fight_order().size()
 	ents[ent_index].act()
 
-
+func cleanup():
+	for child in get_children():
+		remove_child(child)
 
 func start():
 	render()
