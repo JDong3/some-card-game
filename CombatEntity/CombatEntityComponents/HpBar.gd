@@ -28,6 +28,8 @@ func change_hp(n):
 	:param n: int, changes the HP by n
 	"""
 	hp += n
+	if hp > max_hp:
+		hp = max_hp
 	render()
 
 func render():

@@ -5,6 +5,7 @@ var props = {}
 
 var fight_club
 var ent_index
+var hostiles
 
 func _init(props_):
 	"""
@@ -12,6 +13,7 @@ func _init(props_):
 		hostiles: CursorArea
 	"""
 	props = props_
+	hostiles = props.hostiles
 	fight_club = Global.FIGHT_CLUB
 	ent_index = -1
 
@@ -58,6 +60,14 @@ func cont():
 	"""
 	passes turn to the next entity
 	"""
+	var all_fainted = true
+	for ent in hostiles.cells:
+		if !ent.is_faint:
+			all_fainted = false
+
+	if all_fainted:
+		return
+
 	var ents = fight_order()
 	ent_index = (ent_index + 1) % fight_order().size()
 	ents[ent_index].act()

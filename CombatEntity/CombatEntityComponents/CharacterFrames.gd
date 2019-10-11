@@ -52,6 +52,7 @@ func process_animation(dir_name):
 
 	# add the animation to SpriteFrames
 	add_animation(dir_name)
+	set_animation_speed(dir_name, 2)
 
 	dir.open(new_path)
 	dir.list_dir_begin(true, true)

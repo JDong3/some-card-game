@@ -60,6 +60,7 @@ func on_focus():
 	it is refocused, since the card is removed but the cursor_position is still
 	on the end of the Hand
 	"""
+	swapped = false
 	# if cursor goes out of bounds on the top end bring it back in
 	if cursor_position > cells.size() - 1:
 		cursor_position = cells.size() - 1

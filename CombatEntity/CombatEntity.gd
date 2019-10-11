@@ -6,6 +6,7 @@ parent class for friends and enemies
 """
 
 var fight_club = Global.FIGHT_CLUB
+var is_faint = false
 
 # var combat_manager
 # var uid
@@ -25,6 +26,8 @@ var fight_club = Global.FIGHT_CLUB
 # var frail
 
 var selected_sprite
+var character_sprite
+var hp_bar
 
 func init(props_):
 	"""
@@ -35,12 +38,19 @@ func init(props_):
 			CombatEntity
 	"""
 	props = props_
-	add_child(props['hp_bar'])
-	add_child(props['character_sprite'])
-	props['character_sprite'].play('idle')
+
+	hp_bar = props.hp_bar
+	character_sprite = props.character_sprite
+
+	add_child(hp_bar)
+	add_child(character_sprite)
+	character_sprite.play('idle')
 
 	selected_sprite = Sprite.new()
 	selected_sprite.texture = load('res://assets/sprites/entity-selected.png')
+
+
+	.init(props)
 
 func send_transaction(transaction, target):
 	# handle case for targeted card
@@ -53,6 +63,9 @@ func process_transaction(transaction, source):
 	:param transaction: Dictionary, a Dictionary describing the transaction
 	transaction: see card defn
 	"""
+	if is_faint:
+		return
+
 	# process primary effects, taking into account the modifiers
 	if transaction.has('damage'):
 		process_damage(transaction.damage)
@@ -72,11 +85,21 @@ func process_damage(amount):
 	:param amount: int, how much damage
 	"""
 	# looks at self vulnerable, adversary weakness
-	props['hp_bar'].change_hp(-amount)
+	if hp_bar.hp - amount < 0:
+		faintr()
+	hp_bar.change_hp(-amount)
+
+func faintr():
+	is_faint = true
+	render()
+
+func render():
+	pass
 
 func process_heal(amount):
 	"""
 	"""
+
 	props.hp_bar.change_hp(amount)
 
 func process_block(amount):
