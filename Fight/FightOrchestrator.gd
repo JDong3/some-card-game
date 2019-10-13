@@ -76,6 +76,11 @@ func cleanup():
 	for child in get_children():
 		remove_child(child)
 
+	# make a new ent
+	var new_ent = DudeEntity.new()
+	add_child(new_ent)
+	new_ent.position = Vector2(100, 100)
+
 func start():
 	render()
 	fight_club.draw_pile.load_from_deck()

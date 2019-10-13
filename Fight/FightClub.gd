@@ -14,4 +14,3 @@ var friendlies
 var hand
 var hostiles
 var transaction_interface
-

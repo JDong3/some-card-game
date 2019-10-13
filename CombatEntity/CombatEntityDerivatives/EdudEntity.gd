@@ -3,7 +3,7 @@ class_name EdudEntity
 
 func _init():
 
-	props.hp_bar = HpBar.new(100)
+	props.hp_bar = HpBar.new(1)
 	props.character_sprite = CharacterSprite.new('res://assets/character/edud/')
 
 	.init(props)
