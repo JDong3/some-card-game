@@ -1,16 +1,17 @@
-extends Node
+extends Node2D
+class_name RoomNode
 
-# FourNode is a node with n, s, e, w children
-	
-func _init(config):
+# RoomNode is a node with n, s, e, w children
+
+func _init(_props):
 	"""
-	:param config: dictionary
-	
-	config: {
-		n: FourNode or null,
-		s: FourNode or null,
-		e: FourNode or null,
-		w: FOurNode or null
+	:param _props: dictionary
+
+	_props: {
+		n: RoomNode or null,
+		s: RoomNode or null,
+		e: RoomNode or null,
+		w: RoomNode or null,
 	}
 	"""
 	pass

@@ -31,6 +31,7 @@ func remove_focus(focusable):
 	focusable.on_defocus()
 
 func _input(event):
-	var copy = focused_on.duplicate()
-	for focusable in copy:
+	var focused_on_copy = focused_on.duplicate()
+
+	for focusable in focused_on_copy:
 		focusable.input(event)

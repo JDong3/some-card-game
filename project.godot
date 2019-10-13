@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/CharacterSelect/BardCell.gd"
 }, {
+"base": "Node",
+"class": "BluePrint",
+"language": "GDScript",
+"path": "res://Tentative/BluePrint/BluePrint.gd"
+}, {
 "base": "Cell",
 "class": "Card",
 "language": "GDScript",
@@ -185,6 +190,11 @@ _global_script_classes=[ {
 "path": "res://scenes/StartMenu/Components/QuitCell.gd"
 }, {
 "base": "Node2D",
+"class": "RoomNode",
+"language": "GDScript",
+"path": "res://Tentative/Floor/FourNode.gd"
+}, {
+"base": "Node2D",
 "class": "Selectable",
 "language": "GDScript",
 "path": "res://Selectable/Selectable.gd"
@@ -219,6 +229,7 @@ _global_script_class_icons={
 "AoeHealCard": "",
 "AttackCard": "",
 "BardCell": "",
+"BluePrint": "",
 "Card": "",
 "CardSprite": "",
 "Cell": "",
@@ -250,6 +261,7 @@ _global_script_class_icons={
 "ItemDropdown": "",
 "PathSprite": "",
 "QuitCell": "",
+"RoomNode": "",
 "Selectable": "",
 "SettingsCell": "",
 "StartCell": "",
@@ -277,8 +289,6 @@ gdscript/warnings/unused_class_variable=false
 
 window/size/width=480
 window/size/height=270
-window/size/borderless=true
-window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
