@@ -1,21 +1,36 @@
 extends Node2D
-class_name Focusable
+class_name Bass
 
-"""
-Class that is appropriate for connecting to focus interface
-"""
-
-var props = {}
+var is_move = false # whether the objects moves or not
 var focused = false
 
-func init(props_):
+func init(_props):
 	"""
 	props_:
+
+		# focusable
 		focus_manager: FocusManager, the Focus manager that the Focusable will
 		connect to
+
 	"""
 	pass
 
+# moveable
+func input_move(event):
+	if event.is_action_pressed('roam_up'):
+		position.y += 10
+	if event.is_action_pressed('roam_down'):
+		position.y -= 10
+	if event.is_action_pressed('roam_left'):
+		position.x -= 10
+	if event.is_action_pressed('roam_right'):
+		position.x += 10
+
+func input(event):
+	if is_move:
+		input_move(event)
+
+# focusable
 func on_focus():
 	"""
 	a function that is run by the FocusManager when the Focusable gains input
@@ -56,3 +71,13 @@ func has_focus():
 	:return: null
 	"""
 	return props['focus_manager'].has_focus(self)
+
+var is_selected = false
+var props = {}
+
+# selectable
+func select():
+	is_selected = true
+
+func deselect():
+	is_selected = false

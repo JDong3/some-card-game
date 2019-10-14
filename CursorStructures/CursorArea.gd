@@ -1,4 +1,4 @@
-extends Focusable
+extends Bass
 class_name CursorArea
 
 """

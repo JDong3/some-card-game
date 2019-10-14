@@ -2,20 +2,30 @@ extends CursorArea
 class_name EntArea
 
 """
-cursor area but it knows how to handle different targeting modes
+cursor area but it knows how to handle different targeting modes (single target,
+multiple targets (not implemented yet), group targets)
 """
 
-var fight_club = Global.FIGHT_CLUB
+var fight_club
 
 func init(props_):
 	props = props_
+
+	fight_club = Global.FIGHT_CLUB
+
 	.init(props)
 
 func on_focus():
+	"""
+	runs whenever self is comes into focus
+	"""
+
+	# for avoiding highlighting Ents that are fainted
 	for i in range(cells.size()):
 		if cells[cursor_position].is_faint:
 			cursor_position = (cursor_position + 1) % cells.size()
 	render()
+
 	.on_focus()
 
 func input(event):
@@ -30,6 +40,11 @@ func input(event):
 	render()
 
 func input_select(event):
+	"""
+	handles input for the *select event
+	:param event: InputEvent
+	"""
+
 	# just pass the input along if its single target
 	if single_target:
 		cells[cursor_position].input(event)

@@ -76,6 +76,7 @@ func cleanup():
 	for child in get_children():
 		remove_child(child)
 
+func start_roam():
 	# make a new ent
 	var new_ent = DudeEntity.new()
 	add_child(new_ent)

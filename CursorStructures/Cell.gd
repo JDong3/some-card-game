@@ -1,4 +1,4 @@
-extends Selectable
+extends Bass
 class_name Cell
 
 """
