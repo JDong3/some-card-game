@@ -124,3 +124,4 @@ func deselect():
 func input(event):
 	if event.is_action_released('cursor_select'):
 		fight_club.transaction_interface.add_target(self)
+	.input(event)

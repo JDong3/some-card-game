@@ -5,6 +5,7 @@ func _init():
 
 	props.character_sprite = CharacterSprite.new('res://assets/character/dude/')
 	props.hp_bar = HpBar.new(100)
+	props.focus_manager = Global.GAME_FOCUS_MANAGER
 
 	.init(props)
 

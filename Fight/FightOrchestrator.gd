@@ -67,20 +67,26 @@ func cont():
 
 	if all_fainted:
 		cleanup()
+		start_roam()
+		return
 
 	var ents = fight_order()
 	ent_index = (ent_index + 1) % fight_order().size()
 	ents[ent_index].act()
 
 func cleanup():
+	print('cleaning up')
 	for child in get_children():
 		remove_child(child)
 
 func start_roam():
+	print('starting roam')
 	# make a new ent
 	var new_ent = DudeEntity.new()
 	add_child(new_ent)
 	new_ent.position = Vector2(100, 100)
+	new_ent.obtain_sole_focus()
+	new_ent.is_move = true
 
 func start():
 	render()
