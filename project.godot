@@ -89,6 +89,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CursorStructures/CursorGrid.gd"
 }, {
+"base": "Interactable",
+"class": "DangerInt",
+"language": "GDScript",
+"path": "res://Interactable/DangerInt.gd"
+}, {
 "base": "Node",
 "class": "Deck",
 "language": "GDScript",
@@ -169,6 +174,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CombatEntity/CombatEntityComponents/HpBar.gd"
 }, {
+"base": "Area2D",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://Interactable/Interactable.gd"
+}, {
 "base": "Node2D",
 "class": "ItemDropdown",
 "language": "GDScript",
@@ -177,7 +187,7 @@ _global_script_classes=[ {
 "base": "Sprite",
 "class": "PathSprite",
 "language": "GDScript",
-"path": "res://Sprite/PathSprite.gd"
+"path": "res://Interactable/PathSprite.gd"
 }, {
 "base": "Cell",
 "class": "QuitCell",
@@ -231,6 +241,7 @@ _global_script_class_icons={
 "CoordinateGrid": "",
 "CursorArea": "",
 "CursorGrid": "",
+"DangerInt": "",
 "Deck": "",
 "DiscardPile": "",
 "DogeCard": "",
@@ -247,6 +258,7 @@ _global_script_class_icons={
 "HealCard": "",
 "HostileArea": "",
 "HpBar": "",
+"Interactable": "",
 "ItemDropdown": "",
 "PathSprite": "",
 "QuitCell": "",
@@ -261,7 +273,7 @@ _global_script_class_icons={
 [application]
 
 config/name="some-card-game"
-run/main_scene="res://Rooms/TestRoom.tscn"
+run/main_scene="res://CombatEntity/CollisionTest.tscn"
 
 [autoload]
 

@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://CombatEntity/CollisionTest.gd" type="Script" id=1]
+[ext_resource path="res://CombatEntity/Area2D.gd" type="Script" id=2]
+[ext_resource path="res://assets/collision-test/circ-blob.png" type="Texture" id=3]
+[ext_resource path="res://CombatEntity/Area2D2.gd" type="Script" id=4]
+[ext_resource path="res://assets/collision-test/square-blob.png" type="Texture" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 30, 30 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 200, 100 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Circ" type="Sprite" parent="Area2D"]
+texture = ExtResource( 3 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 50, 100 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource( 2 )
+
+[node name="Square" type="Sprite" parent="Area2D2"]
+texture = ExtResource( 5 )
