@@ -2,7 +2,7 @@ extends Area2D
 class_name Interactable
 
 var sprite
-var collisionShape
+var collision_shape
 var props = {}
 
 func init(_props):
@@ -13,7 +13,7 @@ func init(_props):
 	"""
 	props = _props
 	sprite = props.sprite
-	collisionShape = props.collision_shape
+	collision_shape = props.collision_shape
 	render()
 
 func render():
