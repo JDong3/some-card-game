@@ -17,12 +17,12 @@ func _init(_props):
 	props = _props
 
 	# set defaults
-	if !props.has(height):
+	if !props.has('height'):
 		height = 0
 	else:
 		height = props.height
 
-	if !props.has(vertical):
+	if !props.has('vertical'):
 		vertical = false
 	else:
 		vertical = props.vertical
