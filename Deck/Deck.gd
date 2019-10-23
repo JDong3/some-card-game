@@ -6,9 +6,17 @@ A deck is filled with card objects
 """
 
 var cards
+var props = {}
 
-func _init(cards_=[]):
-	cards = cards_
+func init(props_):
+	"""
+	props_:
+		cards: Array<Cards>=[]
+	"""
+	if !props.has('cards'):
+		cards = []
+	else:
+		cards = props.cards
 
 func add_card(card_):
 	cards.push_back(card_)

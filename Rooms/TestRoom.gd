@@ -15,12 +15,7 @@ func _ready():
 	Global.FIGHT_CLUB.friendlies = friendlies
 
 	# in fight club, need a deck that is filled
-	var deck = Deck.new()
-	deck.add_card(AttackCard.new())
-	deck.add_card(AoeAttackCard.new())
-	deck.add_card(HealCard.new())
-	deck.add_card(AoeHealCard.new())
-	deck.add_card(AttackCard.new())
+	var deck = StarterDeck.new()
 	Global.FIGHT_CLUB.deck = deck
 
 	combat_orchestrator.start()

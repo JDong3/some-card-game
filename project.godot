@@ -102,7 +102,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Deck",
 "language": "GDScript",
-"path": "res://Card/Deck.gd"
+"path": "res://Deck/Deck.gd"
 }, {
 "base": "Node2D",
 "class": "DiscardPile",
@@ -219,6 +219,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/StartMenu/Components/StartMenuCursorGrid.gd"
 }, {
+"base": "Deck",
+"class": "StarterDeck",
+"language": "GDScript",
+"path": "res://Deck/StarterDeck.gd"
+}, {
+"base": "Deck",
+"class": "StarterDeck2",
+"language": "GDScript",
+"path": "res://Deck/StarterDeck2.gd"
+}, {
 "base": "Node",
 "class": "TransactionInterface",
 "language": "GDScript",
@@ -272,6 +282,8 @@ _global_script_class_icons={
 "SettingsCell": "",
 "StartCell": "",
 "StartMenuCursorGrid": "",
+"StarterDeck": "",
+"StarterDeck2": "",
 "TransactionInterface": "",
 "UidGenerator": ""
 }
@@ -279,7 +291,7 @@ _global_script_class_icons={
 [application]
 
 config/name="some-card-game"
-run/main_scene="res://CombatEntity/CollisionTest.tscn"
+run/main_scene="res://Rooms/TestRoom.tscn"
 
 [autoload]
 
