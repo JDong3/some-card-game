@@ -6,8 +6,9 @@
 [ext_resource path="res://CombatEntity/Area2D2.gd" type="Script" id=4]
 [ext_resource path="res://assets/collision-test/square-blob.png" type="Texture" id=5]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 30.0
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 16.0
+height = 5.0
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 30, 30 )
@@ -20,6 +21,7 @@ position = Vector2( 200, 100 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Circ" type="Sprite" parent="Area2D"]
