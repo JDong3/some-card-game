@@ -75,12 +75,10 @@ func cont():
 	ents[ent_index].act()
 
 func cleanup():
-	print('cleaning up')
 	for child in get_children():
 		remove_child(child)
 
 func start_roam():
-	print('starting roam')
 	# make a new ent
 	var new_ent = DudeEntity.new()
 	add_child(new_ent)

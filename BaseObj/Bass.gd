@@ -45,7 +45,6 @@ func input_move(event):
 		is_move_right = false
 
 func input(event):
-	print(event)
 	if is_move:
 		input_move(event)
 

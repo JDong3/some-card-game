@@ -99,8 +99,6 @@ func input_swap():
 	var card_default_attack = card.props.metadata.target_hostile
 	var is_hostile = card_default_attack and (target_default != swapped)
 
-	print('hostile: ', is_hostile)
-
 	if is_hostile:
 		current = fight_club.hostiles
 		alt = fight_club.friendlies
