@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Card/Cards/AttackCard.gd"
 }, {
+"base": "Deck",
+"class": "AttackFocusDeck",
+"language": "GDScript",
+"path": "res://Deck/AttackFocusDeck.gd"
+}, {
 "base": "Cell",
 "class": "BardCell",
 "language": "GDScript",
@@ -169,6 +174,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Card/Cards/HealCard.gd"
 }, {
+"base": "Deck",
+"class": "HealFocusDeck",
+"language": "GDScript",
+"path": "res://Deck/HealFocusDeck.gd"
+}, {
 "base": "EntArea",
 "class": "HostileArea",
 "language": "GDScript",
@@ -219,16 +229,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/StartMenu/Components/StartMenuCursorGrid.gd"
 }, {
-"base": "Deck",
-"class": "StarterDeck",
-"language": "GDScript",
-"path": "res://Deck/StarterDeck.gd"
-}, {
-"base": "Deck",
-"class": "StarterDeck2",
-"language": "GDScript",
-"path": "res://Deck/StarterDeck2.gd"
-}, {
 "base": "Node",
 "class": "TransactionInterface",
 "language": "GDScript",
@@ -243,6 +243,7 @@ _global_script_class_icons={
 "AoeAttackCard": "",
 "AoeHealCard": "",
 "AttackCard": "",
+"AttackFocusDeck": "",
 "BardCell": "",
 "Bass": "",
 "BluePrint": "",
@@ -272,6 +273,7 @@ _global_script_class_icons={
 "FriendlyArea": "",
 "Hand": "",
 "HealCard": "",
+"HealFocusDeck": "",
 "HostileArea": "",
 "HpBar": "",
 "Interactable": "",
@@ -282,8 +284,6 @@ _global_script_class_icons={
 "SettingsCell": "",
 "StartCell": "",
 "StartMenuCursorGrid": "",
-"StarterDeck": "",
-"StarterDeck2": "",
 "TransactionInterface": "",
 "UidGenerator": ""
 }
