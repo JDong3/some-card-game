@@ -10,9 +10,7 @@ func _init():
 		'radius': 12,
 	})
 	.init(props)
-
-func _ready():
 	connect("area_shape_entered", self, '_on_invaded')
 
 func _on_invaded (a, b, c ,d):
-	print('yellow')
+	print('yello')

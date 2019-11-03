@@ -49,6 +49,9 @@ func init(props_):
 	selected_sprite = Sprite.new()
 	selected_sprite.texture = load('res://assets/sprites/entity-selected.png')
 
+	var area = Area2D.new()
+	add_child(area)
+	area.add_child(CapsuleCollision.new({'radius': 20}))
 
 	.init(props)
 

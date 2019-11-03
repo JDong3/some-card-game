@@ -23,7 +23,6 @@ func init(_props):
 	is_move_right = false
 	is_move_up = false
 	is_move_down = false
-	pass
 
 # moveable
 func input_move(event):

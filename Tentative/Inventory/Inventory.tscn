@@ -4,6 +4,8 @@
 [ext_resource path="res://Tentative/Inventory/add_cursor_area.gd" type="Script" id=2]
 
 
+
+
 [node name="InventoryContainer" type="ViewportContainer"]
 margin_right = 128.0
 margin_bottom = 192.0

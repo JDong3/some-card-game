@@ -35,7 +35,7 @@ func input(event):
 		input_back()
 	if event.is_action_released('cursor_next'):
 		input_next()
-	if event.is_action_released('cursor_prev'):
+	if event.is_action_released('cursor_previous'):
 		input_prev()
 	render()
 

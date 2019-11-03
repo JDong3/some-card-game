@@ -33,4 +33,7 @@ func change_hp(n):
 	render()
 
 func render():
-	label.text = 'hp: %s/%s' % [hp, max_hp]
+	if hp < 1:
+		label.text = 'dead'
+	else:
+		label.text = 'hp: %s/%s' % [hp, max_hp]

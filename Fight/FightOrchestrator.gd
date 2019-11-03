@@ -86,6 +86,10 @@ func start_roam():
 	new_ent.obtain_sole_focus()
 	new_ent.is_move = true
 
+	var danger = DangerInt.new()
+	danger.position = Vector2(200, 50)
+	add_child(danger)
+
 func start():
 	render()
 	fight_club.draw_pile.load_from_deck()

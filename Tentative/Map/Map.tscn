@@ -5,6 +5,8 @@
 [ext_resource path="res://assets/sprites/map-bg.png" type="Texture" id=3]
 
 
+
+
 [node name="Map" type="ViewportContainer"]
 margin_left = 10.0
 margin_top = 10.0
