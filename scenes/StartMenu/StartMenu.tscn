@@ -1,32 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/sprites/black-bg.png" type="Texture" id=1]
 [ext_resource path="res://scenes/StartMenu/StartMenu.gd" type="Script" id=2]
-[ext_resource path="res://CombatEntity/CombatEntityDerivatives/DudeEntity.gd" type="Script" id=3]
-
-[sub_resource type="Animation" id=1]
-resource_name = "walk"
-loop = true
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("DudeEntity:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray(  ),
-"times": PoolRealArray(  )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("DudeEntity:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray(  ),
-"times": PoolRealArray(  )
-}
 
 [node name="StartMenu" type="Node2D"]
 
@@ -36,9 +11,3 @@ centered = false
 
 [node name="Node2D" type="Node2D" parent="Background"]
 script = ExtResource( 2 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
-anims/walk = SubResource( 1 )
-
-[node name="DudeEntity" type="Node2D" parent="Background"]
-script = ExtResource( 3 )
