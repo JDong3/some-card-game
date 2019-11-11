@@ -28,32 +28,35 @@ var is_faint = false
 var selected_sprite
 var character_sprite
 var hp_bar
+var area
 
 func init(props_):
 	"""
 	props_:
-		name: Str, display name of the CombatEntity
+		area=def: Area2D, area with collision shape
+		character_sprite: CharacterSprite, AnimatedSprite of the CombatEntity
 		hp_bar: HpBar, displays the hp of the CombatEntity
-		character_sprite: CharacterSprite, the AnimatedSprite of the
-			CombatEntity
+		name: Str, display name of the CombatEntity
 	"""
 	props = props_
 
 	hp_bar = props.hp_bar
 	character_sprite = props.character_sprite
 
+	if !props.has('area'):
+		area = CapsuleArea.new({'radius': 20})
+
+	combobulate()
+
+	.init(props)
+
+func combobulate():
 	add_child(hp_bar)
 	add_child(character_sprite)
 	character_sprite.play('idle')
 
-	selected_sprite = Sprite.new()
-	selected_sprite.texture = load('res://assets/sprites/entity-selected.png')
-
-	var area = Area2D.new()
+	selected_sprite = PathSprite.new('res://assets/sprites/entity-selected.png')
 	add_child(area)
-	area.add_child(CapsuleCollision.new({'radius': 20}))
-
-	.init(props)
 
 func send_transaction(transaction, target):
 	# handle case for targeted card
