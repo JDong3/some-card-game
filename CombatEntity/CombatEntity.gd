@@ -47,7 +47,6 @@ func init(props_):
 		area = CapsuleArea.new({'radius': 20})
 
 	combobulate()
-
 	.init(props)
 
 func combobulate():
