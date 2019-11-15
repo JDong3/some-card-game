@@ -3,7 +3,10 @@ class_name DudeEntity
 
 func _init():
 
-	props.character_sprite = CharacterSprite.new('res://assets/character/dude/')
+	props.character_sprite = CharacterSprite.new({
+		'path': 'res://assets/character/dude/',
+		'offset': Vector2(0, -30)
+		})
 	props.hp_bar = HpBar.new(100)
 	props.focus_manager = Global.GAME_FOCUS_MANAGER
 

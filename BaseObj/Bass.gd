@@ -1,7 +1,6 @@
 extends Node2D
 class_name Bass
 
-var is_move = false # whether the objects moves or not
 var focused = false
 
 var is_move_left
@@ -16,46 +15,12 @@ func init(_props):
 		focus_manager: FocusManager, the Focus manager that the Focusable will
 		connect to
 	"""
-	is_move = false
 	focused = false
 
 	is_move_left = false
 	is_move_right = false
 	is_move_up = false
 	is_move_down = false
-
-# moveable
-func input_move(event):
-	if event.is_action_pressed('roam_up'):
-		is_move_up = true
-	if event.is_action_released('roam_up'):
-		is_move_up = false
-	if event.is_action_pressed('roam_down'):
-		is_move_down = true
-	if event.is_action_released('roam_down'):
-		is_move_down = false
-	if event.is_action_pressed('roam_left'):
-		is_move_left = true
-	if event.is_action_released('roam_left'):
-		is_move_left = false
-	if event.is_action_pressed('roam_right'):
-		is_move_right = true
-	if event.is_action_released('roam_right'):
-		is_move_right = false
-
-func input(event):
-	if is_move:
-		input_move(event)
-
-func _process(delta):
-	if is_move_up:
-		position.y -= delta * 50
-	if is_move_down:
-		position.y += delta * 50
-	if is_move_right:
-		position.x += delta * 50
-	if is_move_left:
-		position.x -= delta * 50
 
 # focusable
 func on_focus():
@@ -108,3 +73,6 @@ func select():
 
 func deselect():
 	is_selected = false
+
+func input(event):
+	return event

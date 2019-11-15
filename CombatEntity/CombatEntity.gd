@@ -7,6 +7,7 @@ parent class for friends and enemies
 
 var fight_club = Global.FIGHT_CLUB
 var is_faint = false
+var is_move = false # whether the objects moves or not
 
 # var combat_manager
 # var uid
@@ -30,6 +31,8 @@ var character_sprite
 var hp_bar
 var area
 
+var play_anim # ????
+
 func init(props_):
 	"""
 	props_:
@@ -37,8 +40,11 @@ func init(props_):
 		character_sprite: CharacterSprite, AnimatedSprite of the CombatEntity
 		hp_bar: HpBar, displays the hp of the CombatEntity
 		name: Str, display name of the CombatEntity
+		offset: Vector2
 	"""
 	props = props_
+
+	is_move = false
 
 	hp_bar = props.hp_bar
 	character_sprite = props.character_sprite
@@ -60,6 +66,7 @@ func combobulate():
 func send_transaction(transaction, target):
 	# handle case for targeted card
 	target.process_transaction(transaction, self)
+	character_sprite.play('attack')
 
 func process_transaction(transaction, source):
 	"""
@@ -129,4 +136,44 @@ func deselect():
 func input(event):
 	if event.is_action_released('cursor_select'):
 		fight_club.transaction_interface.add_target(self)
+	if is_move:
+		input_move(event)
 	.input(event)
+
+# moveable
+func input_move(event):
+	if event.is_action_pressed('roam_up'):
+		is_move_up = true
+	if event.is_action_released('roam_up'):
+		is_move_up = false
+	if event.is_action_pressed('roam_down'):
+		is_move_down = true
+	if event.is_action_released('roam_down'):
+		is_move_down = false
+	if event.is_action_pressed('roam_left'):
+		is_move_left = true
+	if event.is_action_released('roam_left'):
+		is_move_left = false
+	if event.is_action_pressed('roam_right'):
+		is_move_right = true
+	if event.is_action_released('roam_right'):
+		is_move_right = false
+
+func _process(delta):
+	if is_move_up:
+		position.y -= delta * 50
+	if is_move_down:
+		position.y += delta * 50
+	if is_move_right:
+		position.x += delta * 50
+	if is_move_left:
+		position.x -= delta * 50
+
+func triggerAnimationSequence():
+	"""
+	triggers the sequence of animations that needs to be played after you play
+	a card or a card bundle
+
+	the args are got form the TransactionInterface from the FightClub
+	"""
+	pass

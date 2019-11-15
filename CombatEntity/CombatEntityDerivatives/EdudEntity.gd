@@ -4,7 +4,10 @@ class_name EdudEntity
 func _init():
 
 	props.hp_bar = HpBar.new(1)
-	props.character_sprite = CharacterSprite.new('res://assets/character/edud/')
+	props.character_sprite = CharacterSprite.new({
+		'path': 'res://assets/character/edud/',
+		'offset': Vector2(0, -14)
+		})
 
 	.init(props)
 

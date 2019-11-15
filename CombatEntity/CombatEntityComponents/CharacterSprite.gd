@@ -6,11 +6,17 @@ AnimatedSprite object that workes with CharacterFrames to auto load the
 animations given a path to the folder containing the animations
 """
 
-var path
+var props
 
-func _init(path_):
+func _init(props_):
 	"""
 	path to the folder containing the animations
+
+	props_:
+		path: String, string path to the folder with the animations
+		offset: Vector2, offset vector for the collision area (offset to the
+		        feet of the character)
 	"""
-	path = path_
-	frames = CharacterFrames.new(path)
+	props = props_
+	frames = CharacterFrames.new(props.path)
+	offset = props.offset
