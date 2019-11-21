@@ -58,15 +58,53 @@ func init(props_):
 func combobulate():
 	add_child(hp_bar)
 	add_child(character_sprite)
-	character_sprite.play('idle')
+	play('idle')
 
 	selected_sprite = PathSprite.new('res://assets/sprites/entity-selected.png')
 	add_child(area)
 
+func play(anim):
+	"""
+	plays an anim of character_sprite
+	"""
+	character_sprite.play(anim)
+
 func send_transaction(transaction, target):
 	# handle case for targeted card
 	target.process_transaction(transaction, self)
-	character_sprite.play('attack')
+
+func start_transaction():
+	"""
+	triggers the sequence of animations that needs to be played after you play
+	a card or a card bundle
+
+	the args are got form the TransactionInterface from the FightClub
+	"""
+	var timer
+	play('attack')
+	# start timer
+
+	while true:
+		timer = Timer.new()
+		add_child(timer)
+		timer.one_shot = true
+		timer.connect('timeout', self, '_on_timeout_test')
+		timer.start(0.7)
+		break
+	print(timer.time_left)
+
+func _on_timeout_test():
+	var targets = fight_club.transaction_interface.targets
+	var card = fight_club.transaction_interface.card
+	var source = fight_club.transaction_interface.source
+
+	targets[0].character_sprite.play('block')
+
+	print('time')
+	for target in fight_club.transaction_interface.targets:
+		source.send_transaction(card.props.transaction, target)
+		fight_club.hand.remove_card(card)
+		fight_club.discard_pile.add_card(card)
 
 func process_transaction(transaction, source):
 	"""
@@ -168,12 +206,3 @@ func _process(delta):
 		position.x += delta * 50
 	if is_move_left:
 		position.x -= delta * 50
-
-func triggerAnimationSequence():
-	"""
-	triggers the sequence of animations that needs to be played after you play
-	a card or a card bundle
-
-	the args are got form the TransactionInterface from the FightClub
-	"""
-	pass

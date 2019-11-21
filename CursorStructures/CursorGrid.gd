@@ -70,7 +70,6 @@ func move_cursor_to(index):
 	cursor_position = index
 
 func input(event):
-
 	if event.is_action_released('cursor_up'):
 		move_cursor_to(cursor_position - props.dimensions.x)
 	elif event.is_action_released('cursor_down'):

@@ -62,6 +62,9 @@ func render():
 		cell.deselect()
 
 	if single_target:
+		if cursor_position == cells.size():
+			cursor_position -= 1
+
 		if cells.size() > 0 and focused:
 			cells[cursor_position].select()
 

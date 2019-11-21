@@ -3,10 +3,11 @@ class_name EdudEntity
 
 func _init():
 
-	props.hp_bar = HpBar.new(1)
+	props.hp_bar = HpBar.new(20)
 	props.character_sprite = CharacterSprite.new({
-		'path': 'res://assets/character/edud/',
-		'offset': Vector2(0, -14)
+		'path': 'res://assets/character/dude/',
+		'offset': Vector2(0, -30),
+		'flip_h': true
 		})
 
 	.init(props)
