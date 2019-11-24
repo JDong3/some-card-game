@@ -5,7 +5,8 @@ func _init():
 	props.sprite = CardSprite.new('res://assets/cards/aoe-heal.png')
 	props.selected_sprite = CardSprite.new('res://assets/cards/card-outline.png')
 	props.metadata = {
-		'group_target': true
+		'group_target': true,
+		'animation': 'block'
 	}
 	props.transaction = {
 		'heal': 5

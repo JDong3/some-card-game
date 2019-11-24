@@ -89,6 +89,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CombatEntity/CombatEntity.gd"
 }, {
+"base": "CursorArea",
+"class": "Combiner",
+"language": "GDScript",
+"path": "res://combiner/combiner.gd"
+}, {
 "base": "Node2D",
 "class": "CoordinateGrid",
 "language": "GDScript",
@@ -261,6 +266,7 @@ _global_script_class_icons={
 "CharacterFrames": "",
 "CharacterSprite": "",
 "CombatEntity": "",
+"Combiner": "",
 "CoordinateGrid": "",
 "CursorArea": "",
 "CursorGrid": "",

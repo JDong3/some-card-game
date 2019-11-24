@@ -3,6 +3,7 @@ class_name Card
 
 var fight_club
 var transaction
+var metadata
 
 func init(props_):
 	"""
@@ -18,6 +19,8 @@ func init(props_):
 			group_target: bool=false
 
 			target_hostile: bool=True
+
+			animation: str='attack'
 
 		transaction:
 			# primary effects
@@ -36,7 +39,12 @@ func init(props_):
 	"""
 	props = props_
 	transaction = props.transaction
+	metadata = props.metadata
 	fight_club = Global.FIGHT_CLUB
+
+	print(metadata.animation)
+	if !metadata.has('animation'):
+		metadata.animation = 'attack'
 
 
 	# defaults for metadata

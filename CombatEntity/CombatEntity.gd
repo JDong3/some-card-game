@@ -73,39 +73,6 @@ func send_transaction(transaction, target):
 	# handle case for targeted card
 	target.process_transaction(transaction, self)
 
-func start_transaction():
-	"""
-	triggers the sequence of animations that needs to be played after you play
-	a card or a card bundle
-
-	the args are got form the TransactionInterface from the FightClub
-	"""
-	var timer
-	play('attack')
-	# start timer
-
-	while true:
-		timer = Timer.new()
-		add_child(timer)
-		timer.one_shot = true
-		timer.connect('timeout', self, '_on_timeout_test')
-		timer.start(0.7)
-		break
-	print(timer.time_left)
-
-func _on_timeout_test():
-	var targets = fight_club.transaction_interface.targets
-	var card = fight_club.transaction_interface.card
-	var source = fight_club.transaction_interface.source
-
-	targets[0].character_sprite.play('block')
-
-	print('time')
-	for target in fight_club.transaction_interface.targets:
-		source.send_transaction(card.props.transaction, target)
-		fight_club.hand.remove_card(card)
-		fight_club.discard_pile.add_card(card)
-
 func process_transaction(transaction, source):
 	"""
 	processes a transaction sent by another CombatInterface
@@ -206,3 +173,50 @@ func _process(delta):
 		position.x += delta * 50
 	if is_move_left:
 		position.x -= delta * 50
+
+# animation stuff
+
+func on_card():
+	"""
+	triggers the sequence of animations that needs to be played after you play
+	a card or a card bundle
+
+	the args are got form the TransactionInterface from the FightClub
+	"""
+	var timer
+	var cards = fight_club.transaction_interface.cards
+
+	# check card type to know what animation the actor needs to play
+	print(cards[0].metadata)
+	if cards[0].metadata.animation.casecmp_to('attack') == 0:
+		play('attack')
+	else:
+		play('block')
+	# start timer
+
+	while true:
+		timer = Timer.new()
+		add_child(timer)
+		timer.one_shot = true
+		timer.connect('timeout', self, 'on_card_reaction')
+		timer.start(0.7)
+		break
+	print(timer.time_left)
+
+func on_card_reaction():
+	"""
+	triggered when a card is played
+	"""
+	var targets = fight_club.transaction_interface.targets
+	var cards = fight_club.transaction_interface.cards
+	var source = fight_club.transaction_interface.source
+
+	targets[0].character_sprite.play('block')
+
+	print('time')
+	for target in fight_club.transaction_interface.targets:
+		source.send_transaction(cards[0].props.transaction, target)
+		fight_club.hand.remove_card(cards[0])
+		fight_club.discard_pile.add_card(cards[0])
+
+	fight_club.transaction_interface.clear()

@@ -52,7 +52,7 @@ func process_animation(dir_name):
 
 	# add the animation to SpriteFrames
 	add_animation(dir_name)
-	set_animation_speed(dir_name, 12)
+	set_animation_speed(dir_name, 10)
 
 	if dir_name.casecmp_to('idle') == 0:
 		set_animation_loop(dir_name, true)
