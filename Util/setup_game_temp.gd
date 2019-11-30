@@ -2,6 +2,7 @@ extends Node2D
 class_name GameSetup
 
 func _init():
+	print('setting up')
 	# FightOrchestrator design incubator
 	add_child(Global.GAME_FOCUS_MANAGER)
 

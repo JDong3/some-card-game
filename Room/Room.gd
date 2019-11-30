@@ -16,8 +16,11 @@ func init(props):
 	props:
 		events: Array<Event>, list of events that make up the flow of the room
 	"""
-	GameSetup.new()
+	var setup = GameSetup.new()
+
+	add_child(setup)
 	print(fight_club.friendlies)
 	events = props.events
 	add_child(events[0])
+
 	events[0].start_event()
