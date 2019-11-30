@@ -3,7 +3,7 @@ class_name BluePrint
 
 """
 class that represents a BluePrint for the for the map layout algorithm to use, a BluePrint is just an object that
-creates a fournode of the map, exposes makeBlueprint function
+creates a RoomNode of the map, exposes makeBlueprint function
 """
 
 func make_blueprint():
@@ -16,21 +16,21 @@ func make_blueprint():
 	var sec
 	var third
 
-	head = FourNode.new({
+	head = RoomNode.new({
 		n: null,
 		e: null,
 		s: sec,
 		w: null
 	});
 
-	sec = FourNode.new({
+	sec = RoomNode.new({
 		n: head,
 		e: null,
 		s: third,
 		w: null
 	});
 
-	third = FourNode.new({
+	third = RoomNode.new({
 		n: sec,
 		e: null,
 		s: null,

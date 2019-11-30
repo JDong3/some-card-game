@@ -149,20 +149,35 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CombatEntity/CombatEntityDerivatives/EdudEntity.gd"
 }, {
+"base": "Interactable",
+"class": "EmptyRoomInt",
+"language": "GDScript",
+"path": "res://Interactable/EmptyRoomInt.gd"
+}, {
+"base": "Node",
+"class": "Encounter",
+"language": "GDScript",
+"path": "res://Encounter/Encounter.gd"
+}, {
 "base": "CursorArea",
 "class": "EntArea",
 "language": "GDScript",
 "path": "res://CursorAreaImpl/EntArea.gd"
+}, {
+"base": "Node2D",
+"class": "Event",
+"language": "GDScript",
+"path": "res://Events/Event.gd"
 }, {
 "base": "Node",
 "class": "FightClub",
 "language": "GDScript",
 "path": "res://Fight/FightClub.gd"
 }, {
-"base": "Node2D",
+"base": "Event",
 "class": "FightOrchestrator",
 "language": "GDScript",
-"path": "res://Fight/FightOrchestrator.gd"
+"path": "res://Events/FightOrchestrator.gd"
 }, {
 "base": "Node2D",
 "class": "FocusManager",
@@ -173,6 +188,11 @@ _global_script_classes=[ {
 "class": "FriendlyArea",
 "language": "GDScript",
 "path": "res://CursorAreaImpl/FriendlyArea.gd"
+}, {
+"base": "Node2D",
+"class": "GameSetup",
+"language": "GDScript",
+"path": "res://Util/setup_game_temp.gd"
 }, {
 "base": "CursorArea",
 "class": "Hand",
@@ -219,10 +239,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/StartMenu/Components/QuitCell.gd"
 }, {
+"base": "Event",
+"class": "Roam",
+"language": "GDScript",
+"path": "res://Events/Roam.gd"
+}, {
+"base": "Node2D",
+"class": "Room",
+"language": "GDScript",
+"path": "res://Room/Room.gd"
+}, {
 "base": "Node2D",
 "class": "RoomNode",
 "language": "GDScript",
-"path": "res://Tentative/Floor/FourNode.gd"
+"path": "res://Tentative/Floor/RoomNode.gd"
 }, {
 "base": "Cell",
 "class": "SettingsCell",
@@ -238,6 +268,11 @@ _global_script_classes=[ {
 "class": "StartMenuCursorGrid",
 "language": "GDScript",
 "path": "res://scenes/StartMenu/Components/StartMenuCursorGrid.gd"
+}, {
+"base": "Room",
+"class": "StartRoom",
+"language": "GDScript",
+"path": "res://Room/StartRoom.gd"
 }, {
 "base": "Node",
 "class": "TransactionInterface",
@@ -278,11 +313,15 @@ _global_script_class_icons={
 "DrawPile": "",
 "DudeEntity": "",
 "EdudEntity": "",
+"EmptyRoomInt": "",
+"Encounter": "",
 "EntArea": "",
+"Event": "",
 "FightClub": "",
 "FightOrchestrator": "",
 "FocusManager": "",
 "FriendlyArea": "",
+"GameSetup": "",
 "Hand": "",
 "HealCard": "",
 "HealFocusDeck": "",
@@ -292,10 +331,13 @@ _global_script_class_icons={
 "ItemDropdown": "",
 "PathSprite": "",
 "QuitCell": "",
+"Roam": "",
+"Room": "",
 "RoomNode": "",
 "SettingsCell": "",
 "StartCell": "",
 "StartMenuCursorGrid": "",
+"StartRoom": "",
 "TransactionInterface": "",
 "UidGenerator": ""
 }
@@ -449,5 +491,10 @@ roam_left={
 roam_right={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+ ]
+}
+cursor_select_secondary={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":92,"unicode":0,"echo":false,"script":null)
  ]
 }

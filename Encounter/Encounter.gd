@@ -1,6 +1,9 @@
 extends Node
+class_name Encounter
+
 
 var props = {}
+
 
 """
 starts with pre fight animations/dialogue etc

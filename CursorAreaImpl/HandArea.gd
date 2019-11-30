@@ -81,6 +81,8 @@ func group_target_event_input():
 	pass
 
 func input(event):
+	if event.is_action_released('cursor_select_secondary'):
+		input_send()
 	if event.is_action_released('combat_end_turn'):
 		input_end_turn()
 	if event.is_action_released('cursor_select'):
@@ -89,6 +91,13 @@ func input(event):
 		input_swap()
 	if !fight_club.hostiles.has_focus() and !fight_club.friendlies.has_focus():
 		.input(event)
+
+func input_send():
+	return
+	var card = cells[cursor_position]
+	cells.erase(card)
+	render()
+	fight_club.combiner.add_card(card)
 
 func input_swap():
 	var current

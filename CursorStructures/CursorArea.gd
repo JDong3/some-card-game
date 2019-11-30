@@ -18,9 +18,9 @@ func init(props_):
 	"""
 	props:
 		cells: list of Cells that are contained in the CursorArea,
-		cursor_position?: specify an optional default cursor position
+		cursor_position: Int=0, specify an optional default cursor position
 		focus_interface: FocusInterface obj
-		reverse?: cursor_next decrements position and cursor_prev
+		reverse: bool=False, cursor_next decrements position and cursor_prev
 			increments position, this is for CursorAreas where the cells are
 			created from right to left
 	"""
@@ -50,6 +50,7 @@ func render():
 	takes all cells in props.cells and combobulates them onto the object
 	:return: null
 	"""
+
 	# render cells
 	for child in get_children():
 		remove_child(child)

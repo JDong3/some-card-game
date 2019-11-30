@@ -201,7 +201,6 @@ func on_card():
 		timer.connect('timeout', self, 'on_card_reaction')
 		timer.start(0.7)
 		break
-	print(timer.time_left)
 
 func on_card_reaction():
 	"""
@@ -213,7 +212,6 @@ func on_card_reaction():
 
 	targets[0].character_sprite.play('block')
 
-	print('time')
 	for target in fight_club.transaction_interface.targets:
 		source.send_transaction(cards[0].props.transaction, target)
 		fight_club.hand.remove_card(cards[0])

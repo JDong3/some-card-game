@@ -8,4 +8,4 @@ func _init():
 
 func input(event):
 	if event.is_action_released('cursor_select'):
-		get_tree().change_scene('res://scenes/Rooms/TestRoom.tscn')
+		get_tree().change_scene('res://Room/StartRoom.tscn')

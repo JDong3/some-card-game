@@ -1,9 +1,6 @@
-extends Node2D
+extends Event
 class_name FightOrchestrator
 
-var props = {}
-
-var fight_club
 var ent_index
 var hostiles
 
@@ -16,6 +13,7 @@ func _init(props_):
 	hostiles = props.hostiles
 	fight_club = Global.FIGHT_CLUB
 	ent_index = -1
+	connect('event_started', self, 'start')
 
 func render():
 	fight_club.fight_orchestrator = self
@@ -40,6 +38,10 @@ func render():
 	add_child(fight_club.discard_pile)
 
 	fight_club.transaction_interface = TransactionInterface.new()
+
+	#fight_club.combiner = Combiner.new()
+	#fight_club.combiner.position = Vector2(100, 100)
+	#add_child(fight_club.combiner)
 
 func fight_order():
 	return fight_club.friendlies.cells + fight_club.hostiles.cells
@@ -89,6 +91,10 @@ func start_roam():
 	var danger = DangerInt.new()
 	danger.position = Vector2(200, 50)
 	add_child(danger)
+
+	var inter = EmptyRoomInt.new()
+	inter.position = Vector2(100, 50)
+	add_child(inter)
 
 func start():
 	render()

@@ -1,13 +1,9 @@
 extends Node2D
+class_name GameSetup
 
-func _ready():
+func _init():
 	# FightOrchestrator design incubator
 	add_child(Global.GAME_FOCUS_MANAGER)
-
-	var combat_orchestrator = FightOrchestrator.new({
-		'hostiles': HostileArea.new()
-	})
-	add_child(combat_orchestrator)
 
 	# in fight club
 	var friendlies = FriendlyArea.new()
@@ -17,5 +13,3 @@ func _ready():
 	# in fight club, need a deck that is filled
 	var deck = AttackFocusDeck.new()
 	Global.FIGHT_CLUB.deck = deck
-
-	combat_orchestrator.start()

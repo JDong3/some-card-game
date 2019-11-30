@@ -42,7 +42,6 @@ func init(props_):
 	metadata = props.metadata
 	fight_club = Global.FIGHT_CLUB
 
-	print(metadata.animation)
 	if !metadata.has('animation'):
 		metadata.animation = 'attack'
 

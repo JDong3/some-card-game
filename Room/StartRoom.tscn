@@ -1,13 +1,12 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scenes/Rooms/TestRoom.gd" type="Script" id=1]
+[ext_resource path="res://Room/StartRoom.gd" type="Script" id=1]
 [ext_resource path="res://scenes/TileSets/TileSet.tres" type="TileSet" id=2]
 
-[node name="Room" type="Node2D"]
+[node name="StartRoom" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="TileSet" type="TileMap" parent="."]
-position = Vector2( 0, -9 )
+[node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
