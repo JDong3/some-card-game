@@ -15,7 +15,9 @@ func start():
 	new_ent.obtain_sole_focus()
 	new_ent.is_move = true
 
-	add_child(DoorPortal.new({}))
+	var door_portal = DoorPortal.new({})
+	door_portal.position = Vector2(150, 150)
+	add_child(door_portal)
 
 func _input(event):
 	if event.is_action_pressed('combat_end_turn'):
