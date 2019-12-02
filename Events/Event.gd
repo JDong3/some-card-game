@@ -24,4 +24,5 @@ func start_event():
 	emit_signal('event_started')
 
 func end_event():
+	print('end emitted')
 	emit_signal('event_ended')

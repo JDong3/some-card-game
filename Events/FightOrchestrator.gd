@@ -96,11 +96,7 @@ func start_roam():
 	inter.position = Vector2(100, 50)
 	add_child(inter)
 
-func start():
-	print('fight started')
-	var txt = Label.new()
-	txt.text = 'hi mom'
-	add_child(txt)
+func start_event():
 	render()
 	fight_club.draw_pile.load_from_deck()
 	cont()

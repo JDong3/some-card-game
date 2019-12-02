@@ -2,7 +2,7 @@ extends Room
 class_name StartRoom
 
 func _init():
-	props.events = [FightOrchestrator.new({
+	props.events = [Roam.new(), FightOrchestrator.new({
 		'hostiles': HostileArea.new()
 		})]
 	.init(props)
