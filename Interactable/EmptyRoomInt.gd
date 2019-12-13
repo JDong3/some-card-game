@@ -12,8 +12,8 @@ func _init():
 		'radius': 12,
 	})
 	.init(props)
-	connect('area_shape_entered', self, 'on_entered')
-	connect('area_shape_exited', self, 'on_exited')
+	# connect('area_shape_entered', self, 'on_entered')
+	# connect('area_shape_exited', self, 'on_exited')
 
 	ta = Label.new()
 	ta.text = 'abc 123'

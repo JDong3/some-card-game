@@ -14,3 +14,6 @@ func _init(props_):
 	props.sprite = PathSprite.new('res://assets/sprites/entity-selected.png')
 	.init(props)
 
+func interact():
+	print('interacted')
+

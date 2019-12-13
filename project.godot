@@ -194,10 +194,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Util/FocusManager.gd"
 }, {
-"base": "Node2D",
+"base": "Area2D",
 "class": "Focusable",
 "language": "GDScript",
 "path": "res://BaseObj/Focusable.gd"
+}, {
+"base": "Node",
+"class": "Focusable2",
+"language": "GDScript",
+"path": "res://BaseObj/Focusable2.gd"
 }, {
 "base": "EntArea",
 "class": "FriendlyArea",
@@ -234,7 +239,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CombatEntity/CombatEntityComponents/HpBar.gd"
 }, {
-"base": "Area2D",
+"base": "Focusable",
 "class": "Interactable",
 "language": "GDScript",
 "path": "res://Interactable/Interactable.gd"
@@ -338,6 +343,7 @@ _global_script_class_icons={
 "FightOrchestrator": "",
 "FocusManager": "",
 "Focusable": "",
+"Focusable2": "",
 "FriendlyArea": "",
 "GameSetup": "",
 "Hand": "",

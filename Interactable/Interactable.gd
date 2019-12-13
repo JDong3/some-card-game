@@ -1,7 +1,5 @@
-extends Area2D
+extends Focusable
 class_name Interactable
-
-var props = {}
 
 var sprite
 var collision_shape
@@ -17,6 +15,8 @@ func init(_props):
 	props = _props
 	sprite = props.sprite
 	collision_shape = props.collision_shape
+	connect('area_shape_entered', self, 'on_entered')
+	connect('area_shape_exited', self, 'on_exited')
 	render()
 
 func render():
@@ -27,11 +27,9 @@ func render():
 	if not collision_shape.get_parent() == self:
 		add_child(collision_shape)
 
-
-
-
 func on_entered(a, b, c, d):
 	entered = true
+	print('hi')
 
 func on_exited(a, b, c, d):
 	entered = false
