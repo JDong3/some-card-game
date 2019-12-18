@@ -8,13 +8,14 @@ experimental composable version of focusable
 var props = {}
 var focused
 
-func init(_props):
+func _init(_props):
 	"""
 	props_:
 		# focusable
 		focus_manager: FocusManager, the Focus manager that the Focusable will
 		connect to
 	"""
+	props = _props
 	focused = false
 
 # focusable

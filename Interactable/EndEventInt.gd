@@ -1,5 +1,5 @@
 extends Interactable
-class_name DangerInt
+class_name EndEventInt
 
 func _init():
 	props.sprite = PathSprite.new('res://assets/sprites/danger-button.png')
@@ -9,4 +9,3 @@ func _init():
 		'height': 5,
 		'radius': 12,
 	})
-	.init(props)

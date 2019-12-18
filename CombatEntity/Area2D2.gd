@@ -5,7 +5,7 @@ func _ready():
 	node.connect('area_entered', self, '_on_Area2D_area_entered')
 
 func _on_Area2D_area_entered(area):
-	print('hi')
+	pass
 
 func _process(delta):
 	position.x += 30 * delta

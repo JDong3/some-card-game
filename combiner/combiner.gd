@@ -8,7 +8,6 @@ func _init():
 
 func add_card(card):
 	cells.push_back(card)
-	print(cells)
 	.render()
 
 func attach_cell(cell):

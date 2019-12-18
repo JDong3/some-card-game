@@ -1,10 +1,14 @@
-extends Focusable
+extends Area2D
 class_name Interactable
 
-var sprite
-var collision_shape
+signal interacted
 
+var props = {}
+
+var collision_shape
 var entered = false
+var focusable
+var sprite
 
 func init(_props):
 	"""
@@ -13,8 +17,14 @@ func init(_props):
 		collision_shape: CollisionShape
 	"""
 	props = _props
+
 	sprite = props.sprite
 	collision_shape = props.collision_shape
+	focusable = Focusable2.new({
+		'focus_manager': Global.GAME_FOCUS_MANAGER
+	})
+	add_child(focusable)
+
 	connect('area_shape_entered', self, 'on_entered')
 	connect('area_shape_exited', self, 'on_exited')
 	render()
@@ -29,10 +39,17 @@ func render():
 
 func on_entered(a, b, c, d):
 	entered = true
+	focusable.obtain_shared_focus()
 	print('hi')
 
 func on_exited(a, b, c, d):
 	entered = false
+	focusable.defocus()
 
 func interact():
-	pass
+	print('emitted interacted')
+	emit_signal("interacted")
+
+func input(event):
+	if event.is_action_released('roam_interact'):
+		interact()

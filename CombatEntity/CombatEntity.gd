@@ -187,7 +187,6 @@ func on_card():
 	var cards = fight_club.transaction_interface.cards
 
 	# check card type to know what animation the actor needs to play
-	print(cards[0].metadata)
 	if cards[0].metadata.animation.casecmp_to('attack') == 0:
 		play('attack')
 	else:
