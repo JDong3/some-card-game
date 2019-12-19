@@ -23,7 +23,9 @@ func start():
 	door_portal.position = Vector2(150, 150)
 	add_child(door_portal)
 
-	var end_event_int = EndEventInt.new()
+	var end_event_int = EndEventInt.new({
+		'event': self
+	})
 	end_event_int.position = Vector2(120, 120)
 	add_child(end_event_int)
 

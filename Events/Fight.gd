@@ -1,5 +1,5 @@
 extends Event
-class_name FightOrchestrator
+class_name Fight
 
 var ent_index
 var hostiles

@@ -15,5 +15,4 @@ func _init(props_):
 	.init(props)
 
 func interact():
-
 	get_tree().change_scene(props.to)
