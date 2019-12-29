@@ -13,12 +13,6 @@ func _init():
 
 func try_process():
 	source.on_card()
-	#if source != null and card != null and targets != null:
-		#for target in targets:
-		#	source.send_transaction(card.props.transaction, target)
-		#fight_club.hand.remove_card(card)
-		#fight_club.discard_pile.add_card(card)
-		#clear()
 
 func add_source(source_):
 	source = source_

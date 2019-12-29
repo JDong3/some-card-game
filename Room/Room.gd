@@ -11,32 +11,35 @@ var props = {}
 var events
 var fight_club = Global.FIGHT_CLUB
 var event_position
+var current_event
 
 func init(props):
 	"""
 	props:
-		events: Array<Event>, list of events that make up the flow of the room
+		events:
+			'entry': Event,
+			'event2': Event,
+			...
 	"""
 	var setup = GameSetup.new()
 	event_position = 0
 
 	add_child(setup)
-	print(fight_club.friendlies)
 	events = props.events
-	add_child(events[event_position])
+
+	add_child(events.entry)
 
 	create_connections()
-	events[event_position].start_event()
+	events.entry.start_event()
+	current_event = 'entry'
 
 func create_connections():
-	for event in events:
-		event.connect('event_ended', self, 'change_event')
+	for event_key in events:
+		events[event_key].connect('event_ended', self, 'change_event')
 
-func change_event():
-	print('changing events')
+func change_event(event_name):
+	print('changing events + event name ', event_name)
 
-	remove_child(events[event_position])
-
-	event_position += 1
-	add_child(events[event_position])
-	events[event_position].start_event()
+	remove_child(events[current_event])
+	add_child(events[event_name])
+	events[event_name].start_event()

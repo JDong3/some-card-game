@@ -42,7 +42,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "BluePrint",
 "language": "GDScript",
-"path": "res://Tentative/BluePrint/BluePrint.gd"
+"path": "res://BluePrint/BluePrint.gd"
 }, {
 "base": "Area2D",
 "class": "CapsuleArea",
@@ -275,9 +275,19 @@ _global_script_classes=[ {
 "path": "res://Room/Room.gd"
 }, {
 "base": "Node2D",
+"class": "Room2",
+"language": "GDScript",
+"path": "res://Room/Room2.gd"
+}, {
+"base": "Node2D",
 "class": "RoomNode",
 "language": "GDScript",
 "path": "res://Tentative/Floor/RoomNode.gd"
+}, {
+"base": "Node2D",
+"class": "SceneManager",
+"language": "GDScript",
+"path": "res://SceneManager/SceneManager.gd"
 }, {
 "base": "Cell",
 "class": "SettingsCell",
@@ -368,7 +378,9 @@ _global_script_class_icons={
 "QuitCell": "",
 "Roam": "",
 "Room": "",
+"Room2": "",
 "RoomNode": "",
+"SceneManager": "",
 "SettingsCell": "",
 "StandardEntryEvent": "",
 "StartCell": "",
@@ -381,7 +393,7 @@ _global_script_class_icons={
 [application]
 
 config/name="some-card-game"
-run/main_scene="res://scenes/StartMenu/StartMenu.tscn"
+run/main_scene="res://SceneManager/Main.tscn"
 
 [autoload]
 
@@ -401,8 +413,6 @@ gdscript/warnings/return_value_discarded=false
 window/size/width=480
 window/size/height=270
 window/size/resizable=false
-window/size/borderless=true
-window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

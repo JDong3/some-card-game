@@ -12,9 +12,17 @@ signal event_ended
 
 var props = {}
 var fight_club = Global.FIGHT_CLUB
+var next
+
 
 func init(props_):
+	"""
+
+	props:
+		next: String
+	"""
 	props = props_
+	next = props.next
 
 func start_event():
 	"""
@@ -25,4 +33,5 @@ func start_event():
 
 func end_event():
 	print('end emitted')
-	emit_signal('event_ended')
+	print('next is ', next)
+	emit_signal('event_ended', next)

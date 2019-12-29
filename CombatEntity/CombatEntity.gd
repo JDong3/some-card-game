@@ -165,14 +165,15 @@ func input_move(event):
 		is_move_right = false
 
 func _process(delta):
+	var speed = 100
 	if is_move_up:
-		position.y -= delta * 50
+		position.y -= delta * speed
 	if is_move_down:
-		position.y += delta * 50
+		position.y += delta * speed
 	if is_move_right:
-		position.x += delta * 50
+		position.x += delta * speed
 	if is_move_left:
-		position.x -= delta * 50
+		position.x -= delta * speed
 
 # animation stuff
 
@@ -208,7 +209,7 @@ func on_card_reaction():
 	var targets = fight_club.transaction_interface.targets
 	var cards = fight_club.transaction_interface.cards
 	var source = fight_club.transaction_interface.source
-
+	print(targets)
 	targets[0].character_sprite.play('block')
 
 	for target in fight_club.transaction_interface.targets:

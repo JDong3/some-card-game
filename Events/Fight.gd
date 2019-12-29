@@ -10,10 +10,12 @@ func _init(props_):
 		hostiles: CursorArea
 	"""
 	props = props_
+	props.next = 'end'
 	hostiles = props.hostiles
 	fight_club = Global.FIGHT_CLUB
 	ent_index = -1
 	connect('event_started', self, 'start')
+	.init(props)
 
 func render():
 	fight_club.fight_orchestrator = self
@@ -81,20 +83,7 @@ func cleanup():
 		remove_child(child)
 
 func start_roam():
-	# make a new ent
-	var new_ent = DudeEntity.new()
-	add_child(new_ent)
-	new_ent.position = Vector2(100, 100)
-	new_ent.obtain_sole_focus()
-	new_ent.is_move = true
-
-	var danger = DangerInt.new()
-	danger.position = Vector2(200, 50)
-	add_child(danger)
-
-	var inter = EmptyRoomInt.new()
-	inter.position = Vector2(100, 50)
-	add_child(inter)
+	end_event()
 
 func start_event():
 	render()

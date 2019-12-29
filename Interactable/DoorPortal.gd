@@ -11,7 +11,7 @@ func _init(props_):
 	props.collision_shape = CapsuleCollision.new({
 		'radius': 10
 	})
-	props.sprite = PathSprite.new('res://assets/sprites/entity-selected.png')
+	props.sprite = PathSprite.new('res://assets/sprites/portal.png')
 	.init(props)
 
 func interact():
