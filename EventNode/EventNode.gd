@@ -4,6 +4,9 @@ class_name EventNode
 """
 if you children need to do autonamous swapping between each other then you
 may want to make the parent an Event node
+
+the event node has two modes 'container' and 'event', 'container' is used for
+storing nodes of 'event' mode
 """
 
 var props = {}
@@ -12,11 +15,15 @@ var current_event
 
 func init(_props):
 	"""
+
+
 	props:
 		event_pool:
-			event1: EventNode
-			event2: EventNode
+			event1: EventNode of mode container or event
+			event2: EventNode of mode container or event
 			...
+		entry: Str, name of the entry event
+		mode: Str, 'container' or 'event'
 	"""
 	_props = props
 

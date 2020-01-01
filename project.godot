@@ -92,7 +92,7 @@ _global_script_classes=[ {
 "base": "EventNode",
 "class": "CombatRoom",
 "language": "GDScript",
-"path": "res://EventRelated/Room/CombatRoom.gd"
+"path": "res://EventNode/Room/CombatRoom.gd"
 }, {
 "base": "CursorArea",
 "class": "Combiner",
@@ -182,12 +182,12 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "EventNode",
 "language": "GDScript",
-"path": "res://EventRelated/EventNode.gd"
+"path": "res://EventNode/EventNode.gd"
 }, {
 "base": "EventNode",
 "class": "Fight",
 "language": "GDScript",
-"path": "res://EventRelated/Events/Fight.gd"
+"path": "res://EventNode/Events/Fight.gd"
 }, {
 "base": "Node",
 "class": "FightClub",
@@ -267,17 +267,12 @@ _global_script_classes=[ {
 "base": "EventNode",
 "class": "Roam",
 "language": "GDScript",
-"path": "res://EventRelated/Events/Roam.gd"
+"path": "res://EventNode/Events/Roam.gd"
 }, {
 "base": "Node2D",
 "class": "RoomNode",
 "language": "GDScript",
 "path": "res://Tentative/Floor/RoomNode.gd"
-}, {
-"base": "Node2D",
-"class": "SceneManager",
-"language": "GDScript",
-"path": "res://SceneManager/SceneManager.gd"
 }, {
 "base": "Cell",
 "class": "SettingsCell",
@@ -287,7 +282,7 @@ _global_script_classes=[ {
 "base": "Event",
 "class": "StandardEntryEvent",
 "language": "GDScript",
-"path": "res://EventRelated/Events/StandardEntryEvent.gd"
+"path": "res://EventNode/Events/StandardEntryEvent.gd"
 }, {
 "base": "Cell",
 "class": "StartCell",
@@ -300,9 +295,14 @@ _global_script_classes=[ {
 "path": "res://scenes/StartMenu/Components/StartMenuCursorGrid.gd"
 }, {
 "base": "EventNode",
+"class": "StartNode",
+"language": "GDScript",
+"path": "res://EventNode/StartNode.gd"
+}, {
+"base": "EventNode",
 "class": "StartRoom",
 "language": "GDScript",
-"path": "res://EventRelated/Room/StartRoom.gd"
+"path": "res://EventNode/Room/StartRoom.gd"
 }, {
 "base": "Node",
 "class": "TransactionInterface",
@@ -368,11 +368,11 @@ _global_script_class_icons={
 "QuitCell": "",
 "Roam": "",
 "RoomNode": "",
-"SceneManager": "",
 "SettingsCell": "",
 "StandardEntryEvent": "",
 "StartCell": "",
 "StartMenuCursorGrid": "",
+"StartNode": "",
 "StartRoom": "",
 "TransactionInterface": "",
 "UidGenerator": ""
@@ -381,7 +381,7 @@ _global_script_class_icons={
 [application]
 
 config/name="some-card-game"
-run/main_scene="res://SceneManager/Main.tscn"
+run/main_scene="res://EventNode/Main.tscn"
 
 [autoload]
 
