@@ -1,8 +1,9 @@
-extends Event
+extends EventNode
 class_name Fight
 
 var ent_index
 var hostiles
+var fight_club
 
 func _init(props_):
 	"""
@@ -10,7 +11,6 @@ func _init(props_):
 		hostiles: CursorArea
 	"""
 	props = props_
-	props.next = 'end'
 	hostiles = props.hostiles
 	fight_club = Global.FIGHT_CLUB
 	ent_index = -1
@@ -83,7 +83,7 @@ func cleanup():
 		remove_child(child)
 
 func start_roam():
-	end_event()
+	end_event('end')
 
 func start_event():
 	render()

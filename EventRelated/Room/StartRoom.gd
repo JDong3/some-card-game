@@ -1,8 +1,8 @@
-extends Room
+extends EventNode
 class_name StartRoom
 
 func _init():
-	props.events = {
+	props.event_pool = {
 		'entry': Roam.new(),
 		'end': Roam.new(),
 		'fight': Fight.new({

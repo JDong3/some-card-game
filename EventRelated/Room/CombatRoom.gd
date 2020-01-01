@@ -1,2 +1,2 @@
-extends Room
+extends EventNode
 class_name CombatRoom

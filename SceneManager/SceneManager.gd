@@ -15,3 +15,6 @@ func _ready():
 func game():
 	start_menu = StartMenu.instance()
 	add_child(start_menu)
+
+func change_scene(scene_name):
+	pass

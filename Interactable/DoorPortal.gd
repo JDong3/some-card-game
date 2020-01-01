@@ -4,7 +4,7 @@ class_name DoorPortal
 func _init(props_):
 	"""
 	props:
-		to: String, scene path
+		to: String, uid of room
 	"""
 	props = props_
 

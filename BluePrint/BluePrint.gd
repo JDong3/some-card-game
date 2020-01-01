@@ -2,8 +2,9 @@ extends Node
 class_name BluePrint
 
 """
-class that represents a BluePrint for the for the map layout algorithm to use, a BluePrint is just an object that
-creates a RoomNode of the map, exposes makeBlueprint function
+class that represents a BluePrint for the for the map layout algorithm to use,
+a BluePrint is just an object that creates a RoomNode of the map, exposes
+makeBlueprint function
 """
 
 func make_blueprint():

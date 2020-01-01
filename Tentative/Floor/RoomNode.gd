@@ -12,6 +12,7 @@ func _init(_props):
 		s: RoomNode or null,
 		e: RoomNode or null,
 		w: RoomNode or null,
+		room: Rooms
 	}
 	"""
 	pass

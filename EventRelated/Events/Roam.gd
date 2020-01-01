@@ -1,4 +1,4 @@
-extends Event
+extends EventNode
 class_name Roam
 
 """
@@ -6,7 +6,6 @@ an event that tiggers the *roam* phase of a room (usually the end of the seq)
 """
 
 func _init():
-	props.next = 'fight'
 	connect('event_started', self, 'start')
 	.init(props)
 
@@ -28,12 +27,3 @@ func start():
 	})
 	end_event_int.position = Vector2(250, 150)
 	add_child(end_event_int)
-
-func _input(event):
-	if event.is_action_pressed('combat_end_turn'):
-		return
-		end_event()
-
-func end_event():
-	print('event ended')
-	.end_event()

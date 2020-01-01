@@ -22,4 +22,4 @@ func _init(_props):
 	.init(props)
 
 func interact():
-	event.end_event()
+	event.end_event('fight')
