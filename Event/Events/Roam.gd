@@ -1,4 +1,4 @@
-extends EventNode
+extends Event
 class_name Roam
 
 """

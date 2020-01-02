@@ -1,5 +1,5 @@
 extends Node2D
-class_name EventNode
+class_name EventContainer
 
 """
 if you children need to do autonamous swapping between each other then you
@@ -12,29 +12,22 @@ storing nodes of 'event' mode
 var props = {}
 var event_pool
 var current_event
+var entry
 
 func init(_props):
 	"""
-
-
 	props:
 		event_pool:
-			event1: EventNode of mode container or event
-			event2: EventNode of mode container or event
+			event1: Node or EventNode
+			event2: Node or EventNode
 			...
 		entry: Str, name of the entry event
-		mode: Str, 'container' or 'event'
 	"""
 	_props = props
 
-	if !props.has('event_pool'):
-		event_pool = {}
-	else:
-		event_pool = props.event_pool
-
-	if event_pool.has('entry'):
-		current_event = 'entry'
-		add_child(event_pool['entry'])
+	event_pool = props.event_pool
+	entry = props.entry
+	start()
 
 func create_connections():
 	for key in event_pool:
@@ -44,12 +37,15 @@ func change_event(name):
 	remove_child(event_pool[current_event])
 	add_child(event_pool[name])
 
-func start_event():
+func start():
 	"""
 	trigger the signal for the event start, this function usually invoked by
 	a parent Room object
 	"""
-	emit_signal('event_started')
+	print('event pool ', event_pool)
+	var event_thing = event_pool[entry]
+	add_child(event_thing)
+	event_thing.start()
 
 func end_event(event_name):
 	emit_signal('event_ended', event_name)

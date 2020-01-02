@@ -1,6 +1,8 @@
 extends Cell
 class_name StartCell
 
+signal change_event
+
 func _init():
 
 	props['sprite'] = CellSprite.new('res://assets/start/start-button.png')
@@ -9,4 +11,4 @@ func _init():
 
 func input(event):
 	if event.is_action_released('cursor_select'):
-		return get_tree().change_scene('res://scenes/CharacterSelect/CharacterSelect.tscn')
+		emit_signal('change_event', 'character_select')

@@ -1,4 +1,4 @@
-extends EventNode
+extends EventContainer
 class_name StartRoom
 
 func _init():
