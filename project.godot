@@ -299,6 +299,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://cells/SettingsCell.gd"
 }, {
+"base": "Node2D",
+"class": "SignalPropagator",
+"language": "GDScript",
+"path": "res://SignalPropagator/SignalPropagator.gd"
+}, {
 "base": "Event",
 "class": "StandardEntryEvent",
 "language": "GDScript",
@@ -393,6 +398,7 @@ _global_script_class_icons={
 "Roam": "",
 "RoomNode": "",
 "SettingsCell": "",
+"SignalPropagator": "",
 "StandardEntryEvent": "",
 "StartCell": "",
 "StartMenuCursorGrid": "",

@@ -7,7 +7,7 @@ func _init():
 	menu = StartMenuCursorGrid.new()
 	var position = Vector2(180, 80)
 	menu.set_position(position)
-	menu.obtain_shared_focus()
+	menu.focus()
 
 	add_child(menu)
 	.init(props)
