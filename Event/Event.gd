@@ -10,9 +10,12 @@ func init(props_):
 
 	signal_propagator = SignalPropagator.new()
 	add_child(signal_propagator)
+	signal_propagator.connect_signals()
+
+	signal_propagator.connect('change_event', self, 'change_event')
 
 func start():
 	pass
 
-func change_event():
+func change_event(event):
 	pass

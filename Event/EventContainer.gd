@@ -42,7 +42,6 @@ func start():
 	trigger the signal for the event start, this function usually invoked by
 	a parent Room object
 	"""
-	print('event pool ', event_pool)
 	var event_thing = event_pool[entry]
 	add_child(event_thing)
 	event_thing.start()

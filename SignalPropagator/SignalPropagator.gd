@@ -16,8 +16,6 @@ var signal_list
 func _init():
 	signal_list = ['change_event']
 
-	connect_signals()
-
 func connect_signals():
 	var siblings = get_parent().get_children()
 	siblings.erase(self)
@@ -32,3 +30,4 @@ func prop_change_event(event):
 	event: Str, name of event as defined in the EventContainer
 	"""
 	emit_signal('change_event', event)
+	print('emitted propagator ', event)
