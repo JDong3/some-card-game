@@ -17,3 +17,8 @@ func _init():
 	pubsub.connect('change_event', self, 'change_event')
 
 	.init(props)
+	start()
+
+func change_event(xd):
+	print('changing')
+	.change_event(xd)

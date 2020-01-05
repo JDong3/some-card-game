@@ -34,4 +34,3 @@ func _input(event):
 	var focused_on_copy = focused_on.duplicate()
 	for focusable in focused_on_copy:
 		focusable.input(event)
-		print('focusable ', focusable.get_class())

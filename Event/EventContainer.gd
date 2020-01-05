@@ -13,6 +13,7 @@ var props = {}
 var event_pool
 var current_event
 var entry
+var has_priority
 
 func init(_props):
 	"""
@@ -27,21 +28,30 @@ func init(_props):
 
 	event_pool = props.event_pool
 	entry = props.entry
-	start()
 
 func change_event(name):
+	if !has_priority:
+		return
+
 	var event_thing = event_pool[name]
+	print(event_thing.get_class())
+
+	if Global.is_event_container(event_thing):
+		has_priority = false
+
 
 	remove_child(event_pool[current_event])
 	current_event = name
 	event_thing.start()
 	add_child(event_pool[name])
 
+
 func start():
 	"""
 	trigger the signal for the event start, this function usually invoked by
 	a parent Room object
 	"""
+	has_priority = true
 	var event_thing = event_pool[entry]
 	current_event = entry
 	add_child(event_thing)
