@@ -2,6 +2,7 @@ extends Interactable
 class_name EndEventInt
 
 var event
+var pubsub = Global.PUB_SUB
 
 func _init(_props):
 	"""
@@ -22,4 +23,4 @@ func _init(_props):
 	.init(props)
 
 func interact():
-	event.end_event('fight')
+	pubsub.emit_signal('change_event', 'fight')
