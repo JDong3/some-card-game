@@ -29,12 +29,12 @@ func init(_props):
 	entry = props.entry
 	start()
 
-func create_connections():
-	for key in event_pool:
-		event_pool[key].connect('end_event', self, 'change_event')
-
 func change_event(name):
+	var event_thing = event_pool[name]
+
 	remove_child(event_pool[current_event])
+	current_event = name
+	event_thing.start()
 	add_child(event_pool[name])
 
 func start():
@@ -43,6 +43,7 @@ func start():
 	a parent Room object
 	"""
 	var event_thing = event_pool[entry]
+	current_event = entry
 	add_child(event_thing)
 	event_thing.start()
 

@@ -14,7 +14,6 @@ func _init(props_):
 	hostiles = props.hostiles
 	fight_club = Global.FIGHT_CLUB
 	ent_index = -1
-	connect('event_started', self, 'start')
 	.init(props)
 
 func render():
@@ -83,7 +82,7 @@ func cleanup():
 		remove_child(child)
 
 func start_roam():
-	end_event('end')
+	change_event('end')
 
 func start_event():
 	render()

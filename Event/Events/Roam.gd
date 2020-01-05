@@ -6,7 +6,6 @@ an event that tiggers the *roam* phase of a room (usually the end of the seq)
 """
 
 func _init():
-	connect('event_started', self, 'start')
 	.init(props)
 
 func start():
