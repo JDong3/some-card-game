@@ -34,7 +34,6 @@ func change_event(name):
 		return
 
 	var event_thing = event_pool[name]
-	print(event_thing.get_class())
 
 	if Global.is_event_container(event_thing):
 		has_priority = false

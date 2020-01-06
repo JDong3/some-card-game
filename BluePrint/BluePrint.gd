@@ -7,7 +7,28 @@ a BluePrint is just an object that creates a RoomNode of the map, exposes
 makeBlueprint function
 """
 
-func make_blueprint():
+var map
+
+func _init():
+	map = make_map()
+
+func get_nodes(res = []):
+	"""
+	return: Array<RoomNode>, all room nodes in the map (graph)
+	"""
+	pass
+
+func get_adj(node):
+	var res = []
+
+	res.push_back(node.n)
+	res.push_back(node.s)
+	res.push_back(node.e)
+	res.push_back(node.w)
+
+	return res
+
+func make_map():
 	"""
 	returns a blueprint of the floor map, a blueprint is a graph that represents
 	the floor

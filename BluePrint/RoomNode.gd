@@ -3,10 +3,15 @@ class_name RoomNode
 
 # RoomNode is a node with n, s, e, w children
 
+var props
+var n
+var s
+var e
+var w
+
 func _init(_props):
 	"""
 	:param _props: dictionary
-
 	_props: {
 		n: RoomNode or null,
 		s: RoomNode or null,
@@ -15,4 +20,9 @@ func _init(_props):
 		room: Rooms
 	}
 	"""
-	pass
+	props = _props
+
+	n = props.n
+	s = props.s
+	e = props.e
+	w = props.w

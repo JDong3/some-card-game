@@ -14,7 +14,7 @@ var multi_target = false
 var group_target = false
 
 
-func init(props_):
+func init(_props):
 	"""
 	props:
 		cells: list of Cells that are contained in the CursorArea,
@@ -24,7 +24,7 @@ func init(props_):
 			increments position, this is for CursorAreas where the cells are
 			created from right to left
 	"""
-	props = props_
+	props = _props
 
 	if props.has('cells'):
 		cells = props.cells

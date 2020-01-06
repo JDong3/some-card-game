@@ -10,7 +10,7 @@ var is_move_down
 
 func init(_props):
 	"""
-	props_:
+	_props:
 		# focusable
 		focus_manager: FocusManager, the Focus manager that the Focusable will
 		connect to
@@ -21,7 +21,6 @@ func init(_props):
 	is_move_right = false
 	is_move_up = false
 	is_move_down = false
-	print('hi', self)
 
 # focusable
 func on_focus():

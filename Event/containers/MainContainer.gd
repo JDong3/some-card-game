@@ -20,5 +20,4 @@ func _init():
 	start()
 
 func change_event(xd):
-	print('changing')
 	.change_event(xd)

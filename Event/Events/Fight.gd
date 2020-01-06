@@ -5,12 +5,12 @@ var ent_index
 var hostiles
 var fight_club
 
-func _init(props_):
+func _init(_props):
 	"""
-	props_:
+	_props:
 		hostiles: CursorArea
 	"""
-	props = props_
+	props = _props
 	hostiles = props.hostiles
 	fight_club = Global.FIGHT_CLUB
 	ent_index = -1

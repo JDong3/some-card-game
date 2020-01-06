@@ -57,7 +57,6 @@ func on_exited(a, b, c, d):
 	render()
 
 func interact():
-	print('emitted interacted')
 	emit_signal("interacted")
 
 func input(event):

@@ -3,8 +3,8 @@ class_name Event
 
 var props = {}
 
-func init(props_):
-	props = props_
+func init(_props):
+	props = _props
 
 
 func start():

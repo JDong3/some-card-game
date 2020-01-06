@@ -1,12 +1,12 @@
 extends Interactable
 class_name DoorPortal
 
-func _init(props_):
+func _init(_props):
 	"""
 	props:
 		to: String, uid of room
 	"""
-	props = props_
+	props = _props
 
 	props.collision_shape = CapsuleCollision.new({
 		'radius': 10

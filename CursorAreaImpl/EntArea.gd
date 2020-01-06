@@ -8,8 +8,8 @@ multiple targets (not implemented yet), group targets)
 
 var fight_club
 
-func init(props_):
-	props = props_
+func init(_props):
+	props = _props
 
 	fight_club = Global.FIGHT_CLUB
 

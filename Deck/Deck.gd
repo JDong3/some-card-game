@@ -8,9 +8,9 @@ A deck is filled with card objects
 var cards
 var props = {}
 
-func init(props_):
+func init(_props):
 	"""
-	props_:
+	_props:
 		cards: Array<Cards>=[]
 	"""
 	if !props.has('cards'):

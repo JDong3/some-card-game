@@ -3,13 +3,13 @@ class_name CoordinateGrid
 
 var props = {}
 
-func init(props_):
+func init(_props):
 	"""
-	props_:
+	_props:
 		offset: Vector2
 		space: int, gap between coordinates
 	"""
-	props = props_
+	props = _props
 
 func position_of(x, y):
 	var maybe_vec = props.space * Vector2(x, y)

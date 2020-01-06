@@ -5,9 +5,9 @@ var fight_club
 var transaction
 var metadata
 
-func init(props_):
+func init(_props):
 	"""
-	props_:
+	_props:
 		sprite: Sprite
 		SelectedSprite: Sprite
 		text: String
@@ -37,7 +37,7 @@ func init(props_):
 			times: int=1, how many times to do the attack
 			aoe: bool=false
 	"""
-	props = props_
+	props = _props
 	transaction = props.transaction
 	metadata = props.metadata
 	fight_club = Global.FIGHT_CLUB

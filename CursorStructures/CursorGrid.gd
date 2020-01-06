@@ -12,10 +12,10 @@ var cells = []
 # var focus_interface
 
 
-func init(props_):
+func init(_props):
 	"""
-	:param props_: dictionary describing the configuration of the CursorGrid object
-	props_:
+	:param _props: dictionary describing the configuration of the CursorGrid object
+	_props:
 		cell_size: Vector2, the pixel w by h of each cell
 		cells: list of Cells that are the cells
 		cursor_position?: null
@@ -23,7 +23,7 @@ func init(props_):
 		focus_interface: a focus interface from the appropriate manager
 		size: Vector2, the pixel w by h of the cursor area
 	"""
-	props = props_
+	props = _props
 
 	cells = props.cells
 	render()

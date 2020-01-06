@@ -9,15 +9,15 @@ implement:
 	input(event)
 """
 
-func init(props_):
+func init(_props):
 	"""
-	props_:
+	_props:
 		sprite: Sprite, the Sprite that is seen by the player by default
 		selected_sprite: Sprite, the Sprite that is overlayed on top of the
 			regular sprite
 	"""
-	for key in props_.keys():
-		props[key] = props_[key]
+	for key in _props.keys():
+		props[key] = _props[key]
 	add_child(props.sprite)
 
 	return self

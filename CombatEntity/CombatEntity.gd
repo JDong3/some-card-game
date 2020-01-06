@@ -33,16 +33,16 @@ var area
 
 var play_anim # ????
 
-func init(props_):
+func init(_props):
 	"""
-	props_:
+	_props:
 		area=def: Area2D, area with collision shape
 		character_sprite: CharacterSprite, AnimatedSprite of the CombatEntity
 		hp_bar: HpBar, displays the hp of the CombatEntity
 		name: Str, display name of the CombatEntity
 		offset: Vector2
 	"""
-	props = props_
+	props = _props
 
 	is_move = false
 

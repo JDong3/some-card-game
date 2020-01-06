@@ -10,7 +10,7 @@ var focused
 
 func _init(_props):
 	"""
-	props_:
+	_props:
 		# focusable
 		focus_manager: FocusManager, the Focus manager that the Focusable will
 		connect to
