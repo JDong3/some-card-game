@@ -12,11 +12,13 @@ var map
 func _init():
 	map = make_map()
 
-func get_nodes(res = []):
+func get_nodes(head=map, res=[]):
 	"""
 	return: Array<RoomNode>, all room nodes in the map (graph)
 	"""
-	pass
+	# get adjacent nodes then recur
+	get_adj(head)
+	return
 
 func get_adj(node):
 	var res = []
