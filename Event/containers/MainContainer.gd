@@ -19,5 +19,8 @@ func _init():
 	.init(props)
 	start()
 
+	var xd = BluePrint.new()
+	print(xd.get_nodes())
+
 func change_event(xd):
 	.change_event(xd)

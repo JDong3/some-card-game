@@ -12,21 +12,45 @@ var map
 func _init():
 	map = make_map()
 
-func get_nodes(head=map, res=[]):
+func get_nodes():
+	var res = []
+	xd(map, res)
+	return res
+
+func xd(head=map, res=[]):
 	"""
-	return: Array<RoomNode>, all room nodes in the map (graph)
+	some weird algorithm that gradually fills res with the nodes of the graph
 	"""
-	# get adjacent nodes then recur
-	get_adj(head)
-	return
+	# add self to results if not visited
+	if not head in res:
+		res.push_back(head)
+
+	# base case, if all adj are visited exit
+	var adj_all_visited = true
+	var adj = get_adj(head)
+	#print('adj', adj)
+	for node in adj:
+		if not node in res:
+			adj_all_visited = false
+	if adj_all_visited:
+		return res
+
+	# recur
+	for node in adj:
+		xd(node, res)
+
 
 func get_adj(node):
 	var res = []
 
-	res.push_back(node.n)
-	res.push_back(node.s)
-	res.push_back(node.e)
-	res.push_back(node.w)
+	if node.n:
+		res.push_back(node.n)
+	if node.s:
+		res.push_back(node.s)
+	if node.e:
+		res.push_back(node.e)
+	if node.w:
+		res.push_back(node.w)
 
 	return res
 
@@ -40,25 +64,13 @@ func make_map():
 	var sec
 	var third
 
-	head = RoomNode.new({
-		n: null,
-		e: null,
-		s: sec,
-		w: null
-	});
+	head = RoomNode.new()
+	sec = RoomNode.new()
+	third = RoomNode.new()
 
-	sec = RoomNode.new({
-		n: head,
-		e: null,
-		s: third,
-		w: null
-	});
-
-	third = RoomNode.new({
-		n: sec,
-		e: null,
-		s: null,
-		w: null
-	})
+	head.s = sec
+	sec.n = head
+	sec.s = third
+	third.n = sec
 
 	return head

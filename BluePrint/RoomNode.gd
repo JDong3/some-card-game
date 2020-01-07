@@ -9,7 +9,7 @@ var s
 var e
 var w
 
-func _init(_props):
+func _init(_props={}):
 	"""
 	:param _props: dictionary
 	_props: {
@@ -21,8 +21,3 @@ func _init(_props):
 	}
 	"""
 	props = _props
-
-	n = props.n
-	s = props.s
-	e = props.e
-	w = props.w
