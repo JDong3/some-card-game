@@ -8,6 +8,7 @@ var n
 var s
 var e
 var w
+var event
 
 func _init(_props={}):
 	"""
@@ -17,7 +18,7 @@ func _init(_props={}):
 		s: RoomNode or null,
 		e: RoomNode or null,
 		w: RoomNode or null,
-		room: Rooms
+		event: Event
 	}
 	"""
 	props = _props

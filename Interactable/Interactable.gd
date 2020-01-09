@@ -10,6 +10,7 @@ var entered = false
 var focusable
 var sprite
 var interact_text
+var pubsub
 
 func init(_props):
 	"""
@@ -18,6 +19,8 @@ func init(_props):
 		collision_shape: CollisionShape
 	"""
 	props = _props
+
+	pubsub = Global.PUB_SUB
 
 	sprite = props.sprite
 	collision_shape = props.collision_shape

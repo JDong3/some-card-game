@@ -1,12 +1,16 @@
 extends Interactable
 class_name DoorPortal
 
+var to
+
 func _init(_props):
 	"""
 	props:
 		to: String, uid of room
 	"""
 	props = _props
+
+	to = props.to
 
 	props.collision_shape = CapsuleCollision.new({
 		'radius': 10
@@ -15,4 +19,4 @@ func _init(_props):
 	.init(props)
 
 func interact():
-	get_tree().change_scene(props.to)
+	pubsub.emit_signal('change_event', to)

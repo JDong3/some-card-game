@@ -1,2 +1,0 @@
-extends EventNode
-class_name CombatRoom

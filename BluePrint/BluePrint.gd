@@ -69,8 +69,11 @@ func make_map():
 	third = RoomNode.new()
 
 	head.s = sec
+	head.event = RoomContainer.new()
 	sec.n = head
 	sec.s = third
+	sec.event = RoomContainer.new()
 	third.n = sec
+	third.event = RoomContainer.new()
 
 	return head

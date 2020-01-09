@@ -99,11 +99,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CombatEntity/CombatEntity.gd"
 }, {
-"base": "EventNode",
-"class": "CombatRoom",
-"language": "GDScript",
-"path": "res://Event/Rooms/CombatRoom.gd"
-}, {
 "base": "CursorArea",
 "class": "Combiner",
 "language": "GDScript",
@@ -282,7 +277,7 @@ _global_script_classes=[ {
 "base": "EventContainer",
 "class": "MapContainer",
 "language": "GDScript",
-"path": "res://Event/Containers/MapContainner.gd"
+"path": "res://Event/Containers/MapContainer.gd"
 }, {
 "base": "Sprite",
 "class": "PathSprite",
@@ -368,7 +363,6 @@ _global_script_class_icons={
 "CharacterSelectEvent": "",
 "CharacterSprite": "",
 "CombatEntity": "",
-"CombatRoom": "",
 "Combiner": "",
 "CoordinateGrid": "",
 "CursorArea": "",

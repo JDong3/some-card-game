@@ -25,10 +25,8 @@ func _init(_props):
 
 	}
 
-
-
-	map = props.map
-	# take the map and create an appropriate event pool
+	build_event_pool()
+	.init(props)
 
 func build_event_pool():
 	"""
@@ -36,6 +34,8 @@ func build_event_pool():
 	"""
 	var res = {}
 	var nodes = blueprint.get_nodes()
+
+	props.entry = 0
 
 	for node in nodes:
 		var uid = uid_generator.obtain_uid()

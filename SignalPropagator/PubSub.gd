@@ -11,5 +11,17 @@ pubsub.emit_signal('xd', ...)
 
 signal change_event
 
+var subscribers
+
 func _init():
-	pass
+	subscribers = []
+
+func has_priority(container):
+	return subscribers[-1] == container
+
+func subscribe(container):
+	subscribers.push_back(container)
+
+func unsubscribe(container):
+	subscribers.erase(container)
+

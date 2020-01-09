@@ -13,7 +13,7 @@ var props = {}
 var event_pool
 var current_event
 var entry
-var has_priority
+var pubsub = Global.PUB_SUB
 
 func init(_props):
 	"""
@@ -30,14 +30,18 @@ func init(_props):
 	entry = props.entry
 
 func change_event(name):
-	if !has_priority:
+	if not pubsub.has_priority(self):
 		return
 
+	if not event_pool.has(name):
+		if Global.is_event_container(get_parent()):
+			get_parent().change_event(name)
+		elif Global.is_event_container(get_parent().get_parent()):
+			get_parent().get_parent().change_event(name)
+		return
+
+
 	var event_thing = event_pool[name]
-
-	if Global.is_event_container(event_thing):
-		has_priority = false
-
 
 	remove_child(event_pool[current_event])
 	current_event = name
@@ -50,7 +54,7 @@ func start():
 	trigger the signal for the event start, this function usually invoked by
 	a parent Room object
 	"""
-	has_priority = true
+	pubsub.subscribe(self)
 	var event_thing = event_pool[entry]
 	current_event = entry
 	add_child(event_thing)

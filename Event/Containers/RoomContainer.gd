@@ -1,7 +1,7 @@
 extends EventContainer
 class_name RoomContainer
 
-func _init(_props):
+func _init():
 	props.event_pool = {
 		'entry': Roam.new()
 	}

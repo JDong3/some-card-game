@@ -2,7 +2,6 @@ extends Interactable
 class_name EndEventInt
 
 var event
-var pubsub = Global.PUB_SUB
 
 func _init(_props):
 	"""
