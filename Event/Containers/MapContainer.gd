@@ -16,16 +16,16 @@ func _init(_props):
 		blueprint: BluePrint
 	"""
 	props = _props
+	print('map container: ', self)
 
 	blueprint = props.blueprint
 
 	uid_generator = UidGenerator.new()
 
-	props.event_pool = {
-
-	}
+	props.event_pool = build_event_pool()
 
 	build_event_pool()
+	print(props.event_pool)
 	.init(props)
 
 func build_event_pool():
@@ -38,9 +38,9 @@ func build_event_pool():
 	props.entry = 0
 
 	for node in nodes:
-		var uid = uid_generator.obtain_uid()
-		var event = node.event
-
-		res[uid] = event
+		var event = RoomContainer.new({
+			'room_node': node
+		})
+		res[node.uid] = event
 
 	return res

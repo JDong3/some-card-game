@@ -17,6 +17,7 @@ func _init():
 	subscribers = []
 
 func has_priority(container):
+	print('priority: ', subscribers[-1])
 	return subscribers[-1] == container
 
 func subscribe(container):
@@ -24,4 +25,7 @@ func subscribe(container):
 
 func unsubscribe(container):
 	subscribers.erase(container)
+
+func next(n):
+	return subscribers[-(1 + n)]
 

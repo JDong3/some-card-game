@@ -28,25 +28,32 @@ func init(_props):
 
 	event_pool = props.event_pool
 	entry = props.entry
+	pubsub.connect('change_event', self, 'change_event')
 
-func change_event(name):
-	if not pubsub.has_priority(self):
+func change_event(name, force=false):
+	print('name: ', name, ' force: ', force, ' subs: ', pubsub.subscribers.size(), pubsub.subscribers, self)
+	print('event_pool: ', event_pool)
+	if not pubsub.has_priority(self) and not force:
+		print('get outta here')
 		return
 
 	if not event_pool.has(name):
-		if Global.is_event_container(get_parent()):
-			get_parent().change_event(name)
-		elif Global.is_event_container(get_parent().get_parent()):
-			get_parent().get_parent().change_event(name)
-		return
+		print("nonono")
+		var self_index = pubsub.subscribers.find(self)
+		if self_index == 0:
+			return
+		var candidate = pubsub.subscribers[self_index - 1]
 
 
-	var event_thing = event_pool[name]
+		candidate.change_event(name, true)
+	else:
+		print("yesyesyes")
+		var event_thing = event_pool[name]
 
-	remove_child(event_pool[current_event])
-	current_event = name
-	event_thing.start()
-	add_child(event_pool[name])
+		remove_child(event_pool[current_event])
+		current_event = name
+		event_thing.start()
+		add_child(event_pool[name])
 
 
 func start():
@@ -55,7 +62,10 @@ func start():
 	a parent Room object
 	"""
 	pubsub.subscribe(self)
+	print(event_pool)
+	print(entry)
 	var event_thing = event_pool[entry]
+
 	current_event = entry
 	add_child(event_thing)
 	event_thing.start()

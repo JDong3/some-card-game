@@ -42,7 +42,6 @@ func xd(head=map, res=[]):
 
 func get_adj(node):
 	var res = []
-
 	if node.n:
 		res.push_back(node.n)
 	if node.s:
@@ -69,11 +68,11 @@ func make_map():
 	third = RoomNode.new()
 
 	head.s = sec
-	head.event = RoomContainer.new()
+	head.uid = 0
 	sec.n = head
 	sec.s = third
-	sec.event = RoomContainer.new()
+	sec.uid = 1
 	third.n = sec
-	third.event = RoomContainer.new()
+	third.uid = 2
 
 	return head

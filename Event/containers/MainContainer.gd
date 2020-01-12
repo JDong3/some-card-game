@@ -15,14 +15,8 @@ func _init():
 		})
 	}
 	add_child(pubsub)
-	pubsub.connect('change_event', self, 'change_event')
 
 	.init(props)
 	start()
-	print(self, pubsub.subscribers[-1])
 
 	var xd = BluePrint.new()
-	print(xd.get_nodes())
-
-func change_event(xd):
-	.change_event(xd)

@@ -9,6 +9,7 @@ var s
 var e
 var w
 var event
+var uid
 
 func _init(_props={}):
 	"""
@@ -18,7 +19,8 @@ func _init(_props={}):
 		s: RoomNode or null,
 		e: RoomNode or null,
 		w: RoomNode or null,
-		event: Event
+		event: Event,
+		furniture: Node2D, the room TileSet thing
 	}
 	"""
 	props = _props

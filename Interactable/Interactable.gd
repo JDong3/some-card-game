@@ -49,7 +49,8 @@ func render():
 		add_child(interact_text)
 	if !entered:
 		focusable.defocus()
-		remove_child(interact_text)
+		if interact_text in get_children():
+			remove_child(interact_text)
 
 func on_entered(a, b, c, d):
 	entered = true

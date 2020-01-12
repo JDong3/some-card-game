@@ -15,14 +15,11 @@ var w_portal
 func init(_props):
 	"""
 	_props:
-		n: int?, uid of room to the north
-		s: int?, uid of room to the south
-		e: int?
-		w: int?
+		room_node: RoomNode
 	"""
 	props = _props
 
-	if props.has('n'):
+	if props.room_node.has('n'):
 		n = props.n
 
 	if props.has('s'):
