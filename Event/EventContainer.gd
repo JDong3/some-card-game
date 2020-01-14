@@ -30,10 +30,8 @@ func init(_props):
 	entry = props.entry
 	pubsub.connect('change_event', self, 'change_event')
 
-func change_event(name, force=false):
-	print('name: ', name, ' force: ', force, ' subs: ', pubsub.subscribers.size(), pubsub.subscribers, self)
-	print('event_pool: ', event_pool)
-	if not pubsub.has_priority(self) and not force:
+func change_event(name, delegated=false):
+	if not pubsub.has_priority(self) and not delegated:
 		print('get outta here')
 		return
 
@@ -47,7 +45,7 @@ func change_event(name, force=false):
 
 		candidate.change_event(name, true)
 	else:
-		print("yesyesyes")
+		event_pool[current_event].end()
 		var event_thing = event_pool[name]
 
 		remove_child(event_pool[current_event])
