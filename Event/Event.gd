@@ -10,5 +10,8 @@ func init(_props):
 func start():
 	pass
 
-func change_event(event):
+func end():
+	"""
+	triggered on current event when change_event is emitted
+	"""
 	pass

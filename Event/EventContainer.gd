@@ -46,7 +46,7 @@ func change_event(name, force=false):
 
 		candidate.change_event(name, true)
 	else:
-		#print('yes: ', name)
+		event_pool[current_event].end()
 		var event_thing = event_pool[name]
 
 		remove_child(event_pool[current_event])
