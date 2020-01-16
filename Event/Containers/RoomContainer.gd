@@ -19,13 +19,12 @@ func _init(_props):
 	"""
 		room_node: RoomNode
 	"""
-	print('rom node: ', self)
 
 	props = _props
 	props.event_pool = {
-		'entry': Roam.new()
+		'entryyy': Roam.new()
 	}
-	props.entry = 'entry'
+	props.entry = 'entryyy'
 
 	furniture = StartRoomFurniture.new({
 		'room_node': props.room_node
@@ -35,6 +34,8 @@ func _init(_props):
 	.init(props)
 
 func change_event(xd, force=false):
-	print('ROOMIE!!!', self)
 	.change_event(xd, force)
 
+func start():
+	print('room started')
+	.start()

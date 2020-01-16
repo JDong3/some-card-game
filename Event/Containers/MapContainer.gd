@@ -16,7 +16,6 @@ func _init(_props):
 		blueprint: BluePrint
 	"""
 	props = _props
-	print('map container: ', self)
 
 	blueprint = props.blueprint
 
@@ -25,7 +24,6 @@ func _init(_props):
 	props.event_pool = build_event_pool()
 
 	build_event_pool()
-	print(props.event_pool)
 	.init(props)
 
 func build_event_pool():
@@ -44,3 +42,7 @@ func build_event_pool():
 		res[node.uid] = event
 
 	return res
+
+func start():
+	print("map started")
+	.start()

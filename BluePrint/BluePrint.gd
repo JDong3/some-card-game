@@ -28,7 +28,7 @@ func xd(head=map, res=[]):
 	# base case, if all adj are visited exit
 	var adj_all_visited = true
 	var adj = get_adj(head)
-	#print('adj', adj)
+
 	for node in adj:
 		if not node in res:
 			adj_all_visited = false
