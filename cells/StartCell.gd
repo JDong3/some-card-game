@@ -11,4 +11,4 @@ func _init():
 
 func input(event):
 	if event.is_action_released('cursor_select'):
-		pubsub.emit_signal('change_event', 'character_menu')
+		pubsub.emit('change_event', ['character_menu'])

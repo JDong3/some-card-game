@@ -18,5 +18,3 @@ func _init():
 
 	.init(props)
 	start()
-
-	var xd = BluePrint.new()

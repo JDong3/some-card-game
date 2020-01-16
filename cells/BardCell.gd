@@ -10,4 +10,4 @@ func _init():
 
 func input(event):
 	if event.is_action_released('cursor_select'):
-		pubsub.emit_signal('change_event', 'map')
+		pubsub.emit('change_event', ['map'])

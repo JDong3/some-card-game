@@ -15,16 +15,26 @@ var subscribers
 
 func _init():
 	subscribers = []
+	connect('change_event', self, 'monitor')
 
 func has_priority(container):
-	return subscribers[-1] == container
+	var temp = subscribers.duplicate()
+	return temp[0] == container
 
 func subscribe(container):
-	subscribers.push_back(container)
+	subscribers.push_front(container)
 
 func unsubscribe(container):
 	subscribers.erase(container)
 
 func next(n):
 	return subscribers[-(1 + n)]
+
+func emit(sig_name, args=[]):
+	for sub in subscribers:
+		if sub.callv(sig_name, args):
+			break
+
+func monitor(xd):
+	print()
 

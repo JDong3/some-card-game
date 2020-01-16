@@ -33,9 +33,6 @@ func _init(_props):
 
 	.init(props)
 
-func change_event(xd, force=false):
-	.change_event(xd, force)
-
 func start():
 	print('room started')
 	.start()

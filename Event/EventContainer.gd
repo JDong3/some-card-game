@@ -31,43 +31,34 @@ func init(_props):
 	pubsub.connect('change_event', self, 'change_event')
 
 func change_event(name, force=false):
-	if force:
-		print('native', name)
-	if not pubsub.has_priority(self) and not force:
-		return
+	event_pool[current_event].end()
+	print('name: ', name, ' ', self)
 
 	if not event_pool.has(name):
-		#print('no: ', name)
-		var self_index = pubsub.subscribers.find(self)
-		var candidate = pubsub.subscribers[self_index - 1]
-
-		if candidate == pubsub.subscribers[-1]:
-			return
-
-		candidate.change_event(name, true)
+		return false
 	else:
-		event_pool[current_event].end()
 		var event_thing = event_pool[name]
 
 		remove_child(event_pool[current_event])
 		current_event = name
 		event_thing.start()
 		add_child(event_pool[name])
-	#print('completed: ', name)
-
+		return true
 
 func start():
 	"""
 	trigger the signal for the event start, this function usually invoked by
 	a parent Room object
 	"""
-	pubsub.subscribe(self)
+
 	var event_thing = event_pool[entry]
 
 	current_event = entry
-	print('entry: ', entry, self)
+	# print('entry: ', entry, self)
 	add_child(event_thing)
 	event_thing.start()
+	print('gained priority: ', self)
+	pubsub.subscribe(self)
 
-func end_event(event_name):
-	emit_signal('event_ended', event_name)
+func end():
+	return

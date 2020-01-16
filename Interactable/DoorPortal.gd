@@ -19,4 +19,4 @@ func _init(_props):
 	.init(props)
 
 func interact():
-	pubsub.emit_signal('change_event', to)
+	pubsub.emit('change_event', [to])
