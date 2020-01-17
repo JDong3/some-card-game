@@ -29,9 +29,12 @@ func _init(_props):
 	furniture = StartRoomFurniture.new({
 		'room_node': props.room_node
 	})
-	add_child(furniture)
 
 	.init(props)
+
+func start():
+	add_child(furniture)
+	.start()
 
 func end():
 	event_pool[current_event].end()

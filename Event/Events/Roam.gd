@@ -26,5 +26,7 @@ func start():
 	add_child(end_event_int)
 
 func end():
-	remove_child(new_ent)
-	remove_child(end_event_int)
+	if new_ent in get_children():
+		remove_child(new_ent)
+	if end_event_int in get_children():
+		remove_child(end_event_int)
