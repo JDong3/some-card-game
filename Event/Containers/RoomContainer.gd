@@ -33,6 +33,6 @@ func _init(_props):
 
 	.init(props)
 
-func start():
-	print('room started')
-	.start()
+func end():
+	event_pool[current_event].end()
+	remove_child(furniture)
