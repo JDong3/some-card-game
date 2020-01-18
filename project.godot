@@ -337,7 +337,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "StartRoomFurniture",
 "language": "GDScript",
-"path": "res://Event/Rooms/StartRoomFurniture.gd"
+"path": "res://Event/Furniture/StartRoomFurniture.gd"
 }, {
 "base": "Node",
 "class": "TransactionInterface",

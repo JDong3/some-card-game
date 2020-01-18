@@ -20,7 +20,7 @@ func _init(_props):
 	room_node = props.room_node
 
 	setup_portals()
-	#add_child(Tiles.instance())
+	add_child(Tiles.instance())
 
 func setup_portals():
 	if room_node.n:

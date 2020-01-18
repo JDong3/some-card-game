@@ -61,4 +61,4 @@ func start():
 	pubsub.subscribe(self)
 
 func end():
-	return
+	remove_child(event_pool[current_event])

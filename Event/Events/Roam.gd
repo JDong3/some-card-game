@@ -23,7 +23,7 @@ func start():
 		'event': self
 	})
 	end_event_int.position = Vector2(250, 150)
-	add_child(end_event_int)
+	# add_child(end_event_int)
 
 func end():
 	if new_ent in get_children():
