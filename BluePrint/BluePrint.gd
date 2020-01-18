@@ -68,6 +68,11 @@ func make_map():
 	third = RoomNode.new()
 
 	head.s = sec
+	head.n = sec
+	head.e = sec
+	head.w = sec
+
+
 	head.uid = 0
 	sec.n = head
 	sec.s = third

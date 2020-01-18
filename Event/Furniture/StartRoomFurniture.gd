@@ -27,26 +27,26 @@ func setup_portals():
 		n_portal = DoorPortal.new({
 			'to': room_node.n.uid
 		})
-		n_portal.position = Vector2(150, 25)
+		n_portal.position = Vector2(238, 25)
 		add_child(n_portal)
 
 	if room_node.s:
 		s_portal = DoorPortal.new({
 			'to': room_node.s.uid
 		})
-		s_portal.position = Vector2(150, 200)
+		s_portal.position = Vector2(238, 240)
 		add_child(s_portal)
 
 	if room_node.e:
 		e_portal = DoorPortal.new({
 			'to': room_node.e.uid
 		})
-		e_portal.position = Vector2(400, 150)
+		e_portal.position = Vector2(450, 120)
 		add_child(e_portal)
 
 	if room_node.w:
 		w_portal = DoorPortal.new({
 			'to': room_node.w.uid
 		})
-		w_portal.position = Vector2(50, 150)
+		w_portal.position = Vector2(20, 120)
 		add_child(w_portal)
