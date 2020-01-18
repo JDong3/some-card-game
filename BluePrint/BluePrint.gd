@@ -13,6 +13,9 @@ func _init():
 	map = make_map()
 
 func get_nodes():
+	"""
+	gets nodes in the map
+	"""
 	var res = []
 	xd(map, res)
 	return res
@@ -68,9 +71,11 @@ func make_map():
 	third = RoomNode.new()
 
 	head.s = sec
-	head.n = sec
-	head.e = sec
-	head.w = sec
+
+	# used for testing portal locations
+	#head.n = sec
+	#head.e = sec
+	#head.w = sec
 
 
 	head.uid = 0
