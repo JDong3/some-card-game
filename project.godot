@@ -209,15 +209,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Util/FocusManager.gd"
 }, {
-"base": "Area2D",
+"base": "Node2D",
 "class": "Focusable",
 "language": "GDScript",
 "path": "res://BaseObj/Focusable.gd"
-}, {
-"base": "Node",
-"class": "Focusable2",
-"language": "GDScript",
-"path": "res://BaseObj/Focusable2.gd"
 }, {
 "base": "EntArea",
 "class": "FriendlyArea",
@@ -309,6 +304,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://BluePrint/RoomNode.gd"
 }, {
+"base": "Node2D",
+"class": "Selectable",
+"language": "GDScript",
+"path": "res://BaseObj/Selectable.gd"
+}, {
 "base": "Cell",
 "class": "SettingsCell",
 "language": "GDScript",
@@ -391,7 +391,6 @@ _global_script_class_icons={
 "FightClub": "",
 "FocusManager": "",
 "Focusable": "",
-"Focusable2": "",
 "FriendlyArea": "",
 "GameContainer": "",
 "GameSetup": "",
@@ -410,6 +409,7 @@ _global_script_class_icons={
 "Roam": "",
 "RoomContainer": "",
 "RoomNode": "",
+"Selectable": "",
 "SettingsCell": "",
 "StandardEntryEvent": "",
 "StartCell": "",

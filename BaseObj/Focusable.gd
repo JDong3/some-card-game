@@ -1,16 +1,21 @@
-extends Area2D
+extends Node2D
 class_name Focusable
 
-var focused
-var props = {}
+"""
+experimental composable version of focusable
+"""
 
-func init(_props):
+var props = {}
+var focused
+
+func _init(_props):
 	"""
 	_props:
 		# focusable
 		focus_manager: FocusManager, the Focus manager that the Focusable will
 		connect to
 	"""
+	props = _props
 	focused = false
 
 # focusable
@@ -54,3 +59,19 @@ func has_focus():
 	:return: null
 	"""
 	return props['focus_manager'].has_focus(self)
+
+func input(event):
+	var siblings
+	var parent
+
+	parent = get_parent()
+
+	siblings = parent.get_children()
+	siblings.erase(self)
+
+	if parent.has_method('input'):
+		parent.input(event)
+
+	for sibling in siblings:
+		if sibling.has_method('input'):
+			sibling.input(event)

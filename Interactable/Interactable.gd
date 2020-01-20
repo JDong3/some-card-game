@@ -24,7 +24,7 @@ func init(_props):
 
 	sprite = props.sprite
 	collision_shape = props.collision_shape
-	focusable = Focusable2.new({
+	focusable = Focusable.new({
 		'focus_manager': Global.GAME_FOCUS_MANAGER
 	})
 	interact_text = Label.new()
