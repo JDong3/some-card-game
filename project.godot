@@ -179,6 +179,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Interactable/EndEventInt.gd"
 }, {
+"base": "RigidBody2D",
+"class": "Ent",
+"language": "GDScript",
+"path": "res://CombatEntity/Ent.gd"
+}, {
 "base": "CursorArea",
 "class": "EntArea",
 "language": "GDScript",
@@ -274,6 +279,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Event/Containers/MapContainer.gd"
 }, {
+"base": "Node2D",
+"class": "Movable",
+"language": "GDScript",
+"path": "res://BaseObj/Movable.gd"
+}, {
 "base": "Sprite",
 "class": "PathSprite",
 "language": "GDScript",
@@ -307,12 +317,17 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Selectable",
 "language": "GDScript",
-"path": "res://BaseObj/Selectable.gd"
+"path": "res://Selectable/Selectable.gd"
 }, {
 "base": "Cell",
 "class": "SettingsCell",
 "language": "GDScript",
 "path": "res://cells/SettingsCell.gd"
+}, {
+"base": "Selectable",
+"class": "SpriteSelectable",
+"language": "GDScript",
+"path": "res://Selectable/Selectables/SpriteSelectable.gd"
 }, {
 "base": "Event",
 "class": "StandardEntryEvent",
@@ -384,6 +399,7 @@ _global_script_class_icons={
 "EmptyRoomInt": "",
 "Encounter": "",
 "EndEventInt": "",
+"Ent": "",
 "EntArea": "",
 "Event": "",
 "EventContainer": "",
@@ -403,6 +419,7 @@ _global_script_class_icons={
 "ItemDropdown": "",
 "MainContainer": "",
 "MapContainer": "",
+"Movable": "",
 "PathSprite": "",
 "PubSub": "",
 "QuitCell": "",
@@ -411,6 +428,7 @@ _global_script_class_icons={
 "RoomNode": "",
 "Selectable": "",
 "SettingsCell": "",
+"SpriteSelectable": "",
 "StandardEntryEvent": "",
 "StartCell": "",
 "StartMenuCursorGrid": "",

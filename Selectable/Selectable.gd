@@ -9,3 +9,6 @@ func select():
 
 func deselect():
 	is_selected = false
+
+func get_class():
+	return 'Selectable'
