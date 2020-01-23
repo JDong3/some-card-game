@@ -31,6 +31,8 @@ var selected_sprite
 var character_sprite
 var hp_bar
 var area
+var sprite_selectable
+
 
 var play_anim # ????
 
@@ -54,6 +56,9 @@ func init(_props):
 		area = CapsuleArea.new({'radius': 20})
 
 	combobulate()
+
+	add_child(sprite_selectable)
+
 	.init(props)
 
 func combobulate():
@@ -129,56 +134,13 @@ func prepare():
 func act():
 	pass
 
-func select():
-	if !is_selected:
-		add_child(selected_sprite)
-		is_selected = true
-
-func deselect():
-	if is_selected:
-		remove_child(selected_sprite)
-		is_selected = false
-
 func input(event):
 	if event.is_action_released('cursor_select'):
 		return # print()
 		fight_club.transaction_interface.add_target(self)
-	if is_move:
-		input_move(event)
 	.input(event)
 
-# moveable
-func input_move(event):
-	if event.is_action_pressed('roam_up'):
-		is_move_up = true
-	if event.is_action_released('roam_up'):
-		is_move_up = false
-	if event.is_action_pressed('roam_down'):
-		is_move_down = true
-	if event.is_action_released('roam_down'):
-		is_move_down = false
-	if event.is_action_pressed('roam_left'):
-		is_move_left = true
-	if event.is_action_released('roam_left'):
-		is_move_left = false
-	if event.is_action_pressed('roam_right'):
-		is_move_right = true
-	if event.is_action_released('roam_right'):
-		is_move_right = false
-
-func _process(delta):
-	var speed = 100
-	if is_move_up:
-		position.y -= delta * speed
-	if is_move_down:
-		position.y += delta * speed
-	if is_move_right:
-		position.x += delta * speed
-	if is_move_left:
-		position.x -= delta * speed
-
 # animation stuff
-
 func on_card():
 	"""
 	triggers the sequence of animations that needs to be played after you play
