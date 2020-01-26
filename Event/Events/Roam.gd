@@ -16,7 +16,7 @@ func start():
 	new_ent = DudeEntity.new()
 	add_child(new_ent)
 	new_ent.position = Vector2(100, 100)
-	new_ent.obtain_sole_focus()
+	new_ent.focusable.obtain_sole_focus()
 	new_ent.is_move = true
 
 	end_event_int = EndEventInt.new({

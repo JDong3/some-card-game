@@ -1,4 +1,4 @@
-extends CombatEntity
+extends Ent
 class_name DudeEntity
 
 func _init():

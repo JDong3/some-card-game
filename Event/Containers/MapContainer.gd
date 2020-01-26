@@ -44,5 +44,4 @@ func build_event_pool():
 	return res
 
 func start():
-	print("map started")
 	.start()

@@ -154,7 +154,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Card/DrawPile.gd"
 }, {
-"base": "CombatEntity",
+"base": "Ent",
 "class": "DudeEntity",
 "language": "GDScript",
 "path": "res://CombatEntity/CombatEntityDerivatives/DudeEntity.gd"
@@ -179,7 +179,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Interactable/EndEventInt.gd"
 }, {
-"base": "RigidBody2D",
+"base": "KinematicBody2D",
 "class": "Ent",
 "language": "GDScript",
 "path": "res://CombatEntity/Ent.gd"

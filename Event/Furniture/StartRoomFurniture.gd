@@ -1,7 +1,7 @@
 extends Node2D
 class_name StartRoomFurniture
 
-var Tiles = load('res://Event/Rooms/StartRoomTileMap.tscn')
+var Tiles = load('res://Event/Rooms/2dtest.tscn')
 
 var props = {}
 

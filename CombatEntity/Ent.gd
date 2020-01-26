@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends KinematicBody2D
 class_name Ent
 
 """
@@ -27,6 +27,9 @@ var is_move = false # whether the objects moves or not
 # block mods
 # var frail
 
+var focusable
+var movable
+
 var selected_sprite
 var character_sprite
 var hp_bar
@@ -53,13 +56,16 @@ func init(_props):
 	character_sprite = props.character_sprite
 
 	if !props.has('area'):
-		area = CapsuleArea.new({'radius': 20})
+		area = CapsuleCollision.new({'radius': 20})
+
+	focusable = Focusable.new({
+		'focus_manager': Global.GAME_FOCUS_MANAGER
+	})
+
+	movable = Movable.new()
 
 	combobulate()
 
-	add_child(sprite_selectable)
-
-	.init(props)
 
 func combobulate():
 	add_child(hp_bar)
@@ -68,6 +74,9 @@ func combobulate():
 
 	selected_sprite = PathSprite.new('res://assets/sprites/entity-selected.png')
 	add_child(area)
+	add_child(focusable)
+	add_child(sprite_selectable)
+	add_child(movable)
 
 func play(anim):
 	"""
@@ -138,7 +147,6 @@ func input(event):
 	if event.is_action_released('cursor_select'):
 		return # print()
 		fight_club.transaction_interface.add_target(self)
-	.input(event)
 
 # animation stuff
 func on_card():

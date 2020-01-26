@@ -32,7 +32,6 @@ func init(_props):
 
 func change_event(name, force=false):
 	event_pool[current_event].end()
-	print('name: ', name, ' ', self)
 
 	if not event_pool.has(name):
 		return false
@@ -54,10 +53,8 @@ func start():
 	var event_thing = event_pool[entry]
 
 	current_event = entry
-	# print('entry: ', entry, self)
 	add_child(event_thing)
 	event_thing.start()
-	print('gained priority: ', self)
 	pubsub.subscribe(self)
 
 func end():
