@@ -41,6 +41,7 @@ func _physics_process(delta):
 	var FRICTION = 50
 
 	var MAX_SPEED = 200
+	var TERMINAL_VELOCITY = 400
 
 	if is_move_left:
 		motion.x = max(motion.x - ACCELERATION, -MAX_SPEED)
@@ -48,7 +49,7 @@ func _physics_process(delta):
 		motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
 
 	if !parent.is_on_floor():
-		motion.y += GRAVITY
+		motion.y = min(motion.y + GRAVITY, TERMINAL_VELOCITY)
 
 	if is_jump:
 		motion.y = -500
