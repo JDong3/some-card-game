@@ -5,6 +5,9 @@ var is_move_left
 var is_move_right
 var is_move_up
 var is_move_down
+var is_jump
+
+var motion = Vector2()
 
 func _init():
 	pass
@@ -26,36 +29,36 @@ func input(event):
 		is_move_right = true
 	if event.is_action_released('roam_right'):
 		is_move_right = false
+	if event.is_action_pressed('roam_jump'):
+		is_jump = true
 
 func _physics_process(delta):
 
 	var parent = get_parent()
-	var motion = Vector2()
-	motion.x = 0
 
-	var GRAVITY = Vector2(0, 20)
-	var SPEED = 50
+	var GRAVITY = 50
+	var ACCELERATION = 50
+	var FRICTION = 50
 
-	if is_move_up:
-		motion.y -= SPEED
-	if is_move_down:
-		motion.y += SPEED
+	var MAX_SPEED = 200
+
 	if is_move_left:
-		motion.x -= SPEED
+		motion.x = max(motion.x - ACCELERATION, -MAX_SPEED)
 	if is_move_right:
-		motion.x += SPEED
+		motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
 
-	motion += GRAVITY
+	if !parent.is_on_floor():
+		motion.y += GRAVITY
+
+	if is_jump:
+		motion.y = -500
+		is_jump = false
+
+	# friction on ground
+	if parent.is_on_floor() and not is_move_left and not is_move_right:
+		if motion.x < 0:
+			motion.x = min(motion.x + FRICTION, 0)
+		if motion.x > 0:
+			motion.x = max(motion.x - FRICTION, 0)
+
 	parent.move_and_slide(motion, Vector2(0, -1))
-
-func _process(delta):
-	return
-	var speed = 100
-	if is_move_up:
-		get_parent().position.y -= delta * speed
-	if is_move_down:
-		get_parent().position.y += delta * speed
-	if is_move_right:
-		get_parent().position.x += delta * speed
-	if is_move_left:
-		get_parent().position.x -= delta * speed
