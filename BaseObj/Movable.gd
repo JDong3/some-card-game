@@ -45,8 +45,13 @@ func _physics_process(delta):
 
 	if is_move_left:
 		motion.x = max(motion.x - ACCELERATION, -MAX_SPEED)
-	if is_move_right:
+	elif is_move_right:
 		motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
+	else:
+		if parent.is_on_floor():
+			motion.x = lerp(motion.x, 0, 0.2)
+		else:
+			motion.x = lerp(motion.x, 0, 0.05)
 
 	if !parent.is_on_floor():
 		motion.y = min(motion.y + GRAVITY, TERMINAL_VELOCITY)
@@ -55,11 +60,5 @@ func _physics_process(delta):
 		motion.y = -500
 		is_jump = false
 
-	# friction on ground
-	if parent.is_on_floor() and not is_move_left and not is_move_right:
-		if motion.x < 0:
-			motion.x = min(motion.x + FRICTION, 0)
-		if motion.x > 0:
-			motion.x = max(motion.x - FRICTION, 0)
 
 	parent.move_and_slide(motion, Vector2(0, -1))
