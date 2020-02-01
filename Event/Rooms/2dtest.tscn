@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://TileSet.tres" type="TileSet" id=1]
-
-[node name="TileMap" type="TileMap"]
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 458753, 17, 0, 458754, 17, 0, 458755, 17, 0, 458756, 17, 0, 458757, 17, 0, 458758, 17, 0, 458759, 17, 0, 458760, 17, 0, 458761, 17, 0, 458762, 17, 0, 458763, 17, 0, 458764, 17, 0, 458765, 17, 0 )

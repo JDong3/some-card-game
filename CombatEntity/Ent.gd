@@ -57,6 +57,8 @@ func init(_props):
 
 	if !props.has('area'):
 		area = CapsuleCollision.new({'radius': 20})
+	else:
+		area = props.area
 
 	focusable = Focusable.new({
 		'focus_manager': Global.GAME_FOCUS_MANAGER

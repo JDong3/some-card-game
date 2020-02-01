@@ -1,7 +1,7 @@
 extends Node2D
 class_name StartRoomFurniture
 
-var Tiles = load('res://Event/Rooms/2dtest.tscn')
+var Tiles = load('res://Event/Rooms/FlatLongRoom.tscn')
 
 var props = {}
 
@@ -23,6 +23,7 @@ func _init(_props):
 	add_child(Tiles.instance())
 
 func setup_portals():
+	return
 	if room_node.n:
 		n_portal = DoorPortal.new({
 			'to': room_node.n.uid
