@@ -16,6 +16,12 @@ func _init():
 	props.hp_bar = HpBar.new(100)
 	props.focus_manager = Global.GAME_FOCUS_MANAGER
 
+	# camera stuff
+	var camera
+	camera = Camera2D.new()
+	add_child(camera)
+	camera.current = true
+
 	.init(props)
 
 func prepare():

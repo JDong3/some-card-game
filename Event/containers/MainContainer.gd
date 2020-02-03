@@ -16,5 +16,6 @@ func _init():
 	}
 	add_child(pubsub)
 
+
 	.init(props)
 	start()
