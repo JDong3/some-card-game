@@ -10,9 +10,7 @@ func _init():
 	props.event_pool = {
 		'start_menu': StartMenuEvent.new(),
 		'character_menu': CharacterSelectEvent.new(),
-		'map': MapContainer.new({
-			'blueprint': BluePrint.new()
-		})
+		'map': Horizon1.new()
 	}
 	add_child(pubsub)
 

@@ -9,9 +9,10 @@ var to_cliffs
 func _init():
 	map = Map.instance()
 	to_cliffs = DoorPortal.new({
-		from: 'snowy_plains_1',
-		to: 'snowy_cliffs_1'
+		'from': 'snowy_plains_1',
+		'to': 'snowy_cliffs_1'
 	})
+	combobulate()
 
 
 func combobulate():

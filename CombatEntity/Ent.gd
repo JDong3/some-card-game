@@ -77,7 +77,7 @@ func combobulate():
 	selected_sprite = PathSprite.new('res://assets/sprites/entity-selected.png')
 	add_child(area)
 	add_child(focusable)
-	add_child(sprite_selectable)
+	# add_child(sprite_selectable)
 	add_child(movable)
 
 func play(anim):

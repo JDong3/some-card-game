@@ -249,6 +249,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Deck/HealFocusDeck.gd"
 }, {
+"base": "EventContainer",
+"class": "Horizon1",
+"language": "GDScript",
+"path": "res://Floors/SnowyFloor1/Horizon1.gd"
+}, {
 "base": "EntArea",
 "class": "HostileArea",
 "language": "GDScript",
@@ -325,14 +330,9 @@ _global_script_classes=[ {
 "path": "res://cells/SettingsCell.gd"
 }, {
 "base": "EventContainer",
-"class": "SnowVillage1Container",
-"language": "GDScript",
-"path": "res://Floors/SnowyFloor1/SnowVillage1Container.gd"
-}, {
-"base": "EventContainer",
 "class": "SnowyPlains1",
 "language": "GDScript",
-"path": "res://Floors/SnowyFloor1/SnowyPlains1Container.gd"
+"path": "res://Floors/SnowyFloor1/SnowyPlains1.gd"
 }, {
 "base": "Node2D",
 "class": "SnowyPlains1Furniture",
@@ -428,6 +428,7 @@ _global_script_class_icons={
 "Hand": "",
 "HealCard": "",
 "HealFocusDeck": "",
+"Horizon1": "",
 "HostileArea": "",
 "HpBar": "",
 "Interactable": "",
@@ -443,7 +444,6 @@ _global_script_class_icons={
 "RoomNode": "",
 "Selectable": "",
 "SettingsCell": "",
-"SnowVillage1Container": "",
 "SnowyPlains1": "",
 "SnowyPlains1Furniture": "",
 "SpriteSelectable": "",

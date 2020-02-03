@@ -10,9 +10,11 @@ storing nodes of 'event' mode
 """
 
 var props = {}
-var event_pool
+
 var current_event
 var entry
+var event_pool
+var furniture
 var pubsub = Global.PUB_SUB
 
 func init(_props):
@@ -23,11 +25,16 @@ func init(_props):
 			event2: Node or EventNode
 			...
 		entry: Str, name of the entry event
+		furniture: Node2D=Node2D.new()
 	"""
 	_props = props
 
 	event_pool = props.event_pool
 	entry = props.entry
+	if props.has('furniture'):
+		furniture = props.furniture
+	else:
+		furniture = Node2D.new()
 	pubsub.connect('change_event', self, 'change_event')
 
 func change_event(name, force=false):
@@ -51,6 +58,8 @@ func start():
 	"""
 
 	var event_thing = event_pool[entry]
+
+	add_child(furniture)
 
 	current_event = entry
 	add_child(event_thing)
