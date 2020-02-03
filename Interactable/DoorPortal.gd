@@ -6,7 +6,8 @@ var to
 func _init(_props):
 	"""
 	props:
-		to: String, uid of room
+		to: String, uid/name of destination room,
+		from: String, uid/name of current room
 	"""
 	props = _props
 

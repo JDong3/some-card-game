@@ -6,3 +6,4 @@ func _init():
 
 	}
 	props.entry = 'snowy_hill_1'
+	.init(props)
