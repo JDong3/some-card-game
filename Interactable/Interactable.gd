@@ -32,8 +32,8 @@ func init(_props):
 
 	add_child(focusable)
 
-	connect('area_shape_entered', self, 'on_entered')
-	connect('area_shape_exited', self, 'on_exited')
+	connect('body_shape_entered', self, 'on_entered')
+	connect('body_shape_exited', self, 'on_exited')
 	render()
 
 func render():
@@ -53,6 +53,7 @@ func render():
 			remove_child(interact_text)
 
 func on_entered(a, b, c, d):
+	print('hi')
 	entered = true
 	render()
 

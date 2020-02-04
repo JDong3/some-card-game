@@ -1,7 +1,9 @@
 extends Interactable
 class_name DoorPortal
 
-var to
+export var to = ''
+export var from = ''
+
 
 func _init(_props):
 	"""
@@ -12,6 +14,7 @@ func _init(_props):
 	props = _props
 
 	to = props.to
+	#from = props.from
 
 	props.collision_shape = CapsuleCollision.new({
 		'radius': 10

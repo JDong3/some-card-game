@@ -16,6 +16,8 @@ func _init():
 
 
 func combobulate():
+	to_cliffs.position = Vector2(800, 195)
+
 	add_child(map)
 	add_child(to_cliffs)
 
