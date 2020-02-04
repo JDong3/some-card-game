@@ -252,7 +252,7 @@ _global_script_classes=[ {
 "base": "EventContainer",
 "class": "Horizon1",
 "language": "GDScript",
-"path": "res://Floors/SnowyFloor1/Horizon1.gd"
+"path": "res://Floors/Horizon1/Horizon1.gd"
 }, {
 "base": "EntArea",
 "class": "HostileArea",
@@ -330,14 +330,24 @@ _global_script_classes=[ {
 "path": "res://cells/SettingsCell.gd"
 }, {
 "base": "EventContainer",
+"class": "SnowyCliffs1",
+"language": "GDScript",
+"path": "res://Floors/Horizon1/SnowyCliffs1/SnowyCliffs1.gd"
+}, {
+"base": "Node2D",
+"class": "SnowyFliffs1Funiture",
+"language": "GDScript",
+"path": "res://Floors/Horizon1/SnowyCliffs1/SnowyCliffs1Furniture.gd"
+}, {
+"base": "EventContainer",
 "class": "SnowyPlains1",
 "language": "GDScript",
-"path": "res://Floors/SnowyFloor1/SnowyPlains1.gd"
+"path": "res://Floors/Horizon1/SnowyPlains1/SnowyPlains1.gd"
 }, {
 "base": "Node2D",
 "class": "SnowyPlains1Furniture",
 "language": "GDScript",
-"path": "res://Floors/SnowyFloor1/SnowyPlains1Furniture.gd"
+"path": "res://Floors/Horizon1/SnowyPlains1/SnowyPlains1Furniture.gd"
 }, {
 "base": "Selectable",
 "class": "SpriteSelectable",
@@ -363,11 +373,6 @@ _global_script_classes=[ {
 "class": "StartMenuEvent",
 "language": "GDScript",
 "path": "res://Event/Events/StartMenuEvent.gd"
-}, {
-"base": "Node2D",
-"class": "StartRoomFurniture",
-"language": "GDScript",
-"path": "res://Event/Furniture/StartRoomFurniture.gd"
 }, {
 "base": "Node",
 "class": "TransactionInterface",
@@ -444,6 +449,8 @@ _global_script_class_icons={
 "RoomNode": "",
 "Selectable": "",
 "SettingsCell": "",
+"SnowyCliffs1": "",
+"SnowyFliffs1Funiture": "",
 "SnowyPlains1": "",
 "SnowyPlains1Furniture": "",
 "SpriteSelectable": "",
@@ -451,7 +458,6 @@ _global_script_class_icons={
 "StartCell": "",
 "StartMenuCursorGrid": "",
 "StartMenuEvent": "",
-"StartRoomFurniture": "",
 "TransactionInterface": "",
 "UidGenerator": ""
 }
