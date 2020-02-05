@@ -21,3 +21,6 @@ func combobulate():
 	add_child(map)
 	add_child(to_cliffs)
 
+func get_portals():
+	return [to_cliffs]
+

@@ -10,6 +10,11 @@ pubsub.emit_signal('xd', ...)
 """
 
 signal change_event
+"""
+props:
+	to: String
+	from: String
+"""
 
 var subscribers
 

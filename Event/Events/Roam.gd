@@ -9,7 +9,12 @@ var new_ent
 var door_portal
 var end_event_int
 
-func _init():
+func _init(props_):
+	"""
+	props:
+		from: String,
+		portals: Array<DoorPortal>
+	"""
 	.init(props)
 
 func start():
@@ -19,11 +24,7 @@ func start():
 	new_ent.focusable.obtain_sole_focus()
 	new_ent.is_move = true
 
-	end_event_int = EndEventInt.new({
-		'event': self
-	})
 	end_event_int.position = Vector2(250, 150)
-	# add_child(end_event_int)
 
 func end():
 	if new_ent in get_children():
