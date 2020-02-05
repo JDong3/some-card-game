@@ -23,4 +23,8 @@ func _init(_props):
 	.init(props)
 
 func interact():
-	pubsub.emit('change_event', [to])
+	var res = {
+		'to': to,
+		'from': from
+	}
+	pubsub.emit('change_event', res)

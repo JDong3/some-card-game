@@ -37,18 +37,19 @@ func init(_props):
 		furniture = Node2D.new()
 	pubsub.connect('change_event', self, 'change_event')
 
-func change_event(name, force=false):
+func change_event(obj, force=false):
+
 	event_pool[current_event].end()
 
-	if not event_pool.has(name):
+	if not event_pool.has(obj.to):
 		return false
 	else:
-		var event_thing = event_pool[name]
+		var event_thing = event_pool[obj.to]
 
 		remove_child(event_pool[current_event])
-		current_event = name
+		current_event = obj.to
 		event_thing.start()
-		add_child(event_pool[name])
+		add_child(event_pool[obj.to])
 		return true
 
 func start():

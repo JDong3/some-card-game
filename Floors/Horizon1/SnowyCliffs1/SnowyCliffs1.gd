@@ -6,5 +6,5 @@ func _init():
 		'roam': Roam.new()
 	}
 	props.entry = 'roam'
-	props.furniture = 1
+	props.furniture = SnowyFliffs1Funiture.new()
 	.init(props)

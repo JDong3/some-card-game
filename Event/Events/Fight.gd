@@ -82,7 +82,7 @@ func cleanup():
 		remove_child(child)
 
 func start_roam():
-	change_event('end')
+	change_event({'to': 'end'})
 
 func start_event():
 	render()

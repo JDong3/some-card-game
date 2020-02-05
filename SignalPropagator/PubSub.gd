@@ -31,10 +31,14 @@ func next(n):
 	return subscribers[-(1 + n)]
 
 func emit(sig_name, args=[]):
+
+	if not args is Array:
+		args = [args]
+
 	for sub in subscribers:
 		if sub.callv(sig_name, args):
 			break
 
 func monitor(xd):
-	print()
+	print(xd)
 

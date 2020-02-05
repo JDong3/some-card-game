@@ -53,7 +53,6 @@ func render():
 			remove_child(interact_text)
 
 func on_entered(a, b, c, d):
-	print('hi')
 	entered = true
 	render()
 

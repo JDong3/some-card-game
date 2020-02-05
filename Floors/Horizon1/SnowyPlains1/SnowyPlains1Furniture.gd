@@ -1,7 +1,7 @@
 extends Node2D
 class_name SnowyPlains1Furniture
 
-var Map = load('res://Floors/Horizon1/Plains1/SnowyPlains1.tscn')
+var Map = load('res://Floors/Horizon1/SnowyPlains1/SnowyPlains1.tscn')
 
 var map
 var to_cliffs

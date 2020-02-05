@@ -483,8 +483,6 @@ gdscript/warnings/return_value_discarded=false
 
 window/size/width=480
 window/size/height=270
-window/size/resizable=false
-window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
