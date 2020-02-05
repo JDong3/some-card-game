@@ -5,9 +5,11 @@ class_name Roam
 an event that tiggers the *roam* phase of a room (usually the end of the seq)
 """
 
-var new_ent
-var door_portal
-var end_event_int
+var dude
+var from
+var portals
+
+
 
 func _init(props_):
 	"""
@@ -15,19 +17,23 @@ func _init(props_):
 		from: String,
 		portals: Array<DoorPortal>
 	"""
-	.init(props)
+	from = props.from
+	portals = props.portals
+
+	.init(props_)
 
 func start():
-	new_ent = DudeEntity.new()
-	add_child(new_ent)
-	new_ent.position = Vector2(100, 100)
-	new_ent.focusable.obtain_sole_focus()
-	new_ent.is_move = true
+	dude = DudeEntity.new()
+	dude.focusable.obtain_sole_focus()
+	dude.is_move = true
+	add_child(dude)
 
-	end_event_int.position = Vector2(250, 150)
+	dude.position = Vector2(100, 100)
+	for portal in portals:
+		if portal.to == from:
+			dude.position = portal.position
+
 
 func end():
-	if new_ent in get_children():
-		remove_child(new_ent)
-	if end_event_int in get_children():
-		remove_child(end_event_int)
+	if dude in get_children():
+		remove_child(dude)
