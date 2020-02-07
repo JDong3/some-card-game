@@ -207,7 +207,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "FightClub",
 "language": "GDScript",
-"path": "res://Fight/FightClub.gd"
+"path": "res://Clubs/FightClub.gd"
 }, {
 "base": "Node2D",
 "class": "FocusManager",
@@ -309,6 +309,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Event/Events/Roam.gd"
 }, {
+"base": "Node",
+"class": "RomeClub",
+"language": "GDScript",
+"path": "res://Clubs/RomeClub.gd"
+}, {
 "base": "EventContainer",
 "class": "RoomContainer",
 "language": "GDScript",
@@ -335,7 +340,7 @@ _global_script_classes=[ {
 "path": "res://Floors/Horizon1/SnowyCliffs1/SnowyCliffs1.gd"
 }, {
 "base": "Node2D",
-"class": "SnowyFliffs1Funiture",
+"class": "SnowyCliffs1Funiture",
 "language": "GDScript",
 "path": "res://Floors/Horizon1/SnowyCliffs1/SnowyCliffs1Furniture.gd"
 }, {
@@ -445,12 +450,13 @@ _global_script_class_icons={
 "PubSub": "",
 "QuitCell": "",
 "Roam": "",
+"RomeClub": "",
 "RoomContainer": "",
 "RoomNode": "",
 "Selectable": "",
 "SettingsCell": "",
 "SnowyCliffs1": "",
-"SnowyFliffs1Funiture": "",
+"SnowyCliffs1Funiture": "",
 "SnowyPlains1": "",
 "SnowyPlains1Furniture": "",
 "SpriteSelectable": "",

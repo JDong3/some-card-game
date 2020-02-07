@@ -6,21 +6,25 @@ an event that tiggers the *roam* phase of a room (usually the end of the seq)
 """
 
 var dude
-var from
 var portals
+var rome_club = Global.ROME_CLUB
 
 
 
 func _init(props_):
 	"""
 	props:
-		from: String,
 		portals: Array<DoorPortal>
+		default_starting_location: Vector2=Vector2(100, 100)
 	"""
-	from = props.from
-	portals = props.portals
+	props = props_
 
-	.init(props_)
+	if !props.has('portals'):
+		portals = []
+	else:
+		portals = props.portals
+
+	.init(props)
 
 func start():
 	dude = DudeEntity.new()
@@ -30,7 +34,7 @@ func start():
 
 	dude.position = Vector2(100, 100)
 	for portal in portals:
-		if portal.to == from:
+		if portal.to == rome_club.last_room:
 			dude.position = portal.position
 
 
