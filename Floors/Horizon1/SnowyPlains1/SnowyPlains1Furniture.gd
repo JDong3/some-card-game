@@ -4,23 +4,22 @@ class_name SnowyPlains1Furniture
 var Map = load('res://Floors/Horizon1/SnowyPlains1/SnowyPlains1.tscn')
 
 var map
-var to_cliffs
 
 func _init():
 	map = Map.instance()
-	to_cliffs = DoorPortal.new({
-		'from': 'snowy_plains_1',
-		'to': 'snowy_cliffs_1'
-	})
 	combobulate()
 
 
 func combobulate():
-	to_cliffs.position = Vector2(800, 195)
-
 	add_child(map)
-	add_child(to_cliffs)
 
 func get_portals():
-	return [to_cliffs]
+	var children = map.get_children()
+	var portals = []
+
+	for child in children:
+		if child is DoorPortal:
+			portals.push_back(child)
+
+	return portals
 

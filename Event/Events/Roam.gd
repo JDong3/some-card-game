@@ -37,7 +37,6 @@ func start():
 		if portal.to == rome_club.last_room:
 			dude.position = portal.position
 
-
 func end():
 	if dude in get_children():
 		remove_child(dude)

@@ -8,16 +8,16 @@ var to_plains
 
 func _init():
 	map = Map.instance()
-	to_plains = DoorPortal.new({
-		'from': 'snowy_cliffs_1',
-		'to': 'snowy_plains_1'
-	})
+	#to_plains = DoorPortal.new({
+	#	'from': 'snowy_cliffs_1',
+	#	'to': 'snowy_plains_1'
+	#})
 	combobulate()
 
 func combobulate():
 	add_child(map)
 
-	to_plains.position = Vector2(50, 200)
+	# to_plains.position = Vector2(50, 200)
 	add_child(to_plains)
 
 
