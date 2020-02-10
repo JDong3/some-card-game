@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall-28-sheet.png-289cc11348f48e90287cfee094bb2fd3.stex"
+path="res://.import/redesign-32.png-b83997659bba25d450fac72d9f5c2f74.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/wall-28-sheet.png"
-dest_files=[ "res://.import/wall-28-sheet.png-289cc11348f48e90287cfee094bb2fd3.stex" ]
+source_file="res://assets/character/dude/redesign-32.png"
+dest_files=[ "res://.import/redesign-32.png-b83997659bba25d450fac72d9f5c2f74.stex" ]
 
 [params]
 
@@ -20,15 +20,15 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
