@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Interactable/DoorPortal.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/danger-button.png" type="Texture" id=3]
 
 [node name="TileMap" type="TileMap"]
 tile_set = ExtResource( 1 )
@@ -14,3 +15,12 @@ position = Vector2( 448, 204 )
 script = ExtResource( 2 )
 to = "snowy_cliffs_1"
 from = "snowy_plains_1"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 98, 95 )
+texture = ExtResource( 3 )
