@@ -45,5 +45,5 @@ func emit(sig_name, args=[]):
 			break
 
 func monitor(xd):
-	print(xd)
+	return
 

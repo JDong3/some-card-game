@@ -3,10 +3,15 @@ class_name SpriteSelectable
 
 var path
 var sprite
+var props
 
-func _init(path_):
-	path = path_
-	sprite = PathSprite.new(path)
+func _init(props_):
+	"""
+	props: Sprite
+	"""
+	props = props_
+
+	sprite = props.sprite
 
 func render():
 	pass

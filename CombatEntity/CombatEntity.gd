@@ -140,7 +140,7 @@ func deselect():
 
 func input(event):
 	if event.is_action_released('cursor_select'):
-		return # print()
+		return
 		fight_club.transaction_interface.add_target(self)
 	if is_move:
 		input_move(event)

@@ -13,5 +13,4 @@ func _init(_props):
 	collision_shape = CapsuleCollision.new(_props)
 	add_child(collision_shape)
 	collision_shape.disabled = false
-	print(collision_shape.disabled)
 

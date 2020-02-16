@@ -8,7 +8,8 @@ parent class for friends and enemies
 var props = {}
 var fight_club = Global.FIGHT_CLUB
 var is_faint = false
-var is_move = false # whether the objects moves or not
+var is_move = false # whether the objects moves or not\
+var selectable = Selectable.new()
 
 # var combat_manager
 # var uid
@@ -147,7 +148,7 @@ func act():
 
 func input(event):
 	if event.is_action_released('cursor_select'):
-		return # print()
+		return
 		fight_club.transaction_interface.add_target(self)
 
 # animation stuff

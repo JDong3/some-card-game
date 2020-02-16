@@ -229,11 +229,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Event/Containers/GameContainer.gd"
 }, {
-"base": "Node2D",
-"class": "GameSetup",
-"language": "GDScript",
-"path": "res://Util/setup_game_temp.gd"
-}, {
 "base": "CursorArea",
 "class": "Hand",
 "language": "GDScript",
@@ -434,7 +429,6 @@ _global_script_class_icons={
 "Focusable": "",
 "FriendlyArea": "",
 "GameContainer": "",
-"GameSetup": "",
 "Hand": "",
 "HealCard": "",
 "HealFocusDeck": "",

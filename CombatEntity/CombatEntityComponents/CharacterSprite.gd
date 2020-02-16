@@ -15,7 +15,7 @@ func _init(_props):
 	_props:
 		path: String, string path to the folder with the animations
 		offset: Vector2, offset vector for the collision area (offset to the
-		        feet of the character)
+				feet of the character)
 		flip_h=false: bool
 	"""
 	props = _props

@@ -22,4 +22,11 @@ func combobulate():
 
 
 func get_portals():
-	return [to_plains]
+	var children = map.get_children()
+	var portals = []
+
+	for child in children:
+		if child is DoorPortal:
+			portals.push_back(child)
+
+	return portals

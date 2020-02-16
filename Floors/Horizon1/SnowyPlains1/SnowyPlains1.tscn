@@ -13,4 +13,4 @@ tile_data = PoolIntArray( 65535, 21, 0, 131071, 21, 0, 196607, 21, 0, 262143, 21
 position = Vector2( 448, 204 )
 script = ExtResource( 2 )
 to = "snowy_cliffs_1"
-from = "snowy_hills_1"
+from = "snowy_plains_1"
