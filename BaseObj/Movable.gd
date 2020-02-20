@@ -7,12 +7,17 @@ var is_move_up
 var is_move_down
 var is_jump
 
+
+# walk, jump, climb, don't worry about this it should be auto detected
+var mode
+
 var motion = Vector2()
 
 func _init():
-	pass
+	mode = 'walk'
 
 func input(event):
+
 	if event.is_action_pressed('roam_up'):
 		is_move_up = true
 	if event.is_action_released('roam_up'):

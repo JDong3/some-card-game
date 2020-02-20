@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/redesign-37.png-bb48d298e8bdeed021210c86cd9755b3.stex"
+path="res://.import/dude4.png-822fb381c74e5f56bc62e1a119f17bd6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/dude/redesign-37.png"
-dest_files=[ "res://.import/redesign-37.png-bb48d298e8bdeed021210c86cd9755b3.stex" ]
+source_file="res://assets/character/dude/walk/dude4.png"
+dest_files=[ "res://.import/dude4.png-822fb381c74e5f56bc62e1a119f17bd6.stex" ]
 
 [params]
 
