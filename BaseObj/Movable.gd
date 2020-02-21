@@ -10,6 +10,13 @@ var TERMINAL_VELOCITY = 400
 
 
 # movement variables, written by input
+var input_vars = {
+	'roam_left': false,
+	'roam_right': false,
+	'roam_up': false,
+	'roam_down': false,
+	'roam_jump': false
+}
 var roam_left
 var roam_right
 var roam_up
@@ -28,6 +35,7 @@ func _init():
 	motion = Vector2()
 
 func input(event):
+	print(event.as_text())
 
 	if event.is_action_pressed('roam_up'):
 		roam_up = true
@@ -52,6 +60,9 @@ func process_walk():
 	"""
 	looks at variables, does stuff to the velocity
 	"""
+
+func get_mode():
+	pass
 
 func _physics_process(delta):
 
