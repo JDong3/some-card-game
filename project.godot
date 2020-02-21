@@ -94,11 +94,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CombatEntity/CombatEntityComponents/CharacterSprite.gd"
 }, {
-"base": "Bass",
-"class": "CombatEntity",
-"language": "GDScript",
-"path": "res://CombatEntity/CombatEntity.gd"
-}, {
 "base": "CursorArea",
 "class": "Combiner",
 "language": "GDScript",
@@ -402,7 +397,6 @@ _global_script_class_icons={
 "CharacterSelectCursorGrid": "",
 "CharacterSelectEvent": "",
 "CharacterSprite": "",
-"CombatEntity": "",
 "Combiner": "",
 "CoordinateGrid": "",
 "CursorArea": "",

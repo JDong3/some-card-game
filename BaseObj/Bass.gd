@@ -3,10 +3,10 @@ class_name Bass
 
 var focused = false
 
-var is_move_left
+var roam_left
 var is_move_right
-var is_move_up
-var is_move_down
+var roam_up
+var roam_down
 
 func init(_props):
 	"""
@@ -17,10 +17,10 @@ func init(_props):
 	"""
 	focused = false
 
-	is_move_left = false
+	roam_left = false
 	is_move_right = false
-	is_move_up = false
-	is_move_down = false
+	roam_up = false
+	roam_down = false
 
 # focusable
 func on_focus():
