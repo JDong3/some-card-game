@@ -53,10 +53,13 @@ func process_walk():
 	var parent = get_parent()
 
 	if ie.roam_left:
+		parent.play('walk')
 		motion.x = max(motion.x - ACCELERATION, -MAX_SPEED)
 	elif ie.roam_right:
+		parent.play('walk')
 		motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
 	else:
+		parent.play('idle')
 		if parent.is_on_floor():
 			motion.x = lerp(motion.x, 0, 0.2)
 		else:
