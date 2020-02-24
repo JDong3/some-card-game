@@ -69,6 +69,12 @@ func process_walk():
 
 func process_in_air():
 	var parent = get_parent()
+
+	if ie.roam_left:
+		motion.x = max(motion.x - ACCELERATION / 1.3, -MAX_SPEED)
+	elif ie.roam_right:
+		motion.x = min(motion.x + ACCELERATION / 1.3, MAX_SPEED)
+
 	motion.y = min	(motion.y + GRAVITY, TERMINAL_VELOCITY)
 	parent.move_and_slide(motion, Vector2(0, -1))
 
