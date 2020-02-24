@@ -14,7 +14,6 @@ func _init():
 	"""
 	#props = _props
 
-
 	if to:
 		pass
 	elif props.has('to'):

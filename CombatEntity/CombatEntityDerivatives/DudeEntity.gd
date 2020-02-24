@@ -3,6 +3,7 @@ class_name DudeEntity
 
 func _init():
 
+	collision_mask = 1 + 2
 	props.character_sprite = CharacterSprite.new({
 		'path': 'res://assets/character/dude/',
 		'offset': Vector2(0, -16)
