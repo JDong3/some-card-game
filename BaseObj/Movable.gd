@@ -54,8 +54,10 @@ func process_walk():
 
 	if ie.roam_left:
 		parent.play('walk')
+		parent.character_sprite.flip_h = true
 		motion.x = max(motion.x - ACCELERATION, -MAX_SPEED)
 	elif ie.roam_right:
+		parent.character_sprite.flip_h = false
 		parent.play('walk')
 		motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
 	else:
