@@ -6,7 +6,7 @@ func _init():
 	collision_mask = 1 + 2
 	props.character_sprite = CharacterSprite.new({
 		'path': 'res://assets/character/dude/',
-		'offset': Vector2(0, -16)
+		'offset': Vector2(0, 1)
 	})
 
 	props.area = CapsuleCollision.new({

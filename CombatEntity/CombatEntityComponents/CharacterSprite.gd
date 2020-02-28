@@ -21,6 +21,7 @@ func _init(_props):
 	props = _props
 	frames = CharacterFrames.new(props.path)
 	offset = props.offset
+	centered = true
 	if props.has('flip_h'):
 		flip_h = props.flip_h
 
