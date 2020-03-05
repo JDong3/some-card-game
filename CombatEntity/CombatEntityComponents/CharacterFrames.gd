@@ -16,28 +16,22 @@ func _init(path_):
 	load_animations()
 
 func load_animations():
-	# directory controller
 	var dir = Directory.new()
-	var item_name
-
-	# open the folder which contains folders for different animations
 	dir.open(path)
 	dir.list_dir_begin(true, true)
+
+	var item_name
 
 	while true:
 		item_name = dir.get_next()
 
-		# break when all dir items are listed
-		if item_name.casecmp_to('') == 0:
+		if item_name == '':
 			break
-
-		# skip if item is not a dir
-		if !dir.current_is_dir():
+		elif item_name.ends_with('.png'):
+			print(item_name)
+		else:
 			continue
 
-		# add the animation if it is a dir
-		if dir.current_is_dir():
-			process_animation(item_name)
 
 func process_animation(dir_name):
 	"""
